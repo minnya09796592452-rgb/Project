@@ -68,6 +68,30 @@ static func _build_butterfly_table(size: int) -> Array:
 	return table
 
 
+## Creates the RGBAF butterfly lookup textures consumed by ceto_fourier_stage.gdshader.
+## Each stage stores normalized source indices in RG and the complex twiddle in BA.
+static func create_butterfly_lookup_textures(size: int) -> Array[ImageTexture]:
+	assert(is_power_of_two(size), "Ceto FFT size must be a positive power of two")
+	var lookup := _build_butterfly_table(size)
+	var textures: Array[ImageTexture] = []
+	var denominator := float(maxi(size - 1, 1))
+
+	for stage in range(lookup.size()):
+		var image := Image.create(size, 1, false, Image.FORMAT_RGBAF)
+		var stage_data: Dictionary = lookup[stage]
+		var indices: PackedInt32Array = stage_data["indices"]
+		var twiddles: PackedVector2Array = stage_data["twiddles"]
+
+		for x in range(size):
+			var j1 := float(indices[x * 2]) / denominator
+			var j2 := float(indices[x * 2 + 1]) / denominator
+			var twiddle := twiddles[x]
+			image.set_pixel(x, 0, Color(j1, j2, twiddle.x, twiddle.y))
+
+		textures.append(ImageTexture.create_from_image(image))
+
+	return textures
+
 ## input_data is row-major: index = x + y * size.
 ## Returns a new PackedVector2Array; input_data is not modified.
 static func transform_2d(input_data: PackedVector2Array, size: int) -> PackedVector2Array:
