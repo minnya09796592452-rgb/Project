@@ -35,8 +35,8 @@ func _run_test() -> void:
 	var slopes: Array = result["slope_textures"]
 	var jacobians: Array = result["jacobian_textures"]
 	var foam: Texture2D = result["foam_texture"]
-	var passed := (
-		result["pass_count"] == 61
+	var passed: bool = (
+		int(result["pass_count"]) == 61
 		and displacement.size() == 4
 		and slopes.size() == 2
 		and jacobians.size() == 3
