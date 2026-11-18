@@ -6,10 +6,10 @@ class_name CetoOceanSimulation
 ## packed 2D FFT -> per-grid displacement arrays -> bilinear wave queries.
 ## This is the CPU numerical backend; it does not yet render an ocean mesh.
 
+const CetoFourier = preload("res://scripts/ceto_fourier.gd")
 const SpectrumMath = preload("res://scripts/ceto_spectrum.gd")
 const SpectrumGenerator = preload("res://scripts/ceto_spectrum_generator.gd")
 const Displacement = preload("res://scripts/ceto_displacement.gd")
-const InterpolatedArray = preload("res://scripts/ceto_interpolated_array_2d.gd")
 const WaveQuery = preload("res://scripts/ceto_wave_query.gd")
 
 var size := 64
@@ -27,7 +27,7 @@ var wave_amplitudes := Vector4.ONE
 var _spectrum_parameters: Dictionary = {}
 var _spectrum_data: Dictionary = {}
 var _grid_displacements: Array[PackedVector3Array] = []
-var _query_buffers: Array[InterpolatedArray] = []
+var _query_buffers: Array[CetoInterpolatedArray2D] = []
 var _initialized := false
 var _last_time := 0.0
 
@@ -76,7 +76,7 @@ func initialize() -> void:
 
 	_query_buffers.clear()
 	for _grid in range(4):
-		_query_buffers.append(InterpolatedArray.new(size, size, 3, true))
+		_query_buffers.append(CetoInterpolatedArray2D.new(size, size, 3, true))
 
 	_grid_displacements.clear()
 	for _grid in range(4):
@@ -102,7 +102,7 @@ func update(time_value: float) -> void:
 		var values: PackedVector3Array = _grid_displacements[grid]
 		for index in range(size * size):
 			var x := index % size
-			var y := index / size
+			var y: int = index / size
 			var value := values[index]
 			buffer.set_value(x, y, 0, value.x)
 			buffer.set_value(x, y, 1, value.y)
