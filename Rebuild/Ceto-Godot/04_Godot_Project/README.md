@@ -15,6 +15,7 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 - `shaders/ceto_init_displacement.gdshader`: Ceto spectrum-to-height/horizontal-displacement initialization, split into selectable single-target passes to replace Unity MRT.
 - `shaders/ceto_init_slope.gdshader`: Ceto slope initialization, split into selectable single-target passes.
 - `shaders/ceto_init_jacobians.gdshader`: Ceto Jacobian/foam precursor initialization, split into selectable single-target passes.
+- `shaders/ceto_foam_copy.gdshader`: Ceto foam Jacobian composition for one through four grids.
 - `tests/test_ceto_fourier.gd`: headless tests for FFT, lookup textures, spectrum equations, and WTable.
 
 ## Verification
@@ -28,7 +29,7 @@ The current project is a verified numerical and asset-conversion foundation, not
 1. Port spectrum condition creation, deterministic .NET `System.Random(0)` sequence, and the complete packed spectrum-generation task.
 2. Port time-dependent displacement initialization and CPU query interpolation.
 3. Implement the Godot GPU ping-pong/MRT equivalent and connect the Fourier stage shader to it.
-4. Connect the translated displacement, slope, and Jacobian shaders to a Godot render-target scheduler; implement downstream foam composition and texture packing.
+4. Connect the translated displacement, slope, Jacobian, and foam shaders to a Godot render-target scheduler; implement the remaining texture packing and render pipeline.
 5. Port ocean mesh, material, camera integration, reflections, underwater effects, and query APIs.
 6. Port GPU buffer ping-pong, slope/Jacobian/foam generation, and the original Unity material effects.
 7. Verify numerical and visual parity against the original Ceto implementation in Godot.
