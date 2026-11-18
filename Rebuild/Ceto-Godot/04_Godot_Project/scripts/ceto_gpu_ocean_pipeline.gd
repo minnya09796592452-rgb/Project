@@ -190,29 +190,37 @@ func update_gpu_ocean(
 	foam_amount: float = 1.0
 ) -> Dictionary:
 	# Frequency-domain initialization and two-dimensional inverse transforms.
+	var total_passes := 0
 	var displacement_init := await initialize_displacement(
 		runner, spectrum_data, size, grid_sizes, grid_count, time_value
 	)
+	total_passes += displacement_init["displacement_textures"].size()
 	var displacement_fft: Array[Texture2D] = await runner.transform_packed_textures(
 		displacement_init["displacement_textures"], size
 	)
+	total_passes += runner.get_last_pass_count()
 
 	var slope_init := await initialize_slopes(
 		runner, spectrum_data, size, grid_sizes, grid_count, time_value
 	)
+	total_passes += slope_init["slope_textures"].size()
 	var slope_fft: Array[Texture2D] = await runner.transform_packed_textures(
 		slope_init["slope_textures"], size
 	)
+	total_passes += runner.get_last_pass_count()
 
 	var jacobian_init := await initialize_jacobians(
 		runner, spectrum_data, size, grid_sizes, grid_count, time_value, foam_amount
 	)
+	total_passes += jacobian_init["jacobian_textures"].size()
 	var jacobian_fft: Array[Texture2D] = await runner.transform_packed_textures(
 		jacobian_init["jacobian_textures"], size
 	)
+	total_passes += runner.get_last_pass_count()
 	var foam_texture := await compose_foam(
 		runner, jacobian_fft, size, grid_count, foam_choppiness, foam_coverage
 	)
+	total_passes += 1
 
 	var grid_displacements: Array[Texture2D] = []
 	for grid in range(grid_count):
@@ -231,8 +239,10 @@ func update_gpu_ocean(
 			grid,
 			grid_count == 1
 		))
+		total_passes += 1
 
 	return {
+		"pass_count": total_passes,
 		"displacement_textures": grid_displacements,
 		"slope_textures": slope_fft,
 		"jacobian_textures": jacobian_fft,
