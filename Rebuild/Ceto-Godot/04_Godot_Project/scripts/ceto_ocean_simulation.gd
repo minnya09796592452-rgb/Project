@@ -140,6 +140,20 @@ func query(
 	)
 
 
+
+func sample_surface(world_x: float, world_z: float) -> Vector3:
+	assert(_initialized, "Call initialize() or update() before sampling")
+	var total := Vector3.ZERO
+	for grid in range(num_grids):
+		var sample := _query_buffers[grid].sample_vector3(
+			world_x / grid_sizes[grid],
+			world_z / grid_sizes[grid]
+		)
+		total.x += sample.x * choppiness[grid]
+		total.y += sample.y * scale_y
+		total.z += sample.z * choppiness[grid]
+	return total
+
 func get_displacement_grid(index: int) -> PackedVector3Array:
 	assert(index >= 0 and index < 4)
 	return _grid_displacements[index]
