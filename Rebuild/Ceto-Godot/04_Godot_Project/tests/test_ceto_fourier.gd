@@ -6,6 +6,7 @@ const CetoDotNetRandom = preload("res://scripts/ceto_dotnet_random.gd")
 const CetoSpectrumGenerator = preload("res://scripts/ceto_spectrum_generator.gd")
 const CetoDisplacement = preload("res://scripts/ceto_displacement.gd")
 const CetoInterpolatedArray2D = preload("res://scripts/ceto_interpolated_array_2d.gd")
+const CetoWaveQuery = preload("res://scripts/ceto_wave_query.gd")
 const TOLERANCE := 0.002
 
 
@@ -21,9 +22,10 @@ func _initialize() -> void:
 	_test_spectrum_generation(failures)
 	_test_displacement_initialization(failures)
 	_test_bilinear_interpolation(failures)
+	_test_wave_query(failures)
 
 	if failures.is_empty():
-		print("CETO GODOT NUMERICS: 10/10 PASS")
+		print("CETO GODOT NUMERICS: 11/11 PASS")
 		quit(0)
 	else:
 		for failure in failures:
@@ -269,3 +271,45 @@ func _test_bilinear_interpolation(failures: Array[String]) -> void:
 	var clamped_edge := wrapped.sample_vector3(-0.25, 0.25)
 	if clamped_edge.length() > TOLERANCE:
 		failures.append("Clamped negative-coordinate sample mismatch")
+
+func _test_wave_query(failures: Array[String]) -> void:
+	var grids: Array[CetoInterpolatedArray2D] = []
+	for grid_index in range(4):
+		var grid := CetoInterpolatedArray2D.new(2, 2, 3, true)
+		var constant_value := Vector3(0.15, 2.0, 0.0) if grid_index == 0 else (
+			Vector3(0.05, 3.0, 0.0) if grid_index == 1 else Vector3.ZERO
+		)
+		for y in range(2):
+			for x in range(2):
+				for channel in range(3):
+					grid.set_value(x, y, channel, constant_value[channel])
+		grids.append(grid)
+
+	var sample_two: Array[bool] = [true, true, false, false]
+	var inverse_sizes := Vector4.ONE
+	var chop := Vector4.ONE
+	var position_result := CetoWaveQuery.query(
+		grids, 12.0, -4.0, sample_two, 2,
+		inverse_sizes, chop, 1.0, Vector2.ZERO, "position", 0.1
+	)
+	if absf(position_result["height"] - 5.0) > TOLERANCE:
+		failures.append("Wave POSITION query height mismatch")
+		return
+	if absf(position_result["displacement_x"] - 0.2) > TOLERANCE:
+		failures.append("Wave POSITION query horizontal displacement mismatch")
+		return
+	if position_result["iterations"] != 2 or position_result["error"] > TOLERANCE:
+		failures.append("Wave POSITION inverse-displacement iteration mismatch")
+		return
+
+	var height_result := CetoWaveQuery.query(
+		grids, 12.0, -4.0, sample_two, 2,
+		inverse_sizes, chop, 1.0, Vector2.ZERO, "displacement", 0.1
+	)
+	if absf(height_result["height"] - 5.0) > TOLERANCE:
+		failures.append("Wave DISPLACEMENT query height mismatch")
+		return
+	for value in height_result["displacement"]:
+		if absf(value.x) > TOLERANCE or absf(value.z) > TOLERANCE:
+			failures.append("Height-only query returned horizontal displacement")
+			return
