@@ -1,5 +1,7 @@
 extends SceneTree
 
+# Strict CI currently expects all thirteen numerical test groups.
+
 const CetoFourier = preload("res://scripts/ceto_fourier.gd")
 const CetoSpectrum = preload("res://scripts/ceto_spectrum.gd")
 const CetoDotNetRandom = preload("res://scripts/ceto_dotnet_random.gd")
