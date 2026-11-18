@@ -57,13 +57,16 @@ func _run_gpu_fft_test() -> void:
 			for channel in range(4):
 				max_error = maxf(max_error, absf(actual[channel] - expected[index][channel]))
 
+	var passed := true
 	if runner.get_last_pass_count() != 6:
 		push_error("GPU FFT pass count mismatch: expected 6, got %d" % runner.get_last_pass_count())
+		passed = false
 	elif max_error > TOLERANCE:
 		push_error("GPU FFT differs from CPU reference: max error %.6f > %.6f" % [max_error, TOLERANCE])
+		passed = false
 	else:
 		print("CETO GPU FFT: PASS (6 passes, max error %.6f)" % max_error)
 
 	runner.release_targets()
 	runner.queue_free()
-	quit(0 if max_error <= TOLERANCE else 1)
+	quit(0 if passed else 1)
