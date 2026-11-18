@@ -26,7 +26,7 @@ vec2 get_spectrum(float omega, vec2 s0, vec2 s0c) {
 vec3 jacobian_terms(vec2 k, float height_real) {
 	float magnitude = length(k);
 	float inverse_magnitude = magnitude == 0.0 ? 0.0 : 1.0 / magnitude;
-	float scale = -height_real * foam_amount * inverse_magnitude;
+	float scale = -height_real * inverse_magnitude;
 	return vec3(k.x * k.x, k.y * k.y, k.x * k.y) * scale;
 }
 
