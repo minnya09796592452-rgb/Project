@@ -77,13 +77,13 @@ func _create_surface() -> void:
 
 
 func _surface_vertex(x: int, y: int) -> Vector3:
-	var size := _simulation.size
+	var size: int = int(_simulation.size)
 	var u := float(x) / float(size - 1)
 	var v := float(y) / float(size - 1)
-	var world_size := _simulation.grid_sizes.x
-	var world_x := (u - 0.5) * world_size
-	var world_z := (v - 0.5) * world_size
-	var displacement := _simulation.sample_surface(world_x, world_z)
+	var world_size: float = float(_simulation.grid_sizes.x)
+	var world_x: float = (u - 0.5) * world_size
+	var world_z: float = (v - 0.5) * world_size
+	var displacement: Vector3 = _simulation.sample_surface(world_x, world_z)
 	return Vector3(
 		world_x + displacement.x,
 		displacement.y,
