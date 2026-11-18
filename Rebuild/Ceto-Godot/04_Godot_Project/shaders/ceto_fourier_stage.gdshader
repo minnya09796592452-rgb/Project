@@ -5,7 +5,7 @@ render_mode unshaded, blend_disabled;
 // Run once per logical data texture and per axis/stage. The Unity source uses
 // MRT for 2-4 buffers; this Godot variant intentionally uses one output per draw.
 
-uniform sampler2D read_buffer : filter_nearest, repeat_disable;
+uniform sampler2D read_buffer : source_color, filter_nearest, repeat_disable;
 uniform sampler2D butterfly_lookup : filter_nearest, repeat_disable;
 uniform bool axis_y = false;
 
