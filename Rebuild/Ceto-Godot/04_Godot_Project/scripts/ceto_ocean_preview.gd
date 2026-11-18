@@ -8,7 +8,7 @@ const Simulation = preload("res://scripts/ceto_ocean_simulation.gd")
 @export_range(16, 256, 16) var fft_size := 64
 @export_range(0.05, 1.0, 0.05) var update_interval := 0.2
 
-var _simulation: CetoOceanSimulation
+var _simulation
 var _surface: MeshInstance3D
 var _elapsed := 0.0
 var _update_clock := 0.0
