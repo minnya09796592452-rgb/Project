@@ -134,12 +134,16 @@ func _test_lookup_textures(failures: Array[String]) -> void:
 		"res://shaders/ceto_init_jacobians.gdshader",
 		"res://shaders/ceto_foam_copy.gdshader",
 		"res://shaders/ceto_displacement_copy.gdshader",
-		"res://shaders/ceto_slope_copy.gdshader"
+		"res://shaders/ceto_slope_copy.gdshader",
+		"res://shaders/ceto_ocean_surface.gdshader"
 	]
 	for shader_path in shader_paths:
 		var shader_resource = ResourceLoader.load(shader_path, "Shader")
 		if shader_resource == null:
 			failures.append("Godot shader failed to load: %s" % shader_path)
+	var gpu_preview_scene = ResourceLoader.load("res://ceto_gpu_ocean_preview.tscn", "PackedScene")
+	if gpu_preview_scene == null:
+		failures.append("GPU ocean preview scene failed to load")
 	if image.get_format() != Image.FORMAT_RGBAF or image.get_width() != 8 or image.get_height() != 1:
 		failures.append("lookup texture format/dimensions mismatch")
 
