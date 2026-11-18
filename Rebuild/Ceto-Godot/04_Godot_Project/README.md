@@ -27,7 +27,11 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 
 ## Verification
 
-The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, runs GPU Fourier ping-pong, displacement/slope/Jacobian initialization, and copy/foam parity tests with the OpenGL Compatibility renderer using normalized test data, launches the preview scene headlessly, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
+The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, runs CPU numerical tests on every CI run. GPU parity scripts execute only when a RenderingDevice is available; the CI Compatibility renderer reports an explicit SKIP because it cannot provide the HDR float targets required for reliable numeric parity. The project GPU path requires a Forward+ or Mobile renderer for full precision. CI also launches the CPU preview scene headlessly, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
+
+## GPU validation boundary
+
+The sequential GPU pass runner and initialization/copy pipeline are implemented, but they are not yet connected to the live preview update loop. The CI host's OpenGL Compatibility renderer cannot provide HDR 2D float targets; GPU numeric tests therefore report SKIP there rather than a false PASS. Run those parity checks on a Godot Forward+ or Mobile RenderingDevice backend before treating GPU parity as verified.
 
 ## Not yet a complete ocean port
 
