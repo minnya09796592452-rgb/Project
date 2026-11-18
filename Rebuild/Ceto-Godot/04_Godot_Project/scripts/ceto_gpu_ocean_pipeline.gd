@@ -175,3 +175,66 @@ func compose_foam(
 		"grid_count": grid_count
 	}
 	return await runner.render_single_target_pass(shader, size, uniforms, j0)
+
+
+
+func update_gpu_ocean(
+	runner: CetoGpuPassRunner,
+	spectrum_data: Dictionary,
+	size: int,
+	grid_sizes: Vector4,
+	grid_count: int,
+	time_value: float,
+	foam_choppiness: Vector4,
+	foam_coverage: float = 0.0,
+	foam_amount: float = 1.0
+) -> Dictionary:
+	# Frequency-domain initialization and two-dimensional inverse transforms.
+	var displacement_init := await initialize_displacement(
+		runner, spectrum_data, size, grid_sizes, grid_count, time_value
+	)
+	var displacement_fft: Array[Texture2D] = await runner.transform_packed_textures(
+		displacement_init["displacement_textures"], size
+	)
+
+	var slope_init := await initialize_slopes(
+		runner, spectrum_data, size, grid_sizes, grid_count, time_value
+	)
+	var slope_fft: Array[Texture2D] = await runner.transform_packed_textures(
+		slope_init["slope_textures"], size
+	)
+
+	var jacobian_init := await initialize_jacobians(
+		runner, spectrum_data, size, grid_sizes, grid_count, time_value, foam_amount
+	)
+	var jacobian_fft: Array[Texture2D] = await runner.transform_packed_textures(
+		jacobian_init["jacobian_textures"], size
+	)
+	var foam_texture := await compose_foam(
+		runner, jacobian_fft, size, grid_count, foam_choppiness, foam_coverage
+	)
+
+	var grid_displacements: Array[Texture2D] = []
+	for grid in range(grid_count):
+		var displacement_buffer: Texture2D
+		if grid_count == 1:
+			displacement_buffer = displacement_fft[0]
+		elif grid < 2:
+			displacement_buffer = displacement_fft[1]
+		else:
+			displacement_buffer = displacement_fft[2]
+		grid_displacements.append(await copy_displacement(
+			runner,
+			displacement_fft[0],
+			displacement_buffer,
+			size,
+			grid,
+			grid_count == 1
+		))
+
+	return {
+		"displacement_textures": grid_displacements,
+		"slope_textures": slope_fft,
+		"jacobian_textures": jacobian_fft,
+		"foam_texture": foam_texture
+	}
