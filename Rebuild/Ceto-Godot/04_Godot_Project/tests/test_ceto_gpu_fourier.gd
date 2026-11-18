@@ -62,6 +62,10 @@ func _run_gpu_fft_test() -> void:
 		return
 
 	var max_error := 0.0
+	var max_error_index := 0
+	var max_error_channel := 0
+	var max_error_actual := 0.0
+	var max_error_expected := 0.0
 	var expected_buffers: Array = [expected, expected_second]
 	for buffer_index in range(2):
 		var output_image := output_textures[buffer_index].get_image()
@@ -78,9 +82,16 @@ func _run_gpu_fft_test() -> void:
 				var actual := Vector4(pixel.r, pixel.g, pixel.b, pixel.a)
 				var reference: PackedVector4Array = expected_buffers[buffer_index]
 				for channel in range(4):
-					max_error = maxf(max_error, absf(actual[channel] - reference[index][channel]))
+					var error := absf(actual[channel] - reference[index][channel])
+					if error > max_error:
+						max_error = error
+						max_error_index = index
+						max_error_channel = channel
+						max_error_actual = actual[channel]
+						max_error_expected = reference[index][channel]
 
 	var passed := true
+	print("GPU FFT diagnostic: max index=%d channel=%d actual=%.6f expected=%.6f" % [max_error_index, max_error_channel, max_error_actual, max_error_expected])
 	if runner.get_last_pass_count() != 12:
 		push_error("GPU FFT pass count mismatch: expected 12, got %d" % runner.get_last_pass_count())
 		passed = false
