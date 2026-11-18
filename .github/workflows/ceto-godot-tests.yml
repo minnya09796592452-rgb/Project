@@ -96,6 +96,12 @@ jobs:
           unzip -q Godot_v4.7.2-stable_linux.x86_64.zip
           chmod +x Godot_v4.7.2-stable_linux.x86_64
 
+      - name: Exercise one-click Ceto conversion coordinator
+        run: |
+          ln -sf "$PWD/Godot_v4.7.2-stable_linux.x86_64" "$PWD/godot"
+          export PATH="$PWD:$PATH"
+          python3 Rebuild/Ceto-Godot/04_Godot_Project/Tools/ceto_oneclick_pipeline.py --no-assets
+
       - name: Validate one-click pipeline Python syntax
         run: |
           python3 -c "from pathlib import Path; p=Path('Rebuild/Ceto-Godot/04_Godot_Project/Tools/ceto_oneclick_pipeline.py'); compile(p.read_text(encoding='utf-8'), str(p), 'exec')"
