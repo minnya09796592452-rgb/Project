@@ -109,4 +109,8 @@ func _run_test() -> void:
 
 
 func _initialize() -> void:
+	if RenderingServer.get_rendering_device() == null:
+		print("CETO GPU COPY: SKIP (Compatibility renderer has no HDR RenderingDevice)")
+		quit(0)
+		return
 	await _run_test()
