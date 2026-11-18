@@ -26,7 +26,7 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 
 ## Verification
 
-The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, runs GPU Fourier ping-pong and displacement/slope/Jacobian initialization parity tests with the Vulkan renderer, launches the preview scene headlessly, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
+The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, runs GPU Fourier ping-pong and displacement/slope/Jacobian initialization parity tests with the OpenGL Compatibility renderer using normalized test data, launches the preview scene headlessly, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
 
 ## Not yet a complete ocean port
 
