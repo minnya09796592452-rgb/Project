@@ -32,7 +32,11 @@ static func _complex_multiply(left: Vector2, right: Vector2) -> Vector2:
 
 static func _build_butterfly_table(size: int) -> Array:
 	assert(is_power_of_two(size), "Ceto FFT size must be a positive power of two")
-	var pass_count := int(round(log(float(size)) / log(2.0)))
+	var pass_count := 0
+	var remaining := size
+	while remaining > 1:
+		remaining >>= 1
+		pass_count += 1
 	var table: Array = []
 
 	for stage in range(pass_count):
@@ -69,6 +73,9 @@ static func _build_butterfly_table(size: int) -> Array:
 static func transform_2d(input_data: PackedVector2Array, size: int) -> PackedVector2Array:
 	assert(is_power_of_two(size), "Ceto FFT size must be a positive power of two")
 	assert(input_data.size() == size * size, "FFT input length must equal size * size")
+
+	if size == 1:
+		return input_data.duplicate()
 
 	var lookup := _build_butterfly_table(size)
 	var buffers: Array[PackedVector2Array] = [
