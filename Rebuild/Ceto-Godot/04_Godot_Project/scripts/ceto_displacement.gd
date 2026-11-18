@@ -1,6 +1,7 @@
 extends RefCounted
-const CetoFourier = preload("res://scripts/ceto_fourier.gd")
 class_name CetoDisplacement
+
+const CetoFourier = preload("res://scripts/ceto_fourier.gd")
 
 ## CPU translation of Ceto InitSpectrumDisplacementsTask.
 ## Evolves packed frequency coefficients in time, mirrors negative-frequency
