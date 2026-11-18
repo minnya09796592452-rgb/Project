@@ -23,9 +23,10 @@ func _initialize() -> void:
 	_test_displacement_initialization(failures)
 	_test_bilinear_interpolation(failures)
 	_test_wave_query(failures)
+	_test_packed_cpu_pipeline(failures)
 
 	if failures.is_empty():
-		print("CETO GODOT NUMERICS: 11/11 PASS")
+		print("CETO GODOT NUMERICS: 12/12 PASS")
 		quit(0)
 	else:
 		for failure in failures:
@@ -313,3 +314,53 @@ func _test_wave_query(failures: Array[String]) -> void:
 		if absf(value.x) > TOLERANCE or absf(value.z) > TOLERANCE:
 			failures.append("Height-only query returned horizontal displacement")
 			return
+
+func _test_packed_cpu_pipeline(failures: Array[String]) -> void:
+	var size := 8
+	var packed := PackedVector4Array()
+	packed.resize(size * size)
+	for index in range(packed.size()):
+		packed[index] = Vector4(
+			sin(float(index) * 0.13),
+			cos(float(index) * 0.21),
+			sin(float(index) * 0.31),
+			cos(float(index) * 0.41)
+		)
+	var double_fft := CetoFourier.transform_packed_vector4_2d(packed, size, true)
+	var xy := PackedVector2Array()
+	var zw := PackedVector2Array()
+	for value in packed:
+		xy.append(Vector2(value.x, value.y))
+		zw.append(Vector2(value.z, value.w))
+	var expected_xy := CetoFourier.transform_2d(xy, size)
+	var expected_zw := CetoFourier.transform_2d(zw, size)
+	for index in range(packed.size()):
+		if Vector2(double_fft[index].x, double_fft[index].y).distance_to(expected_xy[index]) > TOLERANCE:
+			failures.append("Double-packed FFT XY result mismatch")
+			return
+		if Vector2(double_fft[index].z, double_fft[index].w).distance_to(expected_zw[index]) > TOLERANCE:
+			failures.append("Double-packed FFT ZW result mismatch")
+			return
+
+	var parameters := CetoSpectrum.unified_parameters(8.0, 15.0, 0.64)
+	for grid_count in [1, 2, 3, 4]:
+		var settings := CetoSpectrumGenerator.grid_configuration("unified", grid_count)
+		var spectrum := CetoSpectrumGenerator.generate(
+			size, "unified", parameters,
+			settings["grid_sizes"], settings["wave_amplitudes"], grid_count
+		)
+		var cpu := CetoDisplacement.run_cpu_pipeline(
+			spectrum, size, settings["grid_sizes"], grid_count, 0.75
+		)
+		if cpu["displacements"].size() != 4:
+			failures.append("CPU pipeline did not return four grid slots")
+			return
+		for grid in range(4):
+			if cpu["displacements"][grid].size() != size * size:
+				failures.append("CPU pipeline grid dimensions mismatch")
+				return
+			for value in cpu["displacements"][grid]:
+				for channel in range(3):
+					if not is_finite(value[channel]):
+						failures.append("CPU pipeline generated non-finite displacement")
+						return
