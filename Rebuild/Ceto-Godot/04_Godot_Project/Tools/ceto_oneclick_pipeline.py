@@ -123,6 +123,8 @@ def main() -> int:
         "Shaders/SlopeCopy.shader": ["shaders/ceto_slope_copy.gdshader"],
     }
     csharp_ports = {
+        "Scripts/Spectrum/Fourier/FourierGPU.cs": ["scripts/ceto_gpu_pass_runner.gd"],
+        "Scripts/Spectrum/Buffers/WaveSpectrumBufferGPU.cs": ["scripts/ceto_gpu_pass_runner.gd"],
         "Scripts/Spectrum/Fourier/FourierCPU.cs": ["scripts/ceto_fourier.gd"],
         "Scripts/Spectrum/Conditions/UnifiedSpectrum.cs": ["scripts/ceto_spectrum.gd"],
         "Scripts/Spectrum/Conditions/PhillipsSpectrum.cs": ["scripts/ceto_spectrum.gd"],
