@@ -11,7 +11,8 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 - `assets/models/Ship.glb`: converted from the original 3DS by Assimp in CI. The source model referenced two external texture files that are absent from the archive, so those broken texture links are stripped while retaining mesh geometry and material properties.
 - `scripts/ceto_fourier.gd`: CPU radix-2 2D FFT port following Ceto's butterfly table, bit reversal, X-then-Y stages, and unnormalized convention. Also creates RGBAF lookup textures.
 - `scripts/ceto_spectrum.gd`: Ceto Unified and Phillips spectrum equations plus the dispersion WTable.
-- `scripts/ceto_gpu_pass_runner.gd`: sequential Godot SubViewport ping-pong scheduler for the Fourier GPU shader; one output texture is retained per pass to avoid read/write feedback.
+- `scripts/ceto_gpu_pass_runner.gd`: sequential Godot SubViewport render-pass scheduler for Fourier and other single-target Ceto shader passes; every output texture is retained to avoid read/write feedback.
+- `scripts/ceto_gpu_ocean_pipeline.gd`: GPU spectrum-to-displacement initialization using the translated InitDisplacement shader and packed spectrum/WTable textures.
 - `shaders/ceto_fourier_stage.gdshader`: Godot single-render-target Fourier stage.
 - `shaders/ceto_init_displacement.gdshader`: Ceto spectrum-to-height/horizontal-displacement initialization, split into selectable single-target passes to replace Unity MRT.
 - `shaders/ceto_init_slope.gdshader`: Ceto slope initialization, split into selectable single-target passes.
@@ -21,10 +22,11 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 - `shaders/ceto_slope_copy.gdshader`: Ceto slope buffer copy.
 - `tests/test_ceto_fourier.gd`: headless CPU tests for FFT, lookup textures, spectrum equations, WTable, displacement initialization, and wave queries.
 - `tests/test_ceto_gpu_fourier.gd`: GPU render-pass comparison against the CPU FFT reference, including pass-count and numeric-error gates.
+- `tests/test_ceto_gpu_displacement.gd`: GPU InitDisplacement outputs compared against the CPU initialization buffers for four grids.
 
 ## Verification
 
-The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, runs a separate GPU Fourier ping-pong parity test with the compatibility renderer, launches the preview scene headlessly, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
+The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, runs GPU Fourier ping-pong and GPU displacement initialization parity tests with the compatibility renderer, launches the preview scene headlessly, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
 
 ## Not yet a complete ocean port
 
@@ -33,7 +35,7 @@ The current project is a verified numerical and asset-conversion foundation, not
 1. Port spectrum condition creation, deterministic .NET `System.Random(0)` sequence, and the complete packed spectrum-generation task.
 2. Port time-dependent displacement initialization and CPU query interpolation.
 3. Extend the Fourier pass runner to the complete multi-buffer lifecycle and connect it to spectrum/displacement buffer ownership.
-4. Wire displacement, slope, Jacobian, and foam passes into the scheduler; add the remaining texture packing and render pipeline.
+4. Wire slope, Jacobian, and foam passes into the scheduler; add remaining texture packing and render pipeline.
 5. Port ocean mesh, material, camera integration, reflections, underwater effects, and query APIs.
 6. Convert remaining Unity C# behavior, shader includes, compute paths, scenes, prefabs, and materials without silently approximating custom ocean effects.
 7. Verify numerical and visual parity against the original Ceto implementation in Godot.
