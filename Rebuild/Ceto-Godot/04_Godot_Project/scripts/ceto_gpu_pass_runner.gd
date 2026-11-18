@@ -52,34 +52,34 @@ func transform_packed_texture(input_texture: Texture2D, size: int) -> Texture2D:
 			var target := SubViewport.new()
 			target.name = "CetoFFT_%s_%d" % ["Y" if axis_y else "X", stage_index]
 			target.size = Vector2i(size, size)
-		target.disable_3d = true
-		target.transparent_bg = true
-		target.use_hdr_2d = true
-		target.render_target_clear_mode = SubViewport.CLEAR_MODE_ALWAYS
-		target.render_target_update_mode = SubViewport.UPDATE_DISABLED
-		add_child(target)
+			target.disable_3d = true
+			target.transparent_bg = true
+			target.use_hdr_2d = true
+			target.render_target_clear_mode = SubViewport.CLEAR_MODE_ALWAYS
+			target.render_target_update_mode = SubViewport.UPDATE_DISABLED
+			add_child(target)
 
-		var rect := TextureRect.new()
-		rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-		rect.texture = source
-		rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		rect.stretch_mode = TextureRect.STRETCH_SCALE
+			var rect := TextureRect.new()
+			rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+			rect.texture = source
+			rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			rect.stretch_mode = TextureRect.STRETCH_SCALE
 
-		var material := ShaderMaterial.new()
-		material.shader = FOURIER_STAGE_SHADER
-		material.set_shader_parameter("read_buffer", source)
-		material.set_shader_parameter("butterfly_lookup", lookup_textures[stage_index])
-		material.set_shader_parameter("axis_y", axis_y)
-		rect.material = material
-		target.add_child(rect)
+			var material := ShaderMaterial.new()
+			material.shader = FOURIER_STAGE_SHADER
+			material.set_shader_parameter("read_buffer", source)
+			material.set_shader_parameter("butterfly_lookup", lookup_textures[stage_index])
+			material.set_shader_parameter("axis_y", axis_y)
+			rect.material = material
+			target.add_child(rect)
 
-		# UPDATE_ONCE renders the pass exactly once; await completion before the
-		# resulting ViewportTexture becomes the next pass input.
-		target.render_target_update_mode = SubViewport.UPDATE_ONCE
-		await RenderingServer.frame_post_draw
-		source = target.get_texture()
-		_targets.append(target)
-		_last_pass_count += 1
+			# UPDATE_ONCE renders the pass exactly once; await completion before the
+			# resulting ViewportTexture becomes the next pass input.
+			target.render_target_update_mode = SubViewport.UPDATE_ONCE
+			await RenderingServer.frame_post_draw
+			source = target.get_texture()
+			_targets.append(target)
+			_last_pass_count += 1
 
 	_last_output = source
 	_running = false
