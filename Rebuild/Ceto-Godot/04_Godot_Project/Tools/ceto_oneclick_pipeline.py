@@ -129,7 +129,7 @@ def main() -> int:
         "Scripts/Spectrum/Conditions/UnifiedSpectrum.cs": ["scripts/ceto_spectrum.gd"],
         "Scripts/Spectrum/Conditions/PhillipsSpectrum.cs": ["scripts/ceto_spectrum.gd"],
         "Scripts/Spectrum/Conditions/WaveSpectrumCondition.cs": ["scripts/ceto_spectrum_generator.gd"],
-        "Scripts/Spectrum/Tasks/InitSpectrumDisplacementsTask.cs": ["scripts/ceto_displacement.gd"],
+        "Scripts/Spectrum/Tasks/InitSpectrumDisplacementsTask.cs": ["scripts/ceto_displacement.gd", "scripts/ceto_gpu_ocean_pipeline.gd"],
         "Scripts/Spectrum/Tasks/FourierTask.cs": ["scripts/ceto_fourier.gd", "scripts/ceto_displacement.gd"],
         "Scripts/Spectrum/Buffers/QueryDisplacements.cs": ["scripts/ceto_wave_query.gd", "scripts/ceto_interpolated_array_2d.gd"],
     }
