@@ -5,6 +5,7 @@ const CetoSpectrum = preload("res://scripts/ceto_spectrum.gd")
 const CetoDotNetRandom = preload("res://scripts/ceto_dotnet_random.gd")
 const CetoSpectrumGenerator = preload("res://scripts/ceto_spectrum_generator.gd")
 const CetoDisplacement = preload("res://scripts/ceto_displacement.gd")
+const CetoInterpolatedArray2D = preload("res://scripts/ceto_interpolated_array_2d.gd")
 const TOLERANCE := 0.002
 
 
@@ -19,9 +20,10 @@ func _initialize() -> void:
 	_test_dotnet_random(failures)
 	_test_spectrum_generation(failures)
 	_test_displacement_initialization(failures)
+	_test_bilinear_interpolation(failures)
 
 	if failures.is_empty():
-		print("CETO GODOT NUMERICS: 9/9 PASS")
+		print("CETO GODOT NUMERICS: 10/10 PASS")
 		quit(0)
 	else:
 		for failure in failures:
@@ -239,3 +241,31 @@ func _test_displacement_initialization(failures: Array[String]) -> void:
 				if not is_finite(sample[channel]):
 					failures.append("Displacement contains non-finite values for %d grids" % grid_count)
 					return
+
+func _test_bilinear_interpolation(failures: Array[String]) -> void:
+	var wrapped := CetoInterpolatedArray2D.new(2, 2, 3, true)
+	var values := [
+		Vector3(0.0, 0.0, 0.0),
+		Vector3(2.0, 4.0, 6.0),
+		Vector3(4.0, 8.0, 12.0),
+		Vector3(6.0, 12.0, 18.0)
+	]
+	for y in range(2):
+		for x in range(2):
+			var value: Vector3 = values[x + y * 2]
+			for channel in range(3):
+				wrapped.set_value(x, y, channel, value[channel])
+
+	var center := wrapped.sample_vector3(0.5, 0.5)
+	if center.distance_to(Vector3(3.0, 6.0, 9.0)) > TOLERANCE:
+		failures.append("Bilinear center sample mismatch")
+		return
+	var wrapped_edge := wrapped.sample_vector3(-0.25, 0.25)
+	if wrapped_edge.distance_to(Vector3(2.0, 4.0, 6.0)) > TOLERANCE:
+		failures.append("Wrapped negative-coordinate sample mismatch")
+		return
+
+	wrapped.wrap = false
+	var clamped_edge := wrapped.sample_vector3(-0.25, 0.25)
+	if clamped_edge.length() > TOLERANCE:
+		failures.append("Clamped negative-coordinate sample mismatch")
