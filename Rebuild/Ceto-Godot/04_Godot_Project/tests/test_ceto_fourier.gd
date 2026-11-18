@@ -4,6 +4,7 @@ const CetoFourier = preload("res://scripts/ceto_fourier.gd")
 const CetoSpectrum = preload("res://scripts/ceto_spectrum.gd")
 const CetoDotNetRandom = preload("res://scripts/ceto_dotnet_random.gd")
 const CetoSpectrumGenerator = preload("res://scripts/ceto_spectrum_generator.gd")
+const CetoDisplacement = preload("res://scripts/ceto_displacement.gd")
 const TOLERANCE := 0.002
 
 
@@ -17,9 +18,10 @@ func _initialize() -> void:
 	_test_spectrum_math(failures)
 	_test_dotnet_random(failures)
 	_test_spectrum_generation(failures)
+	_test_displacement_initialization(failures)
 
 	if failures.is_empty():
-		print("CETO GODOT NUMERICS: 8/8 PASS")
+		print("CETO GODOT NUMERICS: 9/9 PASS")
 		quit(0)
 	else:
 		for failure in failures:
@@ -195,3 +197,27 @@ func _test_spectrum_generation(failures: Array[String]) -> void:
 			if not is_finite(first["spectrum23"][index][channel]):
 				failures.append("SpectrumTask Spectrum23 contains non-finite values")
 				return
+
+func _test_displacement_initialization(failures: Array[String]) -> void:
+	var parameters := CetoSpectrum.unified_parameters(8.0, 25.0, 0.64)
+	for grid_count in [1, 2, 3, 4]:
+		var settings := CetoSpectrumGenerator.grid_configuration("unified", grid_count)
+		var spectrum := CetoSpectrumGenerator.generate(
+			8, "unified", parameters,
+			settings["grid_sizes"], settings["wave_amplitudes"], grid_count
+		)
+		var initialized := CetoDisplacement.initialize(
+			spectrum, 8, settings["grid_sizes"], grid_count, 1.25
+		)
+		if initialized["displacement"].size() != 64 or initialized["slopes_01"].size() != 64:
+			failures.append("Displacement output dimensions mismatch for %d grids" % grid_count)
+			return
+		var expected_secondary := 64 if grid_count > 2 else 0
+		if initialized["slopes_23"].size() != expected_secondary:
+			failures.append("Secondary slope dimensions mismatch for %d grids" % grid_count)
+			return
+		for sample in initialized["displacement"]:
+			for channel in range(4):
+				if not is_finite(sample[channel]):
+					failures.append("Displacement contains non-finite values for %d grids" % grid_count)
+					return
