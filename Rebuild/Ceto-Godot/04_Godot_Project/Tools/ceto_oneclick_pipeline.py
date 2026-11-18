@@ -114,6 +114,8 @@ def main() -> int:
     # Existing ports are tracked per original source file. A present output is not
     # treated as feature parity; runtime/numerical parity remains a separate gate.
     shader_ports = {
+        "Shaders/OceanDepth.shader": ["shaders/ceto_ocean_depth.gdshader"],
+        "Shaders/UnderWaterPostEffect.shader": ["shaders/ceto_underwater_post.gdshader"],
         "Shaders/OceanMask.shader": ["shaders/ceto_ocean_mask.gdshader"],
         "Shaders/WaveOverlay.shader": ["shaders/ceto_wave_overlay.gdshader"],
         "Shaders/OceanMasking.cginc": ["shaders/ceto_ocean_mask_decode.gdshader"],
