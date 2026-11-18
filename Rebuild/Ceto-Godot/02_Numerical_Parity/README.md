@@ -108,7 +108,7 @@ Both implementations execute all X-axis stages, then all Y-axis stages. The insp
 
 ### Numerical parity verdict
 
-<verdict>PARTIAL — same algorithmic structure confirmed; no executable numerical comparison performed.</verdict>
+**Verdict: PARTIAL** — same algorithmic structure confirmed; no executable numerical comparison performed.
 
 A valid parity test must compare CPU and GPU output arrays for the same initial buffers and size, not compare rendered screenshots. Use absolute and relative error metrics and inspect every channel.
 
@@ -134,7 +134,7 @@ Suggested numerical thresholds must be established empirically for the target pr
 | Source file | Blob SHA |
 |---|---|
 | `Scripts/Spectrum/Tasks/SpectrumTask.cs` | `48512fef8b70ac20bacc52bb9d5965269f5b7efe` |
-| `Scripts/Spectrum/Conditions/UnifiedSpectrum.cs` | `(verify from source tree before final manifest)` |
+| `Scripts/Spectrum/Conditions/UnifiedSpectrum.cs` | `e82de06193c4a801c8c731edc9fa0b90c77ea8be` |
 | `Scripts/Spectrum/Conditions/UnifiedSpectrumCondition.cs` | `8f5e56da6b172b879eb4f0b3df1c3204ff316af3` |
 | `Scripts/Spectrum/Tasks/InitSpectrumDisplacementsTask.cs` | `abb15f06d5841b996d30a3da7a9d874f37e0978b` |
 | `Scripts/Spectrum/Fourier/FourierCPU.cs` | `6f19cb9a0032de17de8174d9dc39e4a6ae74f738` |
