@@ -1,4 +1,5 @@
 extends RefCounted
+const CetoFourier = preload("res://scripts/ceto_fourier.gd")
 class_name CetoDisplacement
 
 ## CPU translation of Ceto InitSpectrumDisplacementsTask.
@@ -42,6 +43,69 @@ static func _slope_for_grid(
 	var normal_y := kx * height.x - ky * height.y
 	return Vector2(normal_x * inverse_wave_number, normal_y * inverse_wave_number)
 
+
+
+## Full CPU reference path: initialize frequency-domain buffers, apply Ceto's
+## packed radix-2 FFT layout, then unpack the three displacement components
+## into four per-grid Vector3 arrays for interpolation and wave queries.
+static func run_cpu_pipeline(
+	spectrum_data: Dictionary,
+	size: int,
+	grid_sizes: Vector4,
+	num_grids: int,
+	time_value: float
+) -> Dictionary:
+	var initialized := initialize(spectrum_data, size, grid_sizes, num_grids, time_value)
+	var fft0 := CetoFourier.transform_packed_vector4_2d(
+		initialized["displacement"], size, num_grids > 2
+	)
+	var fft1 := CetoFourier.transform_packed_vector4_2d(
+		initialized["slopes_01"], size, num_grids > 1
+	)
+	var fft2 := PackedVector4Array()
+	if num_grids > 2:
+		fft2 = CetoFourier.transform_packed_vector4_2d(
+			initialized["slopes_23"], size, num_grids > 3
+		)
+
+	var grids: Array[PackedVector3Array] = []
+	for _grid in range(4):
+		var values := PackedVector3Array()
+		values.resize(size * size)
+		grids.append(values)
+
+	for index in range(size * size):
+		var height_data: Vector4 = fft0[index]
+		var slope_data_01: Vector4 = fft1[index]
+		var grid0 := Vector3(slope_data_01.x, height_data.x, slope_data_01.y)
+		grids[0][index] = grid0
+
+		if num_grids > 1:
+			grids[1][index] = Vector3(
+				slope_data_01.z,
+				height_data.y,
+				slope_data_01.w
+			)
+		if num_grids > 2:
+			var slope_data_23: Vector4 = fft2[index]
+			grids[2][index] = Vector3(
+				slope_data_23.x,
+				height_data.z,
+				slope_data_23.y
+			)
+			if num_grids > 3:
+				grids[3][index] = Vector3(
+					slope_data_23.z,
+					height_data.w,
+					slope_data_23.w
+				)
+
+	return {
+		"displacements": grids,
+		"fft_displacement": fft0,
+		"fft_slopes_01": fft1,
+		"fft_slopes_23": fft2
+	}
 
 static func initialize(
 	spectrum_data: Dictionary,
