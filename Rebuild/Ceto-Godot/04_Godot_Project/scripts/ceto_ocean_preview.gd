@@ -92,7 +92,7 @@ func _surface_vertex(x: int, y: int) -> Vector3:
 
 
 func _rebuild_surface() -> void:
-	var size := _simulation.size
+	var size: int = int(_simulation.size)
 	var tool := SurfaceTool.new()
 	tool.begin(Mesh.PRIMITIVE_TRIANGLES)
 
