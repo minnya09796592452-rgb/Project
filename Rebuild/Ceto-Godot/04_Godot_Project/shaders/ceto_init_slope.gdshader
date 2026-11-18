@@ -2,7 +2,6 @@ shader_type canvas_item;
 render_mode unshaded, blend_disabled;
 
 // Ceto 1.1.4 InitSlope.shader translated to single-target passes.
-// output_index 0 packs grids 1-2; output_index 1 packs grids 3-4.
 uniform sampler2D spectrum_01 : filter_nearest, repeat_disable;
 uniform sampler2D spectrum_23 : filter_nearest, repeat_disable;
 uniform sampler2D wtable : filter_nearest, repeat_disable;
@@ -32,8 +31,7 @@ vec2 slope_term(vec2 k, vec2 h) {
 
 void fragment() {
 	vec2 uv = UV;
-	vec2 st = vec2(uv.x > 0.5 ? uv.x - 1.0 : uv.x,
-				   uv.y > 0.5 ? uv.y - 1.0 : uv.y);
+	vec2 st = vec2(uv.x > 0.5 ? uv.x - 1.0 : uv.x, uv.y > 0.5 ? uv.y - 1.0 : uv.y);
 	vec2 mirrored_uv = mirror_offset - uv;
 
 	vec4 s12 = textureLod(spectrum_01, uv, 0.0);
@@ -43,35 +41,22 @@ void fragment() {
 	vec4 w = textureLod(wtable, uv, 0.0);
 
 	vec2 k1 = st * inverse_grid_sizes.x;
-	vec2 h1 = get_spectrum(w.x, s12.xy, s12c.xy);
-	vec2 n1 = slope_term(k1, h1);
+	vec2 n1 = slope_term(k1, get_spectrum(w.x, s12.xy, s12c.xy));
+	vec2 k2 = st * inverse_grid_sizes.y;
+	vec2 n2 = slope_term(k2, get_spectrum(w.y, s12.zw, s12c.zw));
+	vec2 k3 = st * inverse_grid_sizes.z;
+	vec2 n3 = slope_term(k3, get_spectrum(w.z, s34.xy, s34c.xy));
+	vec2 k4 = st * inverse_grid_sizes.w;
+	vec2 n4 = slope_term(k4, get_spectrum(w.w, s34.zw, s34c.zw));
 
 	if (grid_count == 1) {
 		COLOR = vec4(n1, 0.0, 0.0);
-		return;
-	}
-
-	vec2 k2 = st * inverse_grid_sizes.y;
-	vec2 h2 = get_spectrum(w.y, s12.zw, s12c.zw);
-	vec2 n2 = slope_term(k2, h2);
-
-	if (grid_count == 2) {
+	} else if (grid_count == 2) {
 		COLOR = vec4(n1, n2);
-		return;
+	} else if (grid_count == 3) {
+		if (output_index == 0) COLOR = vec4(n1, n2);
+		else COLOR = vec4(n3, 0.0, 0.0);
+	} else {
+		COLOR = output_index == 0 ? vec4(n1, n2) : vec4(n3, n4);
 	}
-
-	vec2 k3 = st * inverse_grid_sizes.z;
-	vec2 h3 = get_spectrum(w.z, s34.xy, s34c.xy);
-	vec2 n3 = slope_term(k3, h3);
-
-	if (grid_count == 3) {
-		COLOR = output_index == 0 ? vec4(n1, n2) : vec4(n3, 0.0, 0.0);
-		return;
-	}
-
-	vec2 k4 = st * inverse_grid_sizes.w;
-	vec2 h4 = get_spectrum(w.w, s34.zw, s34c.zw);
-	vec2 n4 = slope_term(k4, h4);
-
-	COLOR = output_index == 0 ? vec4(n1, n2) : vec4(n3, n4);
 }
