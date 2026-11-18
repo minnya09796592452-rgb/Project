@@ -4,8 +4,9 @@ class_name CetoGpuPassRunner
 ## Sequential single-target scheduler for Ceto's GPU passes.
 ## Unity MRT outputs are executed as independent passes. Each pass writes to
 ## a fresh SubViewport, preventing read/write feedback.
-## SubViewport HDR 2D uses half-float precision; this is not bitwise-identical
-## to Unity RGBAFloat. The CPU path remains the reference for parity checks.
+## Forward+/Mobile HDR 2D targets preserve values in a 16-bit float buffer.
+## Compatibility rendering ignores HDR 2D and uses LDR; its CI vectors are
+## deliberately normalized. The CPU path remains the numerical reference.
 
 const CetoFourier = preload("res://scripts/ceto_fourier.gd")
 const FOURIER_STAGE_SHADER = preload("res://shaders/ceto_fourier_stage.gdshader")
@@ -79,33 +80,44 @@ func render_single_target_pass(
 	return _last_output
 
 
-func transform_packed_texture(input_texture: Texture2D, size: int) -> Texture2D:
+func transform_packed_textures(input_textures: Array[Texture2D], size: int) -> Array[Texture2D]:
 	assert(is_inside_tree(), "Add CetoGpuPassRunner to the SceneTree before running GPU passes")
 	assert(not _running, "CetoGpuPassRunner does not allow overlapping transforms")
-	assert(input_texture != null, "FFT input texture is required")
-	assert(input_texture.get_width() == size and input_texture.get_height() == size,
-		"FFT input texture dimensions must match size")
+	assert(not input_textures.is_empty(), "At least one FFT input texture is required")
 	assert(CetoFourier.is_power_of_two(size), "Ceto FFT size must be a power of two")
+	for input_texture in input_textures:
+		assert(input_texture != null, "FFT input texture is required")
+		assert(input_texture.get_width() == size and input_texture.get_height() == size,
+			"FFT input texture dimensions must match size")
 
 	_running = true
 	_last_pass_count = 0
-	var source: Texture2D = input_texture
 	var lookup_textures := CetoFourier.create_butterfly_lookup_textures(size)
+	var outputs: Array[Texture2D] = []
 
-	# Match FourierGPU.PeformFFT: all X stages, then all Y stages.
-	for axis_y in [false, true]:
-		for stage_index in range(lookup_textures.size()):
-			var uniforms := {
-				"read_buffer": source,
-				"butterfly_lookup": lookup_textures[stage_index],
-				"axis_y": axis_y
-			}
-			source = await _render_pass(FOURIER_STAGE_SHADER, size, uniforms, source)
+	# Ceto's MRT variants are scheduled as independent texture pipelines. This
+	# preserves their per-buffer result while avoiding a device MRT requirement.
+	for input_texture in input_textures:
+		var source: Texture2D = input_texture
+		# Match FourierGPU.PeformFFT: all X stages, then all Y stages.
+		for axis_y in [false, true]:
+			for stage_index in range(lookup_textures.size()):
+				var uniforms := {
+					"read_buffer": source,
+					"butterfly_lookup": lookup_textures[stage_index],
+					"axis_y": axis_y
+				}
+				source = await _render_pass(FOURIER_STAGE_SHADER, size, uniforms, source)
+		outputs.append(source)
 
-	_last_output = source
+	_last_output = outputs[outputs.size() - 1]
 	_running = false
-	return _last_output
+	return outputs
 
+
+func transform_packed_texture(input_texture: Texture2D, size: int) -> Texture2D:
+	var outputs := await transform_packed_textures([input_texture], size)
+	return outputs[0]
 
 func get_last_output() -> Texture2D:
 	return _last_output
