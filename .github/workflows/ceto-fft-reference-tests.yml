@@ -1,0 +1,30 @@
+name: Ceto FFT Reference Tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - ceto-rebuild
+    paths:
+      - "Rebuild/Ceto-Godot/03_Reference_Tests/**"
+      - ".github/workflows/ceto-fft-reference-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  reference-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run independent FFT reference tests
+        run: |
+          python -m unittest discover \
+            -s Rebuild/Ceto-Godot/03_Reference_Tests \
+            -p "test_*.py" \
+            -v
