@@ -138,10 +138,10 @@ jobs:
           set -o pipefail
           xvfb-run -a ./Godot_v4.7.2-stable_linux.x86_64 \
             --path Rebuild/Ceto-Godot/04_Godot_Project \
-            --rendering-method gl_compatibility --rendering-driver opengl3 \
+            --rendering-method mobile --rendering-driver vulkan \
             --audio-driver Dummy --script res://tests/test_ceto_gpu_fourier.gd \
             2>&1 | tee /tmp/godot-gpu-fft.log
-          grep -Eq "CETO GPU FFT: (PASS|SKIP)" /tmp/godot-gpu-fft.log
+          grep -q "CETO GPU FFT: PASS" /tmp/godot-gpu-fft.log
           if grep -E "ERROR:|SCRIPT ERROR|Parse Error|Compile Error" /tmp/godot-gpu-fft.log; then
             exit 1
           fi
@@ -153,10 +153,10 @@ jobs:
           set -o pipefail
           xvfb-run -a ./Godot_v4.7.2-stable_linux.x86_64 \
             --path Rebuild/Ceto-Godot/04_Godot_Project \
-            --rendering-method gl_compatibility --rendering-driver opengl3 \
+            --rendering-method mobile --rendering-driver vulkan \
             --audio-driver Dummy --script res://tests/test_ceto_gpu_displacement.gd \
             2>&1 | tee /tmp/godot-gpu-displacement.log
-          grep -Eq "CETO GPU INITIALIZATION: (PASS|SKIP)" /tmp/godot-gpu-displacement.log
+          grep -q "CETO GPU INITIALIZATION: PASS" /tmp/godot-gpu-displacement.log
           if grep -E "ERROR:|SCRIPT ERROR|Parse Error|Compile Error" /tmp/godot-gpu-displacement.log; then
             exit 1
           fi
@@ -168,10 +168,10 @@ jobs:
           set -o pipefail
           xvfb-run -a ./Godot_v4.7.2-stable_linux.x86_64 \
             --path Rebuild/Ceto-Godot/04_Godot_Project \
-            --rendering-method gl_compatibility --rendering-driver opengl3 \
+            --rendering-method mobile --rendering-driver vulkan \
             --audio-driver Dummy --script res://tests/test_ceto_gpu_copy.gd \
             2>&1 | tee /tmp/godot-gpu-copy.log
-          grep -Eq "CETO GPU COPY: (PASS|SKIP)" /tmp/godot-gpu-copy.log
+          grep -q "CETO GPU COPY: PASS" /tmp/godot-gpu-copy.log
           if grep -E "ERROR:|SCRIPT ERROR|Parse Error|Compile Error" /tmp/godot-gpu-copy.log; then
             exit 1
           fi
