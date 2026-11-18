@@ -74,7 +74,6 @@ func render_single_target_pass(
 	assert(is_inside_tree(), "Add CetoGpuPassRunner to the SceneTree before rendering")
 	assert(not _running, "CetoGpuPassRunner does not allow overlapping passes")
 	_running = true
-	_last_pass_count = 0
 	_last_output = await _render_pass(shader, size, uniforms, canvas_texture)
 	_running = false
 	return _last_output
