@@ -285,6 +285,35 @@ def main() -> int:
            f"shaders mapped={len(present_shader_ports)}/{len(inventory['shaders'])}; "
            f"Unity scenes/materials pending={len(inventory['unity_scenes'])}.")
 
+    gpu_status = {
+        "status": "GPU_PIPELINE_IMPLEMENTED_PARITY_PENDING",
+        "runner": "scripts/ceto_gpu_pass_runner.gd",
+        "pipeline": "scripts/ceto_gpu_ocean_pipeline.gd",
+        "preview_scene": "ceto_gpu_ocean_preview.tscn",
+        "stages": [
+            "spectrum -> displacement/slope/Jacobian initialization",
+            "multi-buffer 2D FFT (X stages, then Y stages)",
+            "Jacobian FFT -> foam composition",
+            "per-grid displacement assembly -> spatial surface shader",
+        ],
+        "ci_gpu_parity": "SKIPPED_WHEN_RENDERING_DEVICE_UNAVAILABLE",
+        "parity_requirement": "Run GPU numeric and visual checks on a Godot Forward+ or Mobile RenderingDevice backend.",
+        "remaining": [
+            "verify float-target numerical parity on a RenderingDevice backend",
+            "compare per-grid displacement, normals, and foam visually against Unity Ceto",
+            "replace preview material approximations with complete Ceto reflection/refraction and underwater behavior",
+        ],
+        "original_source_modified": False,
+    }
+    (reports / "gpu_pipeline_status.json").write_text(
+        json.dumps(gpu_status, indent=2), encoding="utf-8"
+    )
+    record(
+        "gpu_pipeline_status", "INFO",
+        "GPU pass runner, multi-buffer FFT, initialization/copy stages, and optional preview are present; "
+        "full RenderingDevice parity and Unity visual parity remain unverified."
+    )
+
     # Godot lane: import, numerical tests, then preview smoke test.
     if not args.no_godot:
         godot = tools["godot"]
@@ -335,6 +364,7 @@ def main() -> int:
         "source_counts": {key: len(value) for key, value in inventory.items()},
         "results": results,
         "complete_ceto_feature_parity": False,
+        "gpu_pipeline_status": gpu_status,
         "note": "A PASS applies only to the named stage. Present C# and shader outputs are partial ports and still require full feature-parity validation; unmapped files remain queued.",
     }
     (reports / "run_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
@@ -346,6 +376,7 @@ def main() -> int:
         stream.write("\nFull reports: reports/oneclick/\n")
         stream.write("Original Unity source modified: NO\n")
         stream.write("Complete Ceto feature parity: NOT CLAIMED\n")
+        stream.write("GPU pipeline parity: IMPLEMENTED, NOT VERIFIED\n")
 
     failures = [item for item in results if item["status"] == "FAIL"]
     print(f"\nREPORT: {reports.relative_to(repo)}")
