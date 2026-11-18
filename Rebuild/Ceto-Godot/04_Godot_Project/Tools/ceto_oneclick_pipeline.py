@@ -296,8 +296,8 @@ def main() -> int:
             "Jacobian FFT -> foam composition",
             "per-grid displacement assembly -> spatial surface shader",
         ],
-        "ci_gpu_parity": "SKIPPED_WHEN_RENDERING_DEVICE_UNAVAILABLE",
-        "parity_requirement": "Run GPU numeric and visual checks on a Godot Forward+ or Mobile RenderingDevice backend.",
+        "ci_gpu_parity": "MOBILE_VULKAN_RENDERER_REQUIRED; SKIP_REJECTED_BY_CI",
+        "parity_requirement": "CI executes GPU numeric checks on Godot Mobile with Vulkan llvmpipe; full visual parity still requires comparison against Unity Ceto.",
         "remaining": [
             "verify float-target numerical parity on a RenderingDevice backend",
             "compare per-grid displacement, normals, and foam visually against Unity Ceto",
