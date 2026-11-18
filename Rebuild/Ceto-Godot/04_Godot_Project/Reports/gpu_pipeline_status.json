@@ -1,0 +1,34 @@
+{
+  "status": "GPU_NUMERIC_PARITY_VERIFIED_VISUAL_PARITY_PENDING",
+  "runner": "scripts/ceto_gpu_pass_runner.gd",
+  "pipeline": "scripts/ceto_gpu_ocean_pipeline.gd",
+  "preview_scene": "ceto_gpu_ocean_preview.tscn",
+  "stages": [
+    "spectrum -> displacement/slope/Jacobian initialization",
+    "multi-buffer 2D FFT (X stages, then Y stages)",
+    "Jacobian FFT -> foam composition",
+    "per-grid displacement assembly -> spatial surface shader"
+  ],
+  "ci_gpu_parity": "PASS",
+  "last_verified_ci_run": "44416184577",
+  "render_backend": "Godot Mobile / Vulkan llvmpipe",
+  "verified_metrics": {
+    "four_grid_update_passes": 61,
+    "fft_max_error": 0.000440,
+    "initialization_max_error": 0.000049,
+    "copy_foam_max_error": 0.000234
+  },
+  "conversion_inventory": {
+    "csharp_partial_mappings": "41/104",
+    "shader_outputs": "15/29",
+    "unity_scenes_materials_pending": 18
+  },
+  "parity_requirement": "The tested GPU stages pass numeric parity; full Unity visual parity still requires comparison against original Ceto.",
+  "remaining": [
+    "compare per-grid displacement, normals, and foam visually against Unity Ceto",
+    "replace preview material approximations with complete Ceto reflection/refraction and underwater behavior",
+    "convert remaining Unity C# behavior and shader sources",
+    "convert the 18 remaining Unity scene/material files"
+  ],
+  "original_source_modified": false
+}
