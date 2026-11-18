@@ -127,6 +127,16 @@ func _test_lookup_textures(failures: Array[String]) -> void:
 		failures.append("lookup texture count: expected 3 stages")
 		return
 	var image := textures[0].get_image()
+	var shader_paths := [
+		"res://shaders/ceto_fourier_stage.gdshader",
+		"res://shaders/ceto_init_displacement.gdshader",
+		"res://shaders/ceto_init_slope.gdshader",
+		"res://shaders/ceto_init_jacobians.gdshader"
+	]
+	for shader_path in shader_paths:
+		var shader_resource = ResourceLoader.load(shader_path, "Shader")
+		if shader_resource == null:
+			failures.append("Godot shader failed to load: %s" % shader_path)
 	if image.get_format() != Image.FORMAT_RGBAF or image.get_width() != 8 or image.get_height() != 1:
 		failures.append("lookup texture format/dimensions mismatch")
 
