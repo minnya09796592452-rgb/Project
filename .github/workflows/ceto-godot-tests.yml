@@ -116,6 +116,16 @@ jobs:
             exit 1
           fi
 
+      - name: Run headless ocean preview smoke test
+        run: |
+          set -o pipefail
+          ./Godot_v4.7.2-stable_linux.x86_64 --headless \
+            --path Rebuild/Ceto-Godot/04_Godot_Project --quit-after 2 \
+            2>&1 | tee /tmp/godot-preview.log
+          if grep -E "ERROR:|SCRIPT ERROR|Parse Error|Compile Error" /tmp/godot-preview.log; then
+            exit 1
+          fi
+
       - name: Commit copied and converted binary assets
         run: |
           git config user.name "github-actions[bot]"
