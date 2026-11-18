@@ -24,6 +24,7 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 - `shaders/ceto_ocean_surface.gdshader`: Godot preview surface material that consumes the generated per-grid displacement, slope, and foam textures; it is a presentation approximation, not a full port of Ceto's original ocean material.
 - `shaders/ceto_copy_depth.gdshader`, `ceto_normal_fade.gdshader`, and `ceto_blur_cone_taps.gdshader`: additional Ceto depth-copy, world-normal fade, and four-tap blur translations.
 - `shaders/ceto_wave_overlay.gdshader` and `ceto_ocean_mask_decode.gdshader`: wave overlay channel packing and ocean mask decoding. Overlay max-compositing still requires host-side blend configuration.
+- `shaders/ceto_ocean_mask.gdshader`, `ceto_ocean_depth.gdshader`, and `ceto_underwater_post.gdshader`: projected-grid mask output, generic ocean depth replacement, and a Godot underwater post-process approximation.
 - `tests/test_ceto_fourier.gd`: headless CPU tests for FFT, lookup textures, spectrum equations, WTable, displacement initialization, and wave queries.
 - `tests/test_ceto_gpu_fourier.gd`: GPU render-pass comparison against the CPU FFT reference, including pass-count and numeric-error gates.
 - `tests/test_ceto_gpu_displacement.gd`: GPU InitDisplacement, InitSlope, and InitJacobians outputs compared against independent CPU references for four grids.
@@ -35,7 +36,7 @@ The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 bi
 
 ## GPU validation boundary
 
-The sequential GPU pass runner, multi-buffer FFT scheduler, initialization/copy pipeline, and optional GPU preview scene are implemented. The CI host's OpenGL Compatibility renderer cannot provide HDR 2D float targets; GPU numeric tests therefore report SKIP there rather than a false PASS. Run those parity checks on a Godot Forward+ or Mobile RenderingDevice backend before treating GPU parity as verified.
+The sequential GPU pass runner, multi-buffer FFT scheduler, initialization/copy pipeline, optional GPU preview scene, and additional mask/depth/underwater shader translations are implemented. The CI host's OpenGL Compatibility renderer cannot provide HDR 2D float targets; GPU numeric tests therefore report SKIP there rather than a false PASS. Run those parity checks on a Godot Forward+ or Mobile RenderingDevice backend before treating GPU parity as verified.
 
 ## Not yet a complete ocean port
 
@@ -43,7 +44,7 @@ The current project is a verified numerical and asset-conversion foundation, not
 
 1. Connect the optional GPU preview to the full original Ceto ocean material and validate its per-grid vertex displacement, normals, and foam visually.
 2. Complete the remaining GPU buffer ownership, texture packing, and update scheduling against the original Ceto lifecycle.
-3. Port the original ocean material, reflection/refraction, underwater effects, and scene/prefab integration without replacing them with approximations.
+3. Replace the current approximate underwater post effect and preview surface with complete Ceto reflection/refraction, caustics, absorption, scattering, and scene/prefab integration.
 4. Convert the remaining Unity C# behavior, shader includes, compute paths, scenes, prefabs, and materials.
 5. Verify CPU and GPU numerical parity and visual parity against the original Ceto implementation in Godot.
 
