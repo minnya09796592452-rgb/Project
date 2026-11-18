@@ -32,11 +32,11 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 
 ## Verification
 
-The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, and launches the CPU preview smoke test. GPU parity scripts execute only when a RenderingDevice is available; the CI Compatibility renderer reports an explicit SKIP because it cannot provide the HDR float targets required for reliable numeric parity. The optional GPU preview requires a Forward+ or Mobile renderer. CI also copies the remaining original Caustics texture and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
+The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, and launches the CPU preview smoke test. It also runs GPU Fourier, displacement/slope/Jacobian initialization, and copy/foam parity checks on the Godot Mobile renderer using the runner's Vulkan llvmpipe device. The optional GPU preview requires a Forward+ or Mobile renderer. CI copies the remaining original Caustics texture and converts the original Ship.3DS to GLB, then removes the generated editor cache.
 
 ## GPU validation boundary
 
-The sequential GPU pass runner, multi-buffer FFT scheduler, initialization/copy pipeline, optional GPU preview scene, and additional mask/depth/underwater shader translations are implemented. The CI host's OpenGL Compatibility renderer cannot provide HDR 2D float targets; GPU numeric tests therefore report SKIP there rather than a false PASS. Run those parity checks on a Godot Forward+ or Mobile RenderingDevice backend before treating GPU parity as verified.
+The sequential GPU pass runner, multi-buffer FFT scheduler, initialization/copy pipeline, optional GPU preview scene, and additional mask/depth/underwater shader translations are implemented. The CI host exposes a Vulkan llvmpipe RenderingDevice, so GPU numeric tests are configured to run against the CPU reference. A successful CI run validates the tested FFT and initialization/copy stages only; the full Unity visual parity is still outstanding.
 
 ## Not yet a complete ocean port
 
