@@ -33,8 +33,12 @@ jobs:
           mkdir -p Rebuild/Ceto-Godot/04_Godot_Project/assets/models
           cp Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/Caustics.png \
             Rebuild/Ceto-Godot/04_Godot_Project/assets/textures/Caustics.png
+          # The original 3DS refers to two external texture files absent from Ceto's source archive.
+          # Convert through OBJ without an MTL so the GLB contains the source geometry without broken texture links.
           assimp export \
             Extracted/Ceto-master/Ceto-master/Assets/Ceto/Mesh/Ship.3DS \
+            /tmp/CetoShip.obj -f objnomtl
+          assimp export /tmp/CetoShip.obj \
             Rebuild/Ceto-Godot/04_Godot_Project/assets/models/Ship.glb -f glb2
           assimp info Rebuild/Ceto-Godot/04_Godot_Project/assets/models/Ship.glb
 
@@ -46,14 +50,23 @@ jobs:
 
       - name: Import and parse Godot project
         run: |
+          set -o pipefail
           ./Godot_v4.7.2-stable_linux.x86_64 --headless --editor \
-            --path Rebuild/Ceto-Godot/04_Godot_Project --quit
+            --path Rebuild/Ceto-Godot/04_Godot_Project --quit 2>&1 | tee /tmp/godot-import.log
+          if grep -E "ERROR:|SCRIPT ERROR|Parse Error|Compile Error" /tmp/godot-import.log; then
+            exit 1
+          fi
 
       - name: Run Ceto FFT GDScript tests
         run: |
+          set -o pipefail
           ./Godot_v4.7.2-stable_linux.x86_64 --headless \
             --path Rebuild/Ceto-Godot/04_Godot_Project \
-            --script res://tests/test_ceto_fourier.gd
+            --script res://tests/test_ceto_fourier.gd 2>&1 | tee /tmp/godot-tests.log
+          grep -q "CETO GODOT NUMERICS: 6/6 PASS" /tmp/godot-tests.log
+          if grep -E "SCRIPT ERROR|Parse Error|Compile Error|ERROR:" /tmp/godot-tests.log; then
+            exit 1
+          fi
 
       - name: Commit copied and converted binary assets
         run: |
