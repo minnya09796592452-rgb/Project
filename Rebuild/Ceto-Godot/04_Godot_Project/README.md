@@ -8,7 +8,7 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 - `assets/demo/`: original Ceto demo mask and edge-foam PNGs.
 - `assets/textures/`: original Ceto textures, including the Caustics map copied by CI.
 - `assets/source_models/Ship.3DS`: unchanged original 3DS source model.
-- `assets/models/Ship.glb`: converted from the original 3DS by Assimp in CI.
+- `assets/models/Ship.glb`: converted from the original 3DS by Assimp in CI. The source model referenced two external texture files that are absent from the archive, so those broken texture links are stripped while retaining mesh geometry and material properties.
 - `scripts/ceto_fourier.gd`: CPU radix-2 2D FFT port following Ceto's butterfly table, bit reversal, X-then-Y stages, and unnormalized convention. Also creates RGBAF lookup textures.
 - `scripts/ceto_spectrum.gd`: Ceto Unified and Phillips spectrum equations plus the dispersion WTable.
 - `shaders/ceto_fourier_stage.gdshader`: Godot single-render-target stage translated from Ceto's Fourier shader. Multi-buffer Unity MRT scheduling still needs a Godot-side driver.
