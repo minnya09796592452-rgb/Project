@@ -6,6 +6,7 @@ uniform sampler2D spectrum_01 : filter_nearest, repeat_enable;
 uniform sampler2D spectrum_23 : filter_nearest, repeat_enable;
 uniform sampler2D wtable : filter_nearest, repeat_disable;
 uniform vec2 mirror_offset = vec2(1.0, 1.0);
+uniform vec2 inverse_texture_size = vec2(0.015625, 0.015625);
 uniform vec4 inverse_grid_sizes = vec4(1.0);
 uniform float time_value = 0.0;
 uniform float foam_amount = 1.0;
@@ -31,7 +32,8 @@ vec3 jacobian_terms(vec2 k, float height_real) {
 
 void fragment() {
 	vec2 uv = UV;
-	vec2 st = vec2(uv.x > 0.5 ? uv.x - 1.0 : uv.x, uv.y > 0.5 ? uv.y - 1.0 : uv.y);
+	vec2 frequency_uv = uv - inverse_texture_size * 0.5;
+	vec2 st = vec2(frequency_uv.x > 0.5 ? frequency_uv.x - 1.0 : frequency_uv.x, frequency_uv.y > 0.5 ? frequency_uv.y - 1.0 : frequency_uv.y);
 	vec2 mirrored_uv = mirror_offset - uv;
 
 	vec4 s12 = textureLod(spectrum_01, uv, 0.0) * foam_amount;
