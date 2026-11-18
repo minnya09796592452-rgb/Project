@@ -6,6 +6,10 @@ const TOLERANCE := 0.04
 
 
 func _initialize() -> void:
+	if RenderingServer.get_rendering_device() == null:
+		print("CETO GPU FFT: SKIP (Compatibility renderer has no HDR RenderingDevice)")
+		quit(0)
+		return
 	await _run_gpu_fft_test()
 
 
