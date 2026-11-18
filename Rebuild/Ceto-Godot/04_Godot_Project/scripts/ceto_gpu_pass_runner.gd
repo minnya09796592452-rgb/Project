@@ -5,8 +5,8 @@ class_name CetoGpuPassRunner
 ## Unity MRT outputs are executed as independent passes. Each pass writes to
 ## a fresh SubViewport, preventing read/write feedback.
 ## Forward+/Mobile HDR 2D targets preserve values in a 16-bit float buffer.
-## Compatibility rendering ignores HDR 2D and uses LDR; its CI vectors are
-## deliberately normalized. The CPU path remains the numerical reference.
+## Compatibility rendering ignores HDR 2D and has no RenderingDevice; GPU
+## numeric parity is skipped there. The CPU path remains the reference.
 
 const CetoFourier = preload("res://scripts/ceto_fourier.gd")
 const FOURIER_STAGE_SHADER = preload("res://shaders/ceto_fourier_stage.gdshader")
