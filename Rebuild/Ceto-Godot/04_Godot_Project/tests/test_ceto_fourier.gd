@@ -2,6 +2,8 @@ extends SceneTree
 
 const CetoFourier = preload("res://scripts/ceto_fourier.gd")
 const CetoSpectrum = preload("res://scripts/ceto_spectrum.gd")
+const CetoDotNetRandom = preload("res://scripts/ceto_dotnet_random.gd")
+const CetoSpectrumGenerator = preload("res://scripts/ceto_spectrum_generator.gd")
 const TOLERANCE := 0.002
 
 
@@ -13,9 +15,11 @@ func _initialize() -> void:
 	_test_plane_wave(failures)
 	_test_lookup_textures(failures)
 	_test_spectrum_math(failures)
+	_test_dotnet_random(failures)
+	_test_spectrum_generation(failures)
 
 	if failures.is_empty():
-		print("CETO GODOT NUMERICS: 6/6 PASS")
+		print("CETO GODOT NUMERICS: 8/8 PASS")
 		quit(0)
 	else:
 		for failure in failures:
@@ -143,3 +147,51 @@ func _test_spectrum_math(failures: Array[String]) -> void:
 		failures.append("Unified spectrum downwind sample is not finite and positive")
 	if upwind != 0.0:
 		failures.append("Unified spectrum should suppress negative rotated kx")
+
+func _test_dotnet_random(failures: Array[String]) -> void:
+	var random := CetoDotNetRandom.new(0)
+	var expected := [
+		0.7262432699679598,
+		0.8173253595909687,
+		0.7680226893946634,
+		0.5581611914365372,
+		0.2060331540210327
+	]
+	for index in range(expected.size()):
+		var actual := random.next_double()
+		if absf(actual - expected[index]) > 1e-12:
+			failures.append("System.Random(0) sequence mismatch at %d: %.16f" % [index, actual])
+			return
+
+
+func _test_spectrum_generation(failures: Array[String]) -> void:
+	var settings := CetoSpectrumGenerator.grid_configuration("unified", 4)
+	var parameters := CetoSpectrum.unified_parameters(8.0, 0.0, 0.64)
+	var first := CetoSpectrumGenerator.generate(
+		8, "unified", parameters,
+		settings["grid_sizes"], settings["wave_amplitudes"], 4
+	)
+	var second := CetoSpectrumGenerator.generate(
+		8, "unified", parameters,
+		settings["grid_sizes"], settings["wave_amplitudes"], 4
+	)
+	if first["spectrum01"].size() != 64 or first["spectrum23"].size() != 64:
+		failures.append("SpectrumTask packed buffer dimensions mismatch")
+		return
+	if first["wtable"].size() != 64:
+		failures.append("SpectrumTask WTable dimensions mismatch")
+		return
+	for index in range(64):
+		if first["spectrum01"][index] != second["spectrum01"][index]:
+			failures.append("SpectrumTask Spectrum01 is not deterministic")
+			return
+		if first["spectrum23"][index] != second["spectrum23"][index]:
+			failures.append("SpectrumTask Spectrum23 is not deterministic")
+			return
+		for channel in range(4):
+			if not is_finite(first["spectrum01"][index][channel]):
+				failures.append("SpectrumTask Spectrum01 contains non-finite values")
+				return
+			if not is_finite(first["spectrum23"][index][channel]):
+				failures.append("SpectrumTask Spectrum23 contains non-finite values")
+				return
