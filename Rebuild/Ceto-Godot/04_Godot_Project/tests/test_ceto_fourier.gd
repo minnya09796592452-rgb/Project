@@ -132,7 +132,9 @@ func _test_lookup_textures(failures: Array[String]) -> void:
 		"res://shaders/ceto_init_displacement.gdshader",
 		"res://shaders/ceto_init_slope.gdshader",
 		"res://shaders/ceto_init_jacobians.gdshader",
-		"res://shaders/ceto_foam_copy.gdshader"
+		"res://shaders/ceto_foam_copy.gdshader",
+		"res://shaders/ceto_displacement_copy.gdshader",
+		"res://shaders/ceto_slope_copy.gdshader"
 	]
 	for shader_path in shader_paths:
 		var shader_resource = ResourceLoader.load(shader_path, "Shader")
