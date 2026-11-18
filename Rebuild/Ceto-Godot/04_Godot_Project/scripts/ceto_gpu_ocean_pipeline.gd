@@ -26,6 +26,7 @@ func _prepare_inputs(
 		"spectrum23": CetoGpuPassRunner.texture_from_packed_vector4(spectrum23, size),
 		"wtable": CetoGpuPassRunner.texture_from_packed_vector4(wtable, size),
 		"mirror_offset": Vector2(1.0 + 0.5 / float(size), 1.0 + 0.5 / float(size)),
+		"inverse_texture_size": Vector2(1.0 / float(size), 1.0 / float(size)),
 		"inverse_grid_sizes": Vector4(
 			TAU * float(size) / grid_sizes.x,
 			TAU * float(size) / grid_sizes.y,
@@ -52,6 +53,7 @@ func _render_outputs(
 			"spectrum_23": inputs["spectrum23"],
 			"wtable": inputs["wtable"],
 			"mirror_offset": inputs["mirror_offset"],
+			"inverse_texture_size": inputs["inverse_texture_size"],
 			"inverse_grid_sizes": inputs["inverse_grid_sizes"],
 			"time_value": time_value,
 			"grid_count": grid_count,
