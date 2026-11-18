@@ -140,7 +140,8 @@ func _test_lookup_textures(failures: Array[String]) -> void:
 		"res://shaders/ceto_normal_fade.gdshader",
 		"res://shaders/ceto_blur_cone_taps.gdshader",
 		"res://shaders/ceto_wave_overlay.gdshader",
-		"res://shaders/ceto_ocean_mask_decode.gdshader"
+		"res://shaders/ceto_ocean_mask_decode.gdshader",
+		"res://shaders/ceto_ocean_mask.gdshader"
 	]
 	for shader_path in shader_paths:
 		var shader_resource = ResourceLoader.load(shader_path, "Shader")
