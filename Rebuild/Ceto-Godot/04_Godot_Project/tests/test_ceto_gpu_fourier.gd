@@ -66,6 +66,7 @@ func _run_gpu_fft_test() -> void:
 	var max_error_channel := 0
 	var max_error_actual := 0.0
 	var max_error_expected := 0.0
+	var orientation_errors := {"normal": 0.0, "flip_y": 0.0, "flip_x": 0.0, "transpose": 0.0}
 	var expected_buffers: Array = [expected, expected_second]
 	for buffer_index in range(2):
 		var output_image := output_textures[buffer_index].get_image()
@@ -81,8 +82,15 @@ func _run_gpu_fft_test() -> void:
 				var pixel := output_image.get_pixel(x, y)
 				var actual := Vector4(pixel.r, pixel.g, pixel.b, pixel.a)
 				var reference: PackedVector4Array = expected_buffers[buffer_index]
+				var flip_y_index := x + (size - 1 - y) * size
+				var flip_x_index := (size - 1 - x) + y * size
+				var transpose_index := y + x * size
 				for channel in range(4):
 					var error := absf(actual[channel] - reference[index][channel])
+					orientation_errors["normal"] = maxf(orientation_errors["normal"], error)
+					orientation_errors["flip_y"] = maxf(orientation_errors["flip_y"], absf(actual[channel] - reference[flip_y_index][channel]))
+					orientation_errors["flip_x"] = maxf(orientation_errors["flip_x"], absf(actual[channel] - reference[flip_x_index][channel]))
+					orientation_errors["transpose"] = maxf(orientation_errors["transpose"], absf(actual[channel] - reference[transpose_index][channel]))
 					if error > max_error:
 						max_error = error
 						max_error_index = index
@@ -91,7 +99,7 @@ func _run_gpu_fft_test() -> void:
 						max_error_expected = reference[index][channel]
 
 	var passed := true
-	print("GPU FFT diagnostic: max index=%d channel=%d actual=%.6f expected=%.6f" % [max_error_index, max_error_channel, max_error_actual, max_error_expected])
+	print("GPU FFT diagnostic: max index=%d channel=%d actual=%.6f expected=%.6f orientations=%s" % [max_error_index, max_error_channel, max_error_actual, max_error_expected, orientation_errors])
 	if runner.get_last_pass_count() != 12:
 		push_error("GPU FFT pass count mismatch: expected 12, got %d" % runner.get_last_pass_count())
 		passed = false
