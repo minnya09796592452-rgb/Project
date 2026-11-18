@@ -1,9 +1,9 @@
 shader_type canvas_item;
 render_mode unshaded, blend_disabled;
 
-## Single-target Godot translation of Ceto 1.1.4 Fourier.shader.
-## Run once per logical data texture and per axis/stage. The Unity source uses
-## MRT for 2-4 buffers; this Godot variant intentionally uses one output per draw.
+// Single-target Godot translation of Ceto 1.1.4 Fourier.shader.
+// Run once per logical data texture and per axis/stage. The Unity source uses
+// MRT for 2-4 buffers; this Godot variant intentionally uses one output per draw.
 
 uniform sampler2D read_buffer : filter_nearest, repeat_disable;
 uniform sampler2D butterfly_lookup : filter_nearest, repeat_disable;
