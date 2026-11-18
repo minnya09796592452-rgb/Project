@@ -200,6 +200,24 @@ func _test_spectrum_generation(failures: Array[String]) -> void:
 
 func _test_displacement_initialization(failures: Array[String]) -> void:
 	var parameters := CetoSpectrum.unified_parameters(8.0, 25.0, 0.64)
+	var one_grid := CetoSpectrumGenerator.grid_configuration("unified", 1)
+	var one_spectrum := CetoSpectrumGenerator.generate(
+		8, "unified", parameters,
+		one_grid["grid_sizes"], one_grid["wave_amplitudes"], 1
+	)
+	var at_zero := CetoDisplacement.initialize(one_spectrum, 8, one_grid["grid_sizes"], 1, 0.0)
+	var sample_x := 3
+	var sample_y := 2
+	var sample_index := sample_x + sample_y * 8
+	var mirror_index := ((8 - sample_x) % 8) + ((8 - sample_y) % 8) * 8
+	var source: Vector4 = one_spectrum["spectrum01"][sample_index]
+	var mirrored: Vector4 = one_spectrum["spectrum01"][mirror_index]
+	var expected_height := Vector2(source.x + mirrored.x, source.y - mirrored.y)
+	var actual_height: Vector4 = at_zero["displacement"][sample_index]
+	if Vector2(actual_height.x, actual_height.y).distance_to(expected_height) > TOLERANCE:
+		failures.append("Zero-time displacement does not match Ceto's mirrored-frequency formula")
+		return
+
 	for grid_count in [1, 2, 3, 4]:
 		var settings := CetoSpectrumGenerator.grid_configuration("unified", grid_count)
 		var spectrum := CetoSpectrumGenerator.generate(
