@@ -114,23 +114,23 @@ def main() -> int:
     # Existing ports are tracked per original source file. A present output is not
     # treated as feature parity; runtime/numerical parity remains a separate gate.
     shader_ports = {
-        "Shaders/Fourier.shader": ["shaders/ceto_fourier_stage.gdshader"],
-        "Shaders/InitDisplacement.shader": ["shaders/ceto_init_displacement.gdshader"],
-        "Shaders/InitSlope.shader": ["shaders/ceto_init_slope.gdshader"],
-        "Shaders/InitJacobians.shader": ["shaders/ceto_init_jacobians.gdshader"],
-        "Shaders/FoamCopy.shader": ["shaders/ceto_foam_copy.gdshader"],
-        "Shaders/DisplacementCopy.shader": ["shaders/ceto_displacement_copy.gdshader"],
-        "Shaders/SlopeCopy.shader": ["shaders/ceto_slope_copy.gdshader"],
+        "Shaders/Fourier.shader": ["shaders/ceto_fourier_stage.gdshader", "scripts/ceto_gpu_pass_runner.gd"],
+        "Shaders/InitDisplacement.shader": ["shaders/ceto_init_displacement.gdshader", "scripts/ceto_gpu_ocean_pipeline.gd"],
+        "Shaders/InitSlope.shader": ["shaders/ceto_init_slope.gdshader", "scripts/ceto_gpu_ocean_pipeline.gd"],
+        "Shaders/InitJacobians.shader": ["shaders/ceto_init_jacobians.gdshader", "scripts/ceto_gpu_ocean_pipeline.gd"],
+        "Shaders/FoamCopy.shader": ["shaders/ceto_foam_copy.gdshader", "scripts/ceto_gpu_ocean_pipeline.gd"],
+        "Shaders/DisplacementCopy.shader": ["shaders/ceto_displacement_copy.gdshader", "scripts/ceto_gpu_ocean_pipeline.gd"],
+        "Shaders/SlopeCopy.shader": ["shaders/ceto_slope_copy.gdshader", "scripts/ceto_gpu_ocean_pipeline.gd"],
     }
     csharp_ports = {
         "Scripts/Spectrum/Fourier/FourierGPU.cs": ["scripts/ceto_gpu_pass_runner.gd"],
-        "Scripts/Spectrum/Buffers/WaveSpectrumBufferGPU.cs": ["scripts/ceto_gpu_pass_runner.gd"],
+        "Scripts/Spectrum/Buffers/WaveSpectrumBufferGPU.cs": ["scripts/ceto_gpu_pass_runner.gd", "scripts/ceto_gpu_ocean_pipeline.gd"],
         "Scripts/Spectrum/Fourier/FourierCPU.cs": ["scripts/ceto_fourier.gd"],
         "Scripts/Spectrum/Conditions/UnifiedSpectrum.cs": ["scripts/ceto_spectrum.gd"],
         "Scripts/Spectrum/Conditions/PhillipsSpectrum.cs": ["scripts/ceto_spectrum.gd"],
         "Scripts/Spectrum/Conditions/WaveSpectrumCondition.cs": ["scripts/ceto_spectrum_generator.gd"],
         "Scripts/Spectrum/Tasks/InitSpectrumDisplacementsTask.cs": ["scripts/ceto_displacement.gd", "scripts/ceto_gpu_ocean_pipeline.gd"],
-        "Scripts/Spectrum/Tasks/FourierTask.cs": ["scripts/ceto_fourier.gd", "scripts/ceto_displacement.gd"],
+        "Scripts/Spectrum/Tasks/FourierTask.cs": ["scripts/ceto_fourier.gd", "scripts/ceto_displacement.gd", "scripts/ceto_gpu_pass_runner.gd"],
         "Scripts/Spectrum/Buffers/QueryDisplacements.cs": ["scripts/ceto_wave_query.gd", "scripts/ceto_interpolated_array_2d.gd"],
     }
     def present_ports(mapping: dict[str, list[str]], domain: str) -> dict[str, list[str]]:
