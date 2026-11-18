@@ -16,17 +16,18 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 
 ## Verification
 
-The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the GDScript numerical tests, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
+The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the GDScript numerical tests, launches the preview scene headlessly, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
 
 ## Not yet a complete ocean port
 
-The current project is a verified numerical and asset-conversion foundation, not a complete rendered Ceto ocean. The following remain:
+The current project is a verified numerical and asset-conversion foundation, not a complete feature-parity Ceto ocean. The following remain:
 
 1. Port spectrum condition creation, deterministic .NET `System.Random(0)` sequence, and the complete packed spectrum-generation task.
 2. Port time-dependent displacement initialization and CPU query interpolation.
 3. Implement the Godot GPU ping-pong/MRT equivalent and connect the Fourier stage shader to it.
 4. Port slope and Jacobian/foam generation shaders and texture packing.
 5. Port ocean mesh, material, camera integration, reflections, underwater effects, and query APIs.
-6. Verify visual and numerical parity on the target Android Vulkan device.
+6. Port GPU buffer ping-pong, slope/Jacobian/foam generation, and the original Unity material effects.
+7. Verify visual and numerical parity on the target Android Vulkan device.
 
 No Unity source files are edited. The converted project is isolated under `Rebuild/Ceto-Godot/04_Godot_Project/`.
