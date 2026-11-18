@@ -318,7 +318,7 @@ def main() -> int:
            f"Unity scenes/materials pending={len(inventory['unity_scenes'])}.")
 
     gpu_status = {
-        "status": "GPU_PIPELINE_IMPLEMENTED_PARITY_PENDING",
+        "status": "GPU_NUMERIC_PARITY_VERIFIED_VISUAL_PARITY_PENDING",
         "runner": "scripts/ceto_gpu_pass_runner.gd",
         "pipeline": "scripts/ceto_gpu_ocean_pipeline.gd",
         "preview_scene": "ceto_gpu_ocean_preview.tscn",
