@@ -2,8 +2,8 @@ shader_type canvas_item;
 render_mode unshaded, blend_disabled;
 
 // Ceto 1.1.4 InitDisplacement.shader translated to single-target Godot passes.
-uniform sampler2D spectrum_01 : filter_nearest, repeat_disable;
-uniform sampler2D spectrum_23 : filter_nearest, repeat_disable;
+uniform sampler2D spectrum_01 : filter_nearest, repeat_enable;
+uniform sampler2D spectrum_23 : filter_nearest, repeat_enable;
 uniform sampler2D wtable : filter_nearest, repeat_disable;
 uniform vec2 mirror_offset = vec2(1.0, 1.0);
 uniform vec4 inverse_grid_sizes = vec4(1.0);
