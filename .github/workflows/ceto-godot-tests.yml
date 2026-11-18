@@ -40,6 +40,54 @@ jobs:
             /tmp/CetoShip.obj -f objnomtl
           assimp export /tmp/CetoShip.obj \
             Rebuild/Ceto-Godot/04_Godot_Project/assets/models/Ship.glb -f glb2
+          python3 - <<'PY'
+          import json
+          import struct
+          from pathlib import Path
+
+          path = Path("Rebuild/Ceto-Godot/04_Godot_Project/assets/models/Ship.glb")
+          data = path.read_bytes()
+          magic, version, total_length = struct.unpack_from("<4sII", data, 0)
+          if magic != b"glTF" or version != 2 or total_length != len(data):
+              raise SystemExit("Invalid GLB header")
+
+          chunks = []
+          offset = 12
+          while offset < len(data):
+              chunk_length, chunk_type = struct.unpack_from("<II", data, offset)
+              offset += 8
+              chunk = data[offset:offset + chunk_length]
+              offset += chunk_length
+              if chunk_type == 0x4E4F534A:
+                  document = json.loads(chunk.decode("utf-8").rstrip(" \\t\\r\\n\\0"))
+
+                  def strip_texture_links(value):
+                      if isinstance(value, dict):
+                          for key in list(value):
+                              if "texture" in key.lower():
+                                  del value[key]
+                              else:
+                                  strip_texture_links(value[key])
+                      elif isinstance(value, list):
+                          for item in value:
+                              strip_texture_links(item)
+
+                  strip_texture_links(document.get("materials", []))
+                  document.pop("textures", None)
+                  document.pop("images", None)
+                  document.pop("samplers", None)
+                  chunk = json.dumps(document, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+                  chunk += b" " * ((4 - len(chunk) % 4) % 4)
+              chunks.append((chunk_type, chunk))
+
+          output = bytearray(struct.pack("<4sII", b"glTF", 2, 0))
+          for chunk_type, chunk in chunks:
+              output.extend(struct.pack("<II", len(chunk), chunk_type))
+              output.extend(chunk)
+          struct.pack_into("<I", output, 8, len(output))
+          path.write_bytes(output)
+          print("Removed unavailable external 3DS texture references; retained GLB geometry and material properties.")
+          PY
           assimp info Rebuild/Ceto-Godot/04_Godot_Project/assets/models/Ship.glb
 
       - name: Download official Godot 4.7.2
