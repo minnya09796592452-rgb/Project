@@ -2,6 +2,9 @@ name: Extract ZIPs into Repository
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/extract-zips.yml
 
 permissions:
   contents: write
