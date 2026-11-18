@@ -1,0 +1,32 @@
+# Ceto → Godot conversion project
+
+This folder is a Godot 4.7.2 project assembled from the existing starter project and converted Ceto source behavior. The original Ceto tree under `Extracted/Ceto-master/` remains unchanged and is the source of truth.
+
+## Current contents
+
+- `project.godot`, `node_3d.tscn`, and `icon.svg`: copied from the existing Godot starter project.
+- `assets/demo/`: original Ceto demo mask and edge-foam PNGs.
+- `assets/textures/`: original Ceto textures, including the Caustics map copied by CI.
+- `assets/source_models/Ship.3DS`: unchanged original 3DS source model.
+- `assets/models/Ship.glb`: converted from the original 3DS by Assimp in CI.
+- `scripts/ceto_fourier.gd`: CPU radix-2 2D FFT port following Ceto's butterfly table, bit reversal, X-then-Y stages, and unnormalized convention. Also creates RGBAF lookup textures.
+- `scripts/ceto_spectrum.gd`: Ceto Unified and Phillips spectrum equations plus the dispersion WTable.
+- `shaders/ceto_fourier_stage.gdshader`: Godot single-render-target stage translated from Ceto's Fourier shader. Multi-buffer Unity MRT scheduling still needs a Godot-side driver.
+- `tests/test_ceto_fourier.gd`: headless tests for FFT, lookup textures, spectrum equations, and WTable.
+
+## Verification
+
+The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the GDScript numerical tests, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
+
+## Not yet a complete ocean port
+
+The current project is a verified numerical and asset-conversion foundation, not a complete rendered Ceto ocean. The following remain:
+
+1. Port spectrum condition creation, deterministic .NET `System.Random(0)` sequence, and the complete packed spectrum-generation task.
+2. Port time-dependent displacement initialization and CPU query interpolation.
+3. Implement the Godot GPU ping-pong/MRT equivalent and connect the Fourier stage shader to it.
+4. Port slope and Jacobian/foam generation shaders and texture packing.
+5. Port ocean mesh, material, camera integration, reflections, underwater effects, and query APIs.
+6. Verify visual and numerical parity on the target Android Vulkan device.
+
+No Unity source files are edited. The converted project is isolated under `Rebuild/Ceto-Godot/04_Godot_Project/`.
