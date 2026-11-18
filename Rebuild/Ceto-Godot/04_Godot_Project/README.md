@@ -29,10 +29,11 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 - `tests/test_ceto_gpu_fourier.gd`: GPU render-pass comparison against the CPU FFT reference, including pass-count and numeric-error gates.
 - `tests/test_ceto_gpu_displacement.gd`: GPU InitDisplacement, InitSlope, and InitJacobians outputs compared against independent CPU references for four grids.
 - `tests/test_ceto_gpu_copy.gd`: displacement packing, slope copy, and foam composition compared against CPU reference calculations.
+- `tests/test_ceto_gpu_pipeline.gd`: full four-grid update orchestration; checks 61 scheduled passes and all returned GPU texture dimensions.
 
 ## Verification
 
-The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, and launches the CPU preview smoke test. It also runs GPU Fourier, displacement/slope/Jacobian initialization, and copy/foam parity checks on the Godot Mobile renderer using the runner's Vulkan llvmpipe device. The optional GPU preview requires a Forward+ or Mobile renderer. CI copies the remaining original Caustics texture and converts the original Ship.3DS to GLB, then removes the generated editor cache.
+The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, and launches the CPU preview smoke test. It also runs GPU Fourier, displacement/slope/Jacobian initialization, copy/foam parity checks, and the integrated 61-pass ocean update on the Godot Mobile renderer using the runner's Vulkan llvmpipe device. The optional GPU preview requires a Forward+ or Mobile renderer. CI copies the remaining original Caustics texture and converts the original Ship.3DS to GLB, then removes the generated editor cache.
 
 ## GPU validation boundary
 
