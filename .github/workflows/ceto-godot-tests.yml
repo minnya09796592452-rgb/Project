@@ -157,6 +157,21 @@ jobs:
             exit 1
           fi
 
+      - name: Run GPU copy and foam parity test
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          set -o pipefail
+          xvfb-run -a ./Godot_v4.7.2-stable_linux.x86_64 \
+            --path Rebuild/Ceto-Godot/04_Godot_Project \
+            --rendering-method gl_compatibility --rendering-driver opengl3 \
+            --audio-driver Dummy --script res://tests/test_ceto_gpu_copy.gd \
+            2>&1 | tee /tmp/godot-gpu-copy.log
+          grep -q "CETO GPU COPY: PASS" /tmp/godot-gpu-copy.log
+          if grep -E "ERROR:|SCRIPT ERROR|Parse Error|Compile Error" /tmp/godot-gpu-copy.log; then
+            exit 1
+          fi
+
       - name: Run headless ocean preview smoke test
         run: |
           set -o pipefail
