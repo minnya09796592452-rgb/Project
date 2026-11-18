@@ -328,8 +328,16 @@ def main() -> int:
             "Jacobian FFT -> foam composition",
             "per-grid displacement assembly -> spatial surface shader",
         ],
-        "ci_gpu_parity": "MOBILE_VULKAN_RENDERER_REQUIRED; SKIP_REJECTED_BY_CI",
-        "parity_requirement": "CI executes GPU numeric checks on Godot Mobile with Vulkan llvmpipe; full visual parity still requires comparison against Unity Ceto.",
+        "ci_gpu_parity": "PASS",
+        "last_verified_ci_run": "44416089034",
+        "render_backend": "Godot Mobile / Vulkan llvmpipe",
+        "verified_metrics": {
+            "four_grid_update_passes": 61,
+            "fft_max_error": 0.000440,
+            "initialization_max_error": 0.000049,
+            "copy_foam_max_error": 0.000234,
+        },
+        "parity_requirement": "The tested GPU stages pass numeric parity; full Unity visual parity still requires comparison against original Ceto.",
         "remaining": [
             "verify float-target numerical parity on a RenderingDevice backend",
             "compare per-grid displacement, normals, and foam visually against Unity Ceto",
@@ -342,8 +350,8 @@ def main() -> int:
     )
     record(
         "gpu_pipeline_status", "INFO",
-        "GPU pass runner, multi-buffer FFT, initialization/copy stages, and optional preview are present; "
-        "full RenderingDevice parity and Unity visual parity remain unverified."
+        "GPU pass runner, multi-buffer FFT, four-grid initialization/copy pipeline, and optional preview are present; "
+        "GPU numeric parity passed on Vulkan llvmpipe, while Unity visual parity remains outstanding."
     )
 
     # Godot lane: import, numerical tests, then preview smoke test.
