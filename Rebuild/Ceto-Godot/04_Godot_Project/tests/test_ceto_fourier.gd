@@ -1,6 +1,7 @@
 extends SceneTree
 
 const CetoFourier = preload("res://scripts/ceto_fourier.gd")
+const CetoSpectrum = preload("res://scripts/ceto_spectrum.gd")
 const TOLERANCE := 0.002
 
 
@@ -11,9 +12,10 @@ func _initialize() -> void:
 	_test_constant_dc(failures)
 	_test_plane_wave(failures)
 	_test_lookup_textures(failures)
+	_test_spectrum_math(failures)
 
 	if failures.is_empty():
-		print("CETO GODOT FFT: 5/5 PASS")
+		print("CETO GODOT NUMERICS: 6/6 PASS")
 		quit(0)
 	else:
 		for failure in failures:
@@ -112,3 +114,32 @@ func _test_lookup_textures(failures: Array[String]) -> void:
 	var image := textures[0].get_image()
 	if image.get_format() != Image.FORMAT_RGBAF or image.get_width() != 8 or image.get_height() != 1:
 		failures.append("lookup texture format/dimensions mismatch")
+
+func _test_spectrum_math(failures: Array[String]) -> void:
+	var table := CetoSpectrum.build_w_table(8, Vector4(100.0, 50.0, 25.0, 12.5), 4)
+	if table.size() != 64:
+		failures.append("WTable size mismatch")
+		return
+	if table[0].length() > TOLERANCE:
+		failures.append("WTable zero-frequency origin is not zero")
+	for sample in table:
+		for channel in range(4):
+			if not is_finite(sample[channel]):
+				failures.append("WTable contains non-finite frequency")
+				return
+
+	var phillips := CetoSpectrum.phillips_parameters(8.0, 0.0)
+	if CetoSpectrum.phillips_sample(0.0, 0.0, phillips) != 0.0:
+		failures.append("Phillips spectrum origin must be zero")
+	if CetoSpectrum.phillips_sample(1.0, 0.0, phillips) <= 0.0:
+		failures.append("Phillips spectrum downwind sample must be positive")
+	if CetoSpectrum.phillips_sample(0.0, 1.0, phillips) != 0.0:
+		failures.append("Phillips spectrum crosswind sample must be zero")
+
+	var unified := CetoSpectrum.unified_parameters(8.0, 0.0, 0.64)
+	var downwind := CetoSpectrum.unified_sample(1.0, 0.0, unified)
+	var upwind := CetoSpectrum.unified_sample(-1.0, 0.0, unified)
+	if not is_finite(downwind) or downwind <= 0.0:
+		failures.append("Unified spectrum downwind sample is not finite and positive")
+	if upwind != 0.0:
+		failures.append("Unified spectrum should suppress negative rotated kx")
