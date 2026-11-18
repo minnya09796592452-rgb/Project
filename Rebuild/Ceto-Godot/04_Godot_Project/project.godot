@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Godot Project"
-run/main_scene="res://node_3d.tscn"
+config/name="Ceto Godot CPU Preview"
+run/main_scene="res://ceto_ocean_preview.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
