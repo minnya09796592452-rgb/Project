@@ -10,6 +10,7 @@ on:
       - "Rebuild/Ceto-Godot/04_Godot_Project/scripts/**"
       - "Rebuild/Ceto-Godot/04_Godot_Project/shaders/**"
       - "Rebuild/Ceto-Godot/04_Godot_Project/tests/**"
+      - "Rebuild/Ceto-Godot/04_Godot_Project/Tools/**"
       - ".github/workflows/ceto-godot-tests.yml"
 
 permissions:
