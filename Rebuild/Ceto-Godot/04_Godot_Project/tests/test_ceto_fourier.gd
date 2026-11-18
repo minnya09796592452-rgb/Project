@@ -116,6 +116,9 @@ func _test_lookup_textures(failures: Array[String]) -> void:
 		failures.append("lookup texture format/dimensions mismatch")
 
 func _test_spectrum_math(failures: Array[String]) -> void:
+	if not CetoSpectrum.has_method("build_w_table"):
+		failures.append("CetoSpectrum script did not compile or is missing build_w_table")
+		return
 	var table := CetoSpectrum.build_w_table(8, Vector4(100.0, 50.0, 25.0, 12.5), 4)
 	if table.size() != 64:
 		failures.append("WTable size mismatch")
