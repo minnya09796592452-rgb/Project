@@ -1,0 +1,128 @@
+name: Extract ZIPs into Repository
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: extract-zips-main
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Extract archives safely
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import shutil
+          import stat
+          import zipfile
+          from pathlib import Path, PurePosixPath
+
+          archives = [
+              ("Ceto-master.zip", Path("Extracted/Ceto-master")),
+              ("godot-project.zip", Path("Extracted/godot-project")),
+          ]
+          max_files = 100000
+          max_total = 500 * 1024 * 1024
+          max_file = 90 * 1024 * 1024
+          manifest = {"archives": [], "limits": {
+              "max_files": max_files, "max_total_uncompressed_bytes": max_total,
+              "max_single_file_bytes": max_file
+          }}
+
+          for archive, destination in archives:
+              source = Path(archive)
+              if not source.is_file():
+                  raise SystemExit(f"Missing archive: {archive}")
+              destination.mkdir(parents=True, exist_ok=True)
+              entries = []
+              total = 0
+              with zipfile.ZipFile(source) as zf:
+                  infos = [i for i in zf.infolist() if not i.is_dir()]
+                  if len(infos) > max_files:
+                      raise SystemExit(f"{archive}: too many files ({len(infos)})")
+                  for info in infos:
+                      name = info.filename.replace("\\", "/")
+                      p = PurePosixPath(name)
+                      mode = info.external_attr >> 16
+                      if p.is_absolute() or not p.parts or any(x in ("", ".", "..") for x in p.parts):
+                          raise SystemExit(f"Unsafe ZIP path: {info.filename}")
+                      if ".git" in p.parts:
+                          raise SystemExit(f"Refusing .git entry: {info.filename}")
+                      if stat.S_ISLNK(mode):
+                          raise SystemExit(f"Refusing symlink: {info.filename}")
+                      if info.file_size > max_file:
+                          raise SystemExit(f"File too large: {info.filename}")
+                      total += info.file_size
+                      if total > max_total:
+                          raise SystemExit(f"{archive}: expanded size exceeds limit")
+                      target = destination.joinpath(*p.parts)
+                      target.parent.mkdir(parents=True, exist_ok=True)
+                      digest = hashlib.sha256()
+                      written = 0
+                      with zf.open(info) as src, target.open("wb") as dst:
+                          while True:
+                              chunk = src.read(1024 * 1024)
+                              if not chunk:
+                                  break
+                              written += len(chunk)
+                              if written > max_file or written > info.file_size:
+                                  raise SystemExit(f"Unexpected expanded data: {info.filename}")
+                              digest.update(chunk)
+                              dst.write(chunk)
+                      if written != info.file_size:
+                          raise SystemExit(f"Size mismatch: {info.filename}")
+                      entries.append({
+                          "path": str(target.as_posix()),
+                          "size": written,
+                          "sha256": digest.hexdigest()
+                      })
+              manifest["archives"].append({
+                  "archive": archive,
+                  "archive_size": source.stat().st_size,
+                  "archive_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+                  "extracted_file_count": len(entries),
+                  "total_uncompressed_bytes": total,
+                  "files": entries
+              })
+
+          Path("Extracted/EXTRACTION_MANIFEST.json").write_text(
+              json.dumps(manifest, indent=2) + "\\n", encoding="utf-8"
+          )
+          print(json.dumps({
+              "status": "EXTRACTION_OK",
+              "archives": [{
+                  "archive": x["archive"],
+                  "files": x["extracted_file_count"],
+                  "bytes": x["total_uncompressed_bytes"]
+              } for x in manifest["archives"]]
+          }, indent=2))
+          PY
+
+      - name: Commit extracted files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Extracted/
+          if git diff --cached --quiet; then
+            echo "No extracted changes to commit."
+            exit 0
+          fi
+          git commit -m "Extract repository ZIP archives"
+          git push origin HEAD:main
