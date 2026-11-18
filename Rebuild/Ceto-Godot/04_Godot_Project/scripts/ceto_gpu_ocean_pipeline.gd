@@ -117,3 +117,61 @@ func initialize_jacobians(
 		output_count, {"foam_amount": foam_amount}
 	)
 	return {"jacobian_textures": outputs, "inputs": inputs}
+
+
+
+func copy_displacement(
+	runner: CetoGpuPassRunner,
+	height_buffer: Texture2D,
+	displacement_buffer: Texture2D,
+	size: int,
+	grid_index: int,
+	compact_single_grid: bool = false
+) -> Texture2D:
+	var shader: Shader = preload("res://shaders/ceto_displacement_copy.gdshader")
+	var uniforms := {
+		"height_buffer": height_buffer,
+		"displacement_buffer": displacement_buffer,
+		"grid_index": grid_index,
+		"compact_single_grid": compact_single_grid
+	}
+	return await runner.render_single_target_pass(shader, size, uniforms, height_buffer)
+
+
+func copy_slope(
+	runner: CetoGpuPassRunner,
+	slope_buffer: Texture2D,
+	size: int
+) -> Texture2D:
+	var shader: Shader = preload("res://shaders/ceto_slope_copy.gdshader")
+	return await runner.render_single_target_pass(
+		shader, size, {"slope_buffer": slope_buffer}, slope_buffer
+	)
+
+
+func compose_foam(
+	runner: CetoGpuPassRunner,
+	jacobian_buffers: Array[Texture2D],
+	size: int,
+	grid_count: int,
+	foam_choppiness: Vector4,
+	foam_coverage: float
+) -> Texture2D:
+	assert(grid_count >= 1 and grid_count <= 4, "Ceto supports one through four grids")
+	assert(not jacobian_buffers.is_empty(), "At least one Jacobian buffer is required")
+	var zero_values := PackedVector4Array()
+	zero_values.resize(size * size)
+	var zero_texture := CetoGpuPassRunner.texture_from_packed_vector4(zero_values, size)
+	var j0: Texture2D = jacobian_buffers[0]
+	var j1: Texture2D = jacobian_buffers[1] if jacobian_buffers.size() > 1 else zero_texture
+	var j2: Texture2D = jacobian_buffers[2] if jacobian_buffers.size() > 2 else zero_texture
+	var shader: Shader = preload("res://shaders/ceto_foam_copy.gdshader")
+	var uniforms := {
+		"jacobian_buffer_0": j0,
+		"jacobian_buffer_1": j1,
+		"jacobian_buffer_2": j2,
+		"foam_choppiness": foam_choppiness,
+		"foam_coverage": foam_coverage,
+		"grid_count": grid_count
+	}
+	return await runner.render_single_target_pass(shader, size, uniforms, j0)
