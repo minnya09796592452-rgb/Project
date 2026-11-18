@@ -114,6 +114,9 @@ def main() -> int:
     # Existing ports are tracked per original source file. A present output is not
     # treated as feature parity; runtime/numerical parity remains a separate gate.
     shader_ports = {
+        "Shaders/CopyDepth.shader": ["shaders/ceto_copy_depth.gdshader"],
+        "Shaders/NormalFade.shader": ["shaders/ceto_normal_fade.gdshader"],
+        "Shaders/BlurEffectConeTaps.shader": ["shaders/ceto_blur_cone_taps.gdshader"],
         "Shaders/Fourier.shader": ["shaders/ceto_fourier_stage.gdshader", "scripts/ceto_gpu_pass_runner.gd"],
         "Shaders/InitDisplacement.shader": ["shaders/ceto_init_displacement.gdshader", "scripts/ceto_gpu_ocean_pipeline.gd"],
         "Shaders/InitSlope.shader": ["shaders/ceto_init_slope.gdshader", "scripts/ceto_gpu_ocean_pipeline.gd"],
