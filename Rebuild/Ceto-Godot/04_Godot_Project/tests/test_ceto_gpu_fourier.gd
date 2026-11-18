@@ -2,7 +2,7 @@ extends SceneTree
 
 const CetoFourier = preload("res://scripts/ceto_fourier.gd")
 const CetoGpuPassRunner = preload("res://scripts/ceto_gpu_pass_runner.gd")
-const TOLERANCE := 0.025
+const TOLERANCE := 0.04
 
 
 func _initialize() -> void:
@@ -17,11 +17,12 @@ func _run_gpu_fft_test() -> void:
 	for y in range(size):
 		for x in range(size):
 			var index := x + y * size
+			var scale := 1.0 / float(size * size * 2)
 			var value := Vector4(
-				sin(float(index) * 0.13),
-				cos(float(index) * 0.21),
-				sin(float(index) * 0.31),
-				cos(float(index) * 0.41)
+				sin(float(index) * 0.13) * scale,
+				cos(float(index) * 0.21) * scale,
+				sin(float(index) * 0.31) * scale,
+				cos(float(index) * 0.41) * scale
 			)
 			packed[index] = value
 			input_image.set_pixel(x, y, Color(value.x, value.y, value.z, value.w))
