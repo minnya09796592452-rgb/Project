@@ -15,8 +15,8 @@ var _inextp := 21
 
 func _init(seed_value: int = 0) -> void:
 	_seed_array.resize(56)
-	var subtraction := BIG if seed_value == -2147483648 else abs(seed_value)
-	var mj := SEED - subtraction
+	var subtraction: int = BIG if seed_value == -2147483648 else absi(seed_value)
+	var mj: int = SEED - subtraction
 	if mj < 0:
 		mj += BIG
 	_seed_array[55] = mj
