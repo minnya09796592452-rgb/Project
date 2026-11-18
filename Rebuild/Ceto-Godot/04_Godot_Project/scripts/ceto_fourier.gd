@@ -14,12 +14,12 @@ static func is_power_of_two(value: int) -> bool:
 static func bit_reverse(index: int, size: int) -> int:
 	var total := 0
 	var weight := 1
-	var mask := size / 2
+	var mask: int = size >> 1
 	while mask != 0:
 		var bit := 1 if (index & mask) > mask - 1 else 0
 		total += bit * weight
 		weight *= 2
-		mask /= 2
+		mask >>= 1
 	return total
 
 
