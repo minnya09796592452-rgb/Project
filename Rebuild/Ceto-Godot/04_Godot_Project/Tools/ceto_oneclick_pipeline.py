@@ -141,7 +141,7 @@ def main() -> int:
     present_shader_ports = present_ports(shader_ports, "shaders")
     present_csharp_ports = present_ports(csharp_ports, "csharp")
     routing = [
-        ("C# logic", len(inventory["csharp"]), "Roslyn/source analysis + Godot GDScript ports",
+        ("C# logic", len(inventory["csharp"]), "C# dependency review + Godot GDScript behavior ports",
          f"{len(present_csharp_ports)} PARTIAL_PORT_OUTPUTS_PRESENT",
          "Mapped files are behavior ports, not a complete line-by-line C# conversion or parity claim."),
         ("ShaderLab/HLSL", len(inventory["shaders"]), "Ceto-specific Godot shader translation",
