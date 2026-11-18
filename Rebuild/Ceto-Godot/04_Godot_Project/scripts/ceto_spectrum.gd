@@ -151,7 +151,7 @@ static func build_w_table(size: int, grid_sizes: Vector4, num_grids: int) -> Pac
 
 	var inverse_grid_sizes_squared: Array[float] = []
 	for grid in range(4):
-		var inverse := PI_2 * float(size) / sizes[grid]
+		var inverse: float = PI_2 * float(size) / float(sizes[grid])
 		inverse_grid_sizes_squared.append(inverse * inverse)
 
 	var output := PackedVector4Array()
