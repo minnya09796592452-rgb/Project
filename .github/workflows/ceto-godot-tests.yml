@@ -98,7 +98,7 @@ jobs:
 
       - name: Validate one-click pipeline Python syntax
         run: |
-          python3 -m py_compile Rebuild/Ceto-Godot/04_Godot_Project/Tools/ceto_oneclick_pipeline.py
+          python3 -c "from pathlib import Path; p=Path('Rebuild/Ceto-Godot/04_Godot_Project/Tools/ceto_oneclick_pipeline.py'); compile(p.read_text(encoding='utf-8'), str(p), 'exec')"
 
       - name: Import and parse Godot project
         run: |
