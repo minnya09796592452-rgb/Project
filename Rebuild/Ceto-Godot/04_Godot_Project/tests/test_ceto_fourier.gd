@@ -7,6 +7,7 @@ const CetoSpectrumGenerator = preload("res://scripts/ceto_spectrum_generator.gd"
 const CetoDisplacement = preload("res://scripts/ceto_displacement.gd")
 const CetoInterpolatedArray2D = preload("res://scripts/ceto_interpolated_array_2d.gd")
 const CetoWaveQuery = preload("res://scripts/ceto_wave_query.gd")
+const CetoOceanSimulation = preload("res://scripts/ceto_ocean_simulation.gd")
 const TOLERANCE := 0.002
 
 
@@ -24,9 +25,10 @@ func _initialize() -> void:
 	_test_bilinear_interpolation(failures)
 	_test_wave_query(failures)
 	_test_packed_cpu_pipeline(failures)
+	_test_integrated_simulation(failures)
 
 	if failures.is_empty():
-		print("CETO GODOT NUMERICS: 12/12 PASS")
+		print("CETO GODOT NUMERICS: 13/13 PASS")
 		quit(0)
 	else:
 		for failure in failures:
@@ -364,3 +366,24 @@ func _test_packed_cpu_pipeline(failures: Array[String]) -> void:
 					if not is_finite(value[channel]):
 						failures.append("CPU pipeline generated non-finite displacement")
 						return
+
+func _test_integrated_simulation(failures: Array[String]) -> void:
+	var simulation := CetoOceanSimulation.new()
+	simulation.configure(8, 2, "unified", 8.0, 25.0, 0.64, 1.0)
+	simulation.initialize()
+	simulation.update(0.75)
+	var query_result := simulation.query(
+		5.5, -2.5, [true, true, false, false], "position", 0.1
+	)
+	if not is_finite(query_result["height"]):
+		failures.append("Integrated simulation returned non-finite wave height")
+		return
+	if query_result["displacement"].size() != 4:
+		failures.append("Integrated simulation query did not return four grid results")
+		return
+	if simulation.get_displacement_grid(0).size() != 64:
+		failures.append("Integrated simulation displacement grid size mismatch")
+		return
+	simulation.update(1.25)
+	if absf(simulation.get_simulation_time() - 1.25) > TOLERANCE:
+		failures.append("Integrated simulation time update mismatch")
