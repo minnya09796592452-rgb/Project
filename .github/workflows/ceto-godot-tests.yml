@@ -111,7 +111,7 @@ jobs:
           ./Godot_v4.7.2-stable_linux.x86_64 --headless \
             --path Rebuild/Ceto-Godot/04_Godot_Project \
             --script res://tests/test_ceto_fourier.gd 2>&1 | tee /tmp/godot-tests.log
-          grep -q "CETO GODOT NUMERICS: 10/10 PASS" /tmp/godot-tests.log
+          grep -q "CETO GODOT NUMERICS: 11/11 PASS" /tmp/godot-tests.log
           if grep -E "SCRIPT ERROR|Parse Error|Compile Error|ERROR:" /tmp/godot-tests.log; then
             exit 1
           fi
