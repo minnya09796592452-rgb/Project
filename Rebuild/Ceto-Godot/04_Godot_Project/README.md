@@ -22,11 +22,11 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 - `shaders/ceto_slope_copy.gdshader`: Ceto slope buffer copy.
 - `tests/test_ceto_fourier.gd`: headless CPU tests for FFT, lookup textures, spectrum equations, WTable, displacement initialization, and wave queries.
 - `tests/test_ceto_gpu_fourier.gd`: GPU render-pass comparison against the CPU FFT reference, including pass-count and numeric-error gates.
-- `tests/test_ceto_gpu_displacement.gd`: GPU InitDisplacement outputs compared against the CPU initialization buffers for four grids.
+- `tests/test_ceto_gpu_displacement.gd`: GPU InitDisplacement, InitSlope, and InitJacobians outputs compared against independent CPU references for four grids.
 
 ## Verification
 
-The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, runs GPU Fourier ping-pong and GPU displacement initialization parity tests with the compatibility renderer, launches the preview scene headlessly, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
+The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, runs GPU Fourier ping-pong and displacement/slope/Jacobian initialization parity tests with the Vulkan renderer, launches the preview scene headlessly, copies the remaining original Caustics texture, and converts the original Ship.3DS to GLB. It removes the generated editor cache after the run.
 
 ## Not yet a complete ocean port
 
