@@ -75,13 +75,14 @@ static func query(
 		}
 
 	if enabled == 1 or mode == "displacement":
-		result = _sample_grids(
+		var sampled_height := _sample_grids(
 			displacements, sample_spectrum, num_grids,
 			x, z, inverse_grid_sizes, choppiness, scale_y
 		)
 		var height_only := 0.0
-		for value in result:
-			height_only += value.y
+		for grid in range(GRID_COUNT):
+			height_only += sampled_height[grid].y
+			result[grid] = Vector3(0.0, sampled_height[grid].y, 0.0)
 		return {
 			"height": clampf(height_only, -MAX_SPECTRUM_WAVE_HEIGHT, MAX_SPECTRUM_WAVE_HEIGHT),
 			"displacement_x": 0.0,
