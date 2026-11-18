@@ -53,9 +53,9 @@ func _create_environment() -> void:
 func _create_camera() -> void:
 	var camera := Camera3D.new()
 	camera.position = Vector3(0.0, 190.0, 260.0)
+	add_child(camera)
 	camera.look_at(Vector3.ZERO, Vector3.UP)
 	camera.current = true
-	add_child(camera)
 
 
 func _create_light() -> void:
