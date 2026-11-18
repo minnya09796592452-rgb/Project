@@ -1,0 +1,2352 @@
+{
+  "archives": [
+    {
+      "archive": "Ceto-master.zip",
+      "archive_size": 10086856,
+      "archive_sha256": "f0c6712f2f8063a33ad69f85f083621203eadcf2de6639c1fbc4dd52949b08bd",
+      "extracted_file_count": 396,
+      "total_uncompressed_bytes": 15671919,
+      "files": [
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/.gitattributes",
+          "size": 2518,
+          "sha256": "45a7cbb7d9942ba7ffce0b20bc8dbe2d1196533bc6e4bd245871d77fb1eedfdc"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/.gitignore",
+          "size": 4379,
+          "sha256": "1edd192151a1e5df1279cb8d1aa36b9c666aa5b1f786cfe5f3ff927ecf066c32"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto.meta",
+          "size": 191,
+          "sha256": "77fd10f287b4d119548617c44fda4a63b4e52dc395f98f98266850abdfc15265"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene.meta",
+          "size": 191,
+          "sha256": "b43c325ed69c4c46eb2297fe922e71ec84bada8dd5fbabb640751e09ea76ba45"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/ClipMask.png",
+          "size": 23638,
+          "sha256": "2164cfaad0e4183a618642c7d4605420c16fb9cc1994e4678a8bf4c35454cf94"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/ClipMask.png.meta",
+          "size": 1204,
+          "sha256": "5c3418830524ba5f5530fbed7b6bc1a60bf52ed9ed989a3e313d5b2feffff3d9"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/DemoScene.unity",
+          "size": 31307,
+          "sha256": "4ede557bfbfc369f48c5e0cd29feef2e7840da9e37d10e22ccb1e786e208b3a0"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/DemoScene.unity.meta",
+          "size": 175,
+          "sha256": "00ba8242f806a9552eb41c1b0658cb753c52719f38a2f429ea0ecae05b69045b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/EdgeFoam.png",
+          "size": 14947,
+          "sha256": "5ec7019eea47676d0e68a1c5c3bab153f3b2d01ddd6d50b7eac736683efd6566"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/EdgeFoam.png.meta",
+          "size": 1204,
+          "sha256": "aa07b3dca8fce42524b4f49ab3e4448f9c29b3069c325050f9395f594caeb019"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/Floating Spheres.prefab",
+          "size": 27006,
+          "sha256": "464a54dc0a6dfc983147b3bb587e9bbcd69a090d230b488475f6c2dbd821ac6d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/Floating Spheres.prefab.meta",
+          "size": 179,
+          "sha256": "04345c7b4fcc16a7e18316caf3ee30e7449c5bfef923a4be48cdc9bb5f099a68"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/GUI.prefab",
+          "size": 2020,
+          "sha256": "766fbb8f15bb14e8f3bd6188b0e84f62d28dd08f6df4593c1a20ee8794d53a74"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/GUI.prefab.meta",
+          "size": 180,
+          "sha256": "0b7dd9e553d9224f3e3a0155359902df45fd6c68537733a44bb28f3c27ebb306"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/GrassHillAlbedo.psd",
+          "size": 814358,
+          "sha256": "842d445bc4df19c423763a20d4640b08b087fd31380c1811613155c19d6e3c9d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/GrassHillAlbedo.psd.meta",
+          "size": 1479,
+          "sha256": "cdd578bb2f848b55dba20a7d7078e839f965d534c25ccc4475a7796508c6f19e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/HeightMask.png",
+          "size": 27252,
+          "sha256": "7354c3ab05d430fd5394ca1aca4c9fa3698c84359e198e6fac23060cf9777767"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/HeightMask.png.meta",
+          "size": 1204,
+          "sha256": "d073323f06a92aa04a3f7a25883f4e27a8c907d3bc7c2d655b8a22506884e82f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/OverlayExamples.prefab",
+          "size": 7026,
+          "sha256": "7f0267c3766fabb520042dbb6864a94becadbf67ece266e399d048690f96e0cf"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/OverlayExamples.prefab.meta",
+          "size": 179,
+          "sha256": "9da93de0f847a844b0633075a6e261afb9b912897097579c50b4826d1b1a79b5"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/Ship.prefab",
+          "size": 40487,
+          "sha256": "43122f90f8049bde0d3ab5bb2d704b790db2d4a11741616732bb80a10fad9e7c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/Ship.prefab.meta",
+          "size": 180,
+          "sha256": "914086b4f75c4b4a427ff68294161d7a1ab14e22177587e344b34d9922de3a60"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/TerrainWithAutoShoreMask.asset",
+          "size": 2472320,
+          "sha256": "3cbecf95646b3d3e3f7d0f0596d3cbe3c0f6cbc81cb8a43c52a886f82c0dc66c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/TerrainWithAutoShoreMask.asset.meta",
+          "size": 179,
+          "sha256": "5b67ec686dab8ae80b562e1d2f2a1e909065d238eb18a76add91bb8fca4cf59e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/TerrainWithAutoShoreMask.prefab",
+          "size": 2973,
+          "sha256": "6728181ce7b3d756097557a18bc17c269c900ac66cb1367464e4f21f9046600e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/TerrainWithAutoShoreMask.prefab.meta",
+          "size": 179,
+          "sha256": "448388e2d217683be61853515d3af044f29dff00f3b66c75290b1817eb574c78"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/TerrainWithShoreMask.asset",
+          "size": 2079100,
+          "sha256": "3e0249a4dec4ecd06f5223be7cdc26d9efab945446f207dacb8d52d9fee8c483"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/TerrainWithShoreMask.asset.meta",
+          "size": 179,
+          "sha256": "d39cbdd2a36812c5dd2d40e42924531447775d852757d7fd7370595af6d80d19"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/TerrainWithShoreMask.prefab",
+          "size": 3322,
+          "sha256": "f3cd48a48499e6bab743789213e17463e28f597be70793cba08098931eab9178"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/TerrainWithShoreMask.prefab.meta",
+          "size": 179,
+          "sha256": "02410d26f6584830514a03a4cc06d4f193e689eacff33c698cf50740ea16130c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/Tower.prefab",
+          "size": 17626,
+          "sha256": "1dfb641e9dfe120f3e7c395fbcb0d98ef6f117d35f28e8984a37f794821f0cff"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/Tower.prefab.meta",
+          "size": 179,
+          "sha256": "c1b62436d455a2da02d878378ff29b764e1cba9c4881059ebc4ad3b58b635d7b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/Underwater Spheres.prefab",
+          "size": 13229,
+          "sha256": "7bdf3c9a194100650ac6982e2aa7a200d41d913cc1295cb8adf5208e5dfadf84"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/DemoScene/Underwater Spheres.prefab.meta",
+          "size": 179,
+          "sha256": "fc10e2fd725f8b0dd8caffcb3cfb6617c9517399443b4fcd5bd3579d4a3fd27f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Manual.txt",
+          "size": 122,
+          "sha256": "27f6af73ea66ea6fcea2bafdd02e969c3e3d043cc5ef121e48de1e07e47f478b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Manual.txt.meta",
+          "size": 177,
+          "sha256": "f1b08b3efd91d54780d2ef94ceb3915a7c084b4210d095c0ea534ed52510a19c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials.meta",
+          "size": 192,
+          "sha256": "83994c458c4eecb995cde931523f4a29c98e2e81d8cd1ba0ffd3264918135034"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials/OceanTopSide_Opaque.mat",
+          "size": 1978,
+          "sha256": "a4ebe58a482639f14213d9b799458b8ec2138e498e01d51f01a55c4a7c8df448"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials/OceanTopSide_Opaque.mat.meta",
+          "size": 179,
+          "sha256": "a16f3ca1ac6471d2aa0210221536aadfa5137c4f83bd2d86615c9202c4f85a92"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials/OceanTopSide_Transparent.mat",
+          "size": 797,
+          "sha256": "e7667c944727b87dca1f4ee43b01361d6a725e6e9da01a9566597fe10fc49a51"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials/OceanTopSide_Transparent.mat.meta",
+          "size": 180,
+          "sha256": "7c6780d8862be7901eab203c9dd31cb268fadf6a4f4cae0c2d8a5ef9e65dddb1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials/OceanUnderSide_Opaque.mat",
+          "size": 1980,
+          "sha256": "b53782a9b8eb0c972df81184e28fd753d150d983a0aa10d15b2799dc051374f8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials/OceanUnderSide_Opaque.mat.meta",
+          "size": 179,
+          "sha256": "4eb9e8193151491f886b7166621a3de7411c8443b3bfae7b176aa7648d4edfa5"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials/OceanUnderSide_Transparent.mat",
+          "size": 644,
+          "sha256": "8f7c8f36a68181052e1425d3200701c44118b95148ad2e046749067798e72c4a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials/OceanUnderSide_Transparent.mat.meta",
+          "size": 180,
+          "sha256": "12bda1f96e47ae7cb57a0a900e351b9595fc20c5b370195cca8619fb4be4a7b6"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials/White.mat",
+          "size": 2104,
+          "sha256": "ef79336b3b4577e4e2599a97744d4e04cb28bf07785299ca148f3718989e736a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Materials/White.mat.meta",
+          "size": 180,
+          "sha256": "2ea4b17825abe9cb73cb1100220438f54c91907cef3af71f612be8126d6a57e7"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Mesh.meta",
+          "size": 192,
+          "sha256": "c1cce723acacf43aa2671c834e905d92fd0b09538f5dc6513ac7c62562057ed8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Mesh/Ship.3DS",
+          "size": 454548,
+          "sha256": "6387a8b31f223552331a7656b0bd45e2f8756f53085af7fff70433f0bbb9d6e8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Mesh/Ship.3DS.meta",
+          "size": 2579,
+          "sha256": "2e90411acfec31c9f43c18ec8da9108aaadb052dc0f6c07a08a1c4c1e8c71bed"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Prefabs.meta",
+          "size": 192,
+          "sha256": "1dae0a540e7a77d739a8df1c85eefce3f7e5020dc8b17922f37b37dee7565986"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Prefabs/Ocean_OpaqueQueue.prefab",
+          "size": 6847,
+          "sha256": "6eb123d825b2015d317e9ed42110379cc8eda2b25ff09dbd7900cb1f0b01f7b8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Prefabs/Ocean_OpaqueQueue.prefab.meta",
+          "size": 179,
+          "sha256": "4113ba3329b79f8e13a48a162c40f03d7e03a5e1f2041ea1c6712d8e20de4b43"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Prefabs/Ocean_TransparentQueue.prefab",
+          "size": 6850,
+          "sha256": "51e745f4adc4cff2bf90d1efb298448d4223cfdd8233523cd3bb11a19da47e14"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Prefabs/Ocean_TransparentQueue.prefab.meta",
+          "size": 179,
+          "sha256": "3f0c1b1944775c16134c05be4de0aa871c5af030a29834afb712ddfb49a83150"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts.meta",
+          "size": 192,
+          "sha256": "984ec641d5e84e31823aaae0321e05019b63d7fe5e41d9ebfc1d3b9f6248b671"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common.meta",
+          "size": 192,
+          "sha256": "9a04ecc39db5bb7fe093084d455aa90283f78f96c0605c636927885c53ba3c3a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Interpolation.meta",
+          "size": 192,
+          "sha256": "bc5f95a44d3dde8211a8f1e274a265b72604ae11be2f50abead81281102bdba2"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Interpolation/InterpolatedArray.cs",
+          "size": 1705,
+          "sha256": "751f8299f5376174e92b74d6f20b6dae595e7de4b1703a3599ae23b6a1e0dd02"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Interpolation/InterpolatedArray.cs.meta",
+          "size": 262,
+          "sha256": "ef2949ddb410bf774b0b77772c8b5020aa65b553cacfdaecc74889fd31bd8ac1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Interpolation/InterpolatedArray2f.cs",
+          "size": 4924,
+          "sha256": "e949a3764f6a57bd3a269c776b4dec29ec0050028815840f0683386703bea7ff"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Interpolation/InterpolatedArray2f.cs.meta",
+          "size": 262,
+          "sha256": "0b1abcc16f1ccef422981a34cfab66c26b6976e7c9038696ac71e519d5ee89d2"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Queues.meta",
+          "size": 191,
+          "sha256": "c28372f3b6cb82a6a8e6857de4e5595ef0b4464a092ea1787e24d08f4c1ad130"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Queues/DictionaryQueue.cs",
+          "size": 4889,
+          "sha256": "1abe97c86c725e43564906822fdd8373c7742d5e365fde446211f32ed253b69f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Queues/DictionaryQueue.cs.meta",
+          "size": 262,
+          "sha256": "160950d1b3a59f0e8e11071b63feda3c2605b5d39068de5cb2bcf6676cfcbe74"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Queues/SetQueue.cs",
+          "size": 4561,
+          "sha256": "3657d765f8de243ac57d1c4349e7649d8a470518aea2ad28987e87055fa71b85"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Queues/SetQueue.cs.meta",
+          "size": 262,
+          "sha256": "bc5f47fd0ef6793165f34a97c5c495739c41245effab275eec61d232d43fe239"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading.meta",
+          "size": 192,
+          "sha256": "93c88458993970700963cdf3504a282a647adbb2490963ba8352cc320204c9e1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Scheduler.meta",
+          "size": 107,
+          "sha256": "6fa048d6a71dc7dab915d25e9d9cc7e0bd6b179af9e5549d2a3c03483fe85d60"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Scheduler/ICoroutine.cs",
+          "size": 164,
+          "sha256": "3259d6f639d037f3a10357cbf3fdfbfa9854fd7948b288a04ec313d822adc636"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Scheduler/ICoroutine.cs.meta",
+          "size": 262,
+          "sha256": "bc90d0d86d356855cd33ea476cc42bc84ddc98860479ff33a9d7e40dbee82d0c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Scheduler/IScheduler.cs",
+          "size": 2822,
+          "sha256": "846bc2be21465d31cb101ed0315b33ec8a438fb4860282d25816ca75fc18f48e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Scheduler/IScheduler.cs.meta",
+          "size": 262,
+          "sha256": "ef5459bf2404d1403aecda9a4d668f3b588ab50f0684973c7c6e18a645ee6f2e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Scheduler/Scheduler.cs",
+          "size": 18632,
+          "sha256": "5967bc542094c71d1be8d7fbc5df64a1e73fca55edb5c02993ae4cebef664b89"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Scheduler/Scheduler.cs.meta",
+          "size": 262,
+          "sha256": "e7407ce3d80a90b60f835155affd09ca6a446cab92f1fd90d17117f50e239697"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Tasks.meta",
+          "size": 107,
+          "sha256": "0c408e98228f7ad0d7114fa7e79a157f5a1033fa102486c93a6c0d3df0fc4851"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Tasks/ICancelToken.cs",
+          "size": 142,
+          "sha256": "9cb6e6aaf54e579cdd7041bc04640137d462469bdd24cfa8496c3bd9c5e3e7c0"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Tasks/ICancelToken.cs.meta",
+          "size": 262,
+          "sha256": "21805e2f360e3d482ed3488a1178a1901bb64e4dd6ad37344b69b40d20596c5a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Tasks/IThreadedTask.cs",
+          "size": 2980,
+          "sha256": "d2b0fdbe22cdf4ad1ebd3b7eecd3cd2ed67df627735b1222990dbf652cdaeca2"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Tasks/IThreadedTask.cs.meta",
+          "size": 262,
+          "sha256": "6364d5b57e6ee4c50ef76b408eb1f30b1e6a206283c9993b3cc477d54bc47258"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Tasks/TaskListener.cs",
+          "size": 1265,
+          "sha256": "d7ac05569f12c784378273be6567ac936dfdc99e75a34e6dc9372116c4f83a6b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Tasks/TaskListener.cs.meta",
+          "size": 262,
+          "sha256": "a4c0a3924c6b105c6b849416418829241a76f8af9b3e28190c35622dbeab2d64"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Tasks/ThreadedTask.cs",
+          "size": 7312,
+          "sha256": "fd40fbc7343d6c729a55532f039ecfe2305c6954fb0a8964e0330492af7acffe"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Threading/Tasks/ThreadedTask.cs.meta",
+          "size": 262,
+          "sha256": "84deeb36ca7aa1201ac755031087da88c9daa402cfbf11bc420da47954da7018"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity.meta",
+          "size": 192,
+          "sha256": "9dfcf842c698e980c1698710a8bbd783c23b01bd8a245421c4562c4e8f21e453"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/CBUtility.cs",
+          "size": 4603,
+          "sha256": "03b765ca01e3fb721373ce8ccd08b0b5f8ebfe03a9e9b637cd7d990027d3c205"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/CBUtility.cs.meta",
+          "size": 263,
+          "sha256": "8701aab71bb268bbabcf47ab34c7769ecc8a24f4e6d78ad91fbf015782413a13"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/DisableFog.cs",
+          "size": 368,
+          "sha256": "cbb85eb8fd1014938b1288b4913748217b9a0052dc2e84fdf727b7bf0a90b3b0"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/DisableFog.cs.meta",
+          "size": 263,
+          "sha256": "573fefb3e49e3ea2a14b5009d91ceb80b5f4b4b7d4cf7059b145c432713588c2"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/DisableGameObject.cs",
+          "size": 264,
+          "sha256": "d56b7d02467de6daf684f10f38e7ce98c6cf5b5284f5f8caface8be2f7d489cb"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/DisableGameObject.cs.meta",
+          "size": 263,
+          "sha256": "46a294bd28c2439ebbe81c3164281056aacc48df67266bbbabc8b4428f7672c1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/DisableShadows.cs",
+          "size": 432,
+          "sha256": "bbfe1b2c48577574ac947726b72fb8cb1ef601568307cbeb325bcd6d7f12f9ef"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/DisableShadows.cs.meta",
+          "size": 262,
+          "sha256": "21b2f37672c94a8d679f37e15afda4beea5479b4cfec05e8aeb586c001fac328"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/ExtendedFind.cs",
+          "size": 6331,
+          "sha256": "972234362f42cd092e291975d6196256a6490f52213297cfd29f532fbc30de03"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/ExtendedFind.cs.meta",
+          "size": 263,
+          "sha256": "37b84dc5b7382ab8eb30aea39bd71fbb578d8695895124d389952df2dc4f6b2c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/FPSCounter.cs",
+          "size": 864,
+          "sha256": "feef10ed5d6adc30e0023fabe966bddb7988e279bbe144e52dee139398f9983f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/FPSCounter.cs.meta",
+          "size": 263,
+          "sha256": "f17912d3549725dbe517389288d41bb89ba25ed0e518c510c8143782f9b853cf"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/NotifyOnEvent.cs",
+          "size": 2082,
+          "sha256": "ef777359c0183a44adfd4e1a990d69b34a4f5f051e304c7e75ec828595b23a85"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/NotifyOnEvent.cs.meta",
+          "size": 262,
+          "sha256": "48558a6b5444c60cd3c8b545169d63fd0b9f3231100142e220526f52f03dc1df"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/NotifyOnRenderObject.cs",
+          "size": 577,
+          "sha256": "dfc158a7785db21c2f454c3f5f3401c1e2c412535ac1dc9ff5e013786fe330cf"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/NotifyOnRenderObject.cs.meta",
+          "size": 262,
+          "sha256": "35aeaf5d6f1145e7a4bfdb5a2ba552fbd11da021b659629978ae3ac8b9513241"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/NotifyOnWillRender.cs",
+          "size": 547,
+          "sha256": "13a86dafb17885b87b7b6634288f9356b48a28103d4bd2c5ed4957753f424f3e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/NotifyOnWillRender.cs.meta",
+          "size": 263,
+          "sha256": "640f1c50f5ed648efb163c9f380ac09c8d2e2a119564fb650aba4c1bed865fd6"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/Quit.cs",
+          "size": 263,
+          "sha256": "aa8bfd26b1bb96c229f2a9084cc81efd07b76617b26e760fda526cd10988ea6f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/Quit.cs.meta",
+          "size": 263,
+          "sha256": "d06d9cc47dc2e85faf0d9ae4720c0b13ab21099d9c52b0862573d28a5588d104"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/RTUtility.cs",
+          "size": 8393,
+          "sha256": "0b6ef808816ca182aa0276b44aec7f7838c9a4ac938be46cc901575c7729a226"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/RTUtility.cs.meta",
+          "size": 263,
+          "sha256": "ad5e56d4ed7ad3716af9867a8920a4c955b0b933221c2b657566625e8ab78135"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/RotateLight.cs",
+          "size": 839,
+          "sha256": "ab90766fab1b3b4b0b6f7f053393ed5efb63a6c2aea7c1c52edfe475e7cbbaab"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/RotateLight.cs.meta",
+          "size": 263,
+          "sha256": "b3f96ef1245c58a9603a8780116ca525b713a12e4a2fe2f094989b47b359211f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/Wireframe.cs",
+          "size": 439,
+          "sha256": "4b4fa7bb973e1db7644f51f568aa107be7cc818965c7423d88d415f6c71e6323"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Common/Unity/Wireframe.cs.meta",
+          "size": 263,
+          "sha256": "687bc342d2b06990ba847201b8135ac4df39ab8e4d482f9fa04d369e8dae0528"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Editor.meta",
+          "size": 191,
+          "sha256": "2f115e533e5019d372e1771812c2b4f6928842522db52a6a50a76d62d19ed9d9"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Editor/ShoreMaskExporter.cs",
+          "size": 9463,
+          "sha256": "2aa2527de042e185473ddf1e33a25f9f165c9a6e03dcf3f34b24b23d1a181c95"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Editor/ShoreMaskExporter.cs.meta",
+          "size": 262,
+          "sha256": "72ea9f98643715ff4c88dad0dce742a333c88a04c2f8335b68deb9d90b20e2ce"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Grids.meta",
+          "size": 192,
+          "sha256": "8e66b34c2c31965bc4c5af75d3af1474b599dd5d056c4655f9b66f0303a87314"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Grids/ProjectedGrid.cs",
+          "size": 29355,
+          "sha256": "dd6045ce716ec6b9c650b1b6bf9a0b963a76f881ee769c5ab91765d2c879a4f1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Grids/ProjectedGrid.cs.meta",
+          "size": 438,
+          "sha256": "50715dd36c727a4fa49dec16106e281fc2333e59fcc5d287331aa337d4d5ccfb"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Grids/ProjectionData.cs",
+          "size": 655,
+          "sha256": "75bc2fe0191e2e6f949e13da6800f3c20f3dd05f2186e83e377e2a1dbcc263c6"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Grids/ProjectionData.cs.meta",
+          "size": 262,
+          "sha256": "3e5dc0ca8481ead318873618905db4c5f6a0f2bfc8c299159ad063b1a74eb3c5"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean.meta",
+          "size": 192,
+          "sha256": "1a1136e20a9a654b3b27a4c69fc0edecde2b2bd0d8fe82408573a303367f646d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Buoyancy.meta",
+          "size": 192,
+          "sha256": "082b26bdc8e8121a5c7fd56df400beacab666f7fbc7557f5b76757107cd0cd9c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Buoyancy/Buoyancy.cs",
+          "size": 3568,
+          "sha256": "ffcc9b93bd98b56cc7d54abe6318783fa25f48b7044ae82f5912c6eabb047779"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Buoyancy/Buoyancy.cs.meta",
+          "size": 263,
+          "sha256": "92cbb546984b4faa1e8fdc08026726e9ff47e12e442e5d3e770d86a1667e3821"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Buoyancy/BuoyantStructure.cs",
+          "size": 1451,
+          "sha256": "99317f606f700792dd21e8ba10e6bacb4e03a6be7820c9b79d8ba2f5943fcae4"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Buoyancy/BuoyantStructure.cs.meta",
+          "size": 263,
+          "sha256": "6526579a42c58614f5c328609a7d572945cb887133ea12867fc376696b7fb495"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Buoyancy/StickToSurface.cs",
+          "size": 654,
+          "sha256": "d20c618070186f1d8e11f10d3dd6edc4f568990063e191320152fb24ae76be8d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Buoyancy/StickToSurface.cs.meta",
+          "size": 263,
+          "sha256": "b3b98e338b33e70cacda9030533c1bb50cbb6b35a7d911975e2adac345dd478e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/CameraData.meta",
+          "size": 191,
+          "sha256": "96b6ae89a6f1eb00c687ee4032d377445d620301615cee5027df36d4d13b3e76"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/CameraData/CameraData.cs",
+          "size": 527,
+          "sha256": "dac8bbc473443296a2ef3f7833df993999bf194a1de497b3d4600a694e7c6aff"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/CameraData/CameraData.cs.meta",
+          "size": 262,
+          "sha256": "5763d36314f4d16111f0430e7618bddbe16f3b8a1adb968d9c026ed009cd019a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/CameraData/ViewData.cs",
+          "size": 818,
+          "sha256": "87a2579415279edf29b33a594fa6005579d1b08a5fa1af1b16c2b67777af32b9"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/CameraData/ViewData.cs.meta",
+          "size": 262,
+          "sha256": "1000df594583491abba21fd6cf8275fba26e840b3f4b4875f79d9d30b481dcad"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/IOceanTime.cs",
+          "size": 1025,
+          "sha256": "80fc75dd0d01f5a6ac6bcbcdbd585e5ee3e7c89591af4cc5bef311aea9109864"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/IOceanTime.cs.meta",
+          "size": 263,
+          "sha256": "b52931ad5f6598e469f77e3fa8a28f60da1da5bac29c55d50f7a4e3822d050ae"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/IProjection.cs",
+          "size": 875,
+          "sha256": "8bca5905c423c838a67de8ed14d3a7f91206f0ef2d386807eb4e07053342d496"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/IProjection.cs.meta",
+          "size": 262,
+          "sha256": "43f9d6dd29cdc5833a984206df7770f136e7ed43f5a5f7cf3e6bd268e827aa2f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/IgnoreOceanEvents.cs",
+          "size": 129,
+          "sha256": "ea2350ea8f2afb655dacc902d678dd89c937de42fc9477198b0aba15abda3d30"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/IgnoreOceanEvents.cs.meta",
+          "size": 263,
+          "sha256": "211d4c638bd634000362f4bf9e778d00c7d0fc8cb153a5fca9f05071ca69a12d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Ocean.cs",
+          "size": 36223,
+          "sha256": "ffbf548e977f0fd1b22a8b4206133f80383cc647c456f9f983456350eb8e77dd"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Ocean.cs.meta",
+          "size": 374,
+          "sha256": "4a2c25cf1fc57ebc667beabe62893ad8d9dd329b9126a77e634e3cdb88b90bb3"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanCameraSettings.cs",
+          "size": 813,
+          "sha256": "6afd780d8808fca47d27838eee98d6af626380f38fbbbdc9c16dd86b9c0d578c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanCameraSettings.cs.meta",
+          "size": 263,
+          "sha256": "2b4bde1319c288d9575ebbe2f3e9c017285009f96a0998f2e456ec0c543e78cc"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanComponent.cs",
+          "size": 1843,
+          "sha256": "43c79fdf89bcab289bf883061ddcaf0cd2acfbf0d6f75eea999ea6e8fd668b3d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanComponent.cs.meta",
+          "size": 263,
+          "sha256": "88d390c37bf45d18e3d164df8ad02ab8fc7b34785c8513c200065627f0b05c6e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanData.cs",
+          "size": 7023,
+          "sha256": "0a95bce686f97ac273bd1b9e3226118c325ad35b36a0eef6089ebb7bd95cd0ef"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanData.cs.meta",
+          "size": 263,
+          "sha256": "f52b1afd5a674f164cdbb7838de4ae6827cb7f34e834965722c0cdcae9f96605"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanTime.cs",
+          "size": 357,
+          "sha256": "d90f2f333bb2cb1efcc8fd4a5a3e2646aff02975cc0ecff07e8ecaff62b21d0e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanTime.cs.meta",
+          "size": 263,
+          "sha256": "bb7b68dc83978c02cf44ecbd0221b4313871a0b2d64d14418803f28aa35db108"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanUtility.cs",
+          "size": 2164,
+          "sha256": "8ea2d80e62fc6f0f760b4b2fb9e8ee0ea0e3954696304952545c781ed5c1a073"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanUtility.cs.meta",
+          "size": 263,
+          "sha256": "b8568f233facc2b6622935262f5eb2dab6e34a6817cd4c8a07879867d8277c94"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanVR.cs",
+          "size": 2479,
+          "sha256": "95c531fd06e11ee0d26e0ade1da21e61e50e0823e78ada08b83e6b913a319845"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/OceanVR.cs.meta",
+          "size": 262,
+          "sha256": "7c9e78b62dc57f090812d2d124c9faebe5dcce0276efa6a321c3e52452d0109d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays.meta",
+          "size": 192,
+          "sha256": "df795f0691e1f920aa6629c0a32853055b587ee13ac4bddd7c5fca17be3aa03a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddAutoShoreMask.cs",
+          "size": 8628,
+          "sha256": "81658493501cce5cdf91d9baeb533844eb3f031848c43dec74dbcb13fd3cdc45"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddAutoShoreMask.cs.meta",
+          "size": 262,
+          "sha256": "607ce5d7478d7ca3a68f55d8839c3af8009174cbd27276ff9862b9a580ff290e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddFoamThruster.cs",
+          "size": 12184,
+          "sha256": "ceb7fe3e158189ce926cce1dafac4018bd4658b450141539483c40ff7b4f9698"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddFoamThruster.cs.meta",
+          "size": 262,
+          "sha256": "d0df91717d6a8c9b3d328ce8f92b76416ef87bd9b84b6120e8fe3f8ca0e549a5"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddFoamTrail.cs",
+          "size": 12815,
+          "sha256": "949c7ed79aabc0922d4ea48d7670366b759e32600cb5b6897235515bd195f2ca"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddFoamTrail.cs.meta",
+          "size": 263,
+          "sha256": "5d5a65711b9ce2918edde962ccd5e3b834893fee3889a95a53a446182bd01f95"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddShoreMask.cs",
+          "size": 5104,
+          "sha256": "b0020df71c6af5c2665943d9d1f1341eeacf349a9456730aba9c450710f73610"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddShoreMask.cs.meta",
+          "size": 262,
+          "sha256": "15285d186d6ff99c1402416b05e267e14e96439dbe2201896d13704b5eebb484"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddWaveOverlay.cs",
+          "size": 4564,
+          "sha256": "e8153775732f175c8b8489917f65cd0c161d5e6255f013d6660738dee0db0de8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddWaveOverlay.cs.meta",
+          "size": 263,
+          "sha256": "36b98b9c9314b223e3aa76b6de1886c62c2ebfa4484e2120706580f08539cb9e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddWaveOverlayBase.cs",
+          "size": 4313,
+          "sha256": "e785639d442704f422d2a465a23273d71e6baf1dbf4668cd5297d2d34fa35e4c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/AddWaveOverlayBase.cs.meta",
+          "size": 262,
+          "sha256": "ceae298228658b8d34a5eea206cc4561ba7181491451101fb0d4dcf227f4327a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/FoamOverlay.cs",
+          "size": 2055,
+          "sha256": "3607a0047232b5bc5963d20e573d1698e046b41fc7a76d217bc522f09a096330"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/FoamOverlay.cs.meta",
+          "size": 263,
+          "sha256": "746eb6345a3f06146c8d678087d2f467dee4b3d038fd0bcd5bf1f47c33fbf9e1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/IOverlaySampler.cs",
+          "size": 163,
+          "sha256": "0c5b8fbf564090fcd449e6fc2d077724493c27bedf9ded5177eb4b8032b85dc8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/IOverlaySampler.cs.meta",
+          "size": 262,
+          "sha256": "53ec4494e57923e4ae7658672fbc91b8282efa6ca76f1dc5eb15b278edb6217b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/OverlayManager.cs",
+          "size": 27564,
+          "sha256": "52a49b2d78fe9f5dff87831e437f9c5f52a470f70197eee26ed9ec5a313527c0"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/OverlayManager.cs.meta",
+          "size": 263,
+          "sha256": "f65630a835e98e03883ca85668485932e2104ad939cb8a0c6797f8b501a703e2"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/OverlayTexture.cs",
+          "size": 1962,
+          "sha256": "4094263175fdb20ec8414d562311d4bb48057bede7d3a71dbcdbb6cb624323ba"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/OverlayTexture.cs.meta",
+          "size": 263,
+          "sha256": "0eeb67394544926e91b5b103a96812a01d2165a39d44126ad9e89d41f90030c8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/WaveOverlay.cs",
+          "size": 8819,
+          "sha256": "c7414834698a8a74d3e13f2f03dc8e02ca51f5b8aa3ca828b8476342cc049938"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/WaveOverlay.cs.meta",
+          "size": 263,
+          "sha256": "56cb39e8ffcfdf6d4caaf58edf22fa3afb28da8b00c2ceea19d6770a68a8ec90"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/WaveOverlayData.cs",
+          "size": 823,
+          "sha256": "c8010f35a3d2b80fdef94d77b1303d6a75b34e138c04a3145a13e1b1a229966f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Overlays/WaveOverlayData.cs.meta",
+          "size": 262,
+          "sha256": "f910987c713a42bb8230e233f6b99446f47ca386f75546deb980aa9af17a96a6"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Projection3d.cs",
+          "size": 19200,
+          "sha256": "81fdfe0525eaa435b08500a1022d6d6df48027188366cdf7ec12a2c05c2b6035"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Projection3d.cs.meta",
+          "size": 263,
+          "sha256": "5f181098caa5f648a084beae94157ba67ef53c1a5bb171a796d09c531d5b3b9f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Projection3f.cs",
+          "size": 11629,
+          "sha256": "60e44d9b70af9bb4208fb9bb5efb37850dd9b1aae882d5d8d9e9d690a0fb5986"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Projection3f.cs.meta",
+          "size": 262,
+          "sha256": "c8566924cfd8f71af8145e6480b3a7a0833aceffee82aa0cba859b31b3c44236"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Querys.meta",
+          "size": 192,
+          "sha256": "b59f8b841569fee676cff785f40328ee6f9747def5563c9d1e21669e1dcf58e6"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Querys/CoroutineWaveQueryTask.cs",
+          "size": 2332,
+          "sha256": "020fc397291ea9b3fcf5c9cd1aab1ae2306a802b54eeee4b842358f5dff2ab9d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Querys/CoroutineWaveQueryTask.cs.meta",
+          "size": 262,
+          "sha256": "aba0060d3830cbf3a607713ce479426474ab029cca44271ffeeb4b0cc84e25fa"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Querys/ThreadedWaveQueryTask.cs",
+          "size": 1469,
+          "sha256": "98452862463bf47663657ad9345d85d205abc59594f72fb34e03a5419a1a7106"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Querys/ThreadedWaveQueryTask.cs.meta",
+          "size": 262,
+          "sha256": "1990b331be75672ac5eb2938923a42966fb3ec7462a9d11b1eccda5bd07b1bc3"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Querys/WaveQuery.cs",
+          "size": 5633,
+          "sha256": "f376d9252bbba19d7be5131d0b732cbfec983fb73d8ed8798b22a860038d9b85"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Querys/WaveQuery.cs.meta",
+          "size": 263,
+          "sha256": "ac66c9f5eb3e66b868007a2050ea2032351e1e0df17a520c4d352ef3dba4aa26"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Querys/WaveQueryTask.cs",
+          "size": 3749,
+          "sha256": "370cc950560417ef3cf2901813e3375b36dddd1f425a1cb4dc28a348a799f54c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Ocean/Querys/WaveQueryTask.cs.meta",
+          "size": 263,
+          "sha256": "1b6dd5544ac7fb819d6af985a161f6abab8a14cffe2b785bb41efed2c6abda61"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Reflections.meta",
+          "size": 192,
+          "sha256": "24c27394340957ae36dd6dabac214bfe3e7d7f18ab17726fd7c76d83cc13156c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Reflections/PlanarReflection.cs",
+          "size": 20306,
+          "sha256": "4061ae8e1c4ca974d682eb6ef4787394e25d9e2bddf106935c58de1cb510c82e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Reflections/PlanarReflection.cs.meta",
+          "size": 342,
+          "sha256": "8c255959aa2917076651c8e3eb0b9f3f3157f93977b6363177ca2bce856c11b9"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Reflections/ReflactionData.cs",
+          "size": 1135,
+          "sha256": "60c680c8ecabdde91faa174de586404dfcb134bd7602322dbecc0581ac1371cd"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Reflections/ReflactionData.cs.meta",
+          "size": 262,
+          "sha256": "9398cef3b8aca666a13661a3d4f66da3792ce87229865d7298f1084ed4e796ec"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Reflections/ReflectionCameraCullingDistances.cs",
+          "size": 1071,
+          "sha256": "9504d922ec956d1f891ee113a7d4309c5798da6a3b0197676c140b49d242c171"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Reflections/ReflectionCameraCullingDistances.cs.meta",
+          "size": 263,
+          "sha256": "589c78a92808e958074fdf67aa1c5d34e5d5759de0a1d77ebfe2e2623efac603"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum.meta",
+          "size": 192,
+          "sha256": "b28347b47a296162702c6fdef36556c5963626568364b0cd68bf7bb99b81c5ab"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers.meta",
+          "size": 192,
+          "sha256": "78efd0ad3de83ffed06a2a61057d1a20a5774f8f55de3109894a6f1dcff5fadf"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/DisplacementBufferCPU.cs",
+          "size": 3264,
+          "sha256": "7472041ebd546cf91c5f72166301aa2995a5e6ee267f357664311bf5cd4fc06a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/DisplacementBufferCPU.cs.meta",
+          "size": 263,
+          "sha256": "cb2c24ea5809b5e71a1f85c5fece78644fb2b74d1cdfedcc9e3c44aec6447ccc"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/DisplacementBufferGPU.cs",
+          "size": 1586,
+          "sha256": "a0aed878d50f4c78f18c60670caa675b5ac95fb880c1a307aa7ad8b7cd2a609c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/DisplacementBufferGPU.cs.meta",
+          "size": 263,
+          "sha256": "932d5e706e9495f526e58bea79189c7b73b0e23d0c05068c433219e11d412e39"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/IDisplacementBuffer.cs",
+          "size": 563,
+          "sha256": "5231110406cab90916f7005a769debd17ec497acc0064cca9b33d4dffcf22270"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/IDisplacementBuffer.cs.meta",
+          "size": 263,
+          "sha256": "064fccbefd3ed6976754aadf03babade0e3426d592c87f33be302b3042e39148"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/QueryDisplacements.cs",
+          "size": 10176,
+          "sha256": "60da72e139be58b8d8904f67bd62377b8473cef31123853ee34a64af257349fa"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/QueryDisplacements.cs.meta",
+          "size": 263,
+          "sha256": "07efc9bea98db645f26bb913d191f576b93bd0e36e343f6aecbdce9a1defb1cd"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/WaveSpectrumBuffer.cs",
+          "size": 3510,
+          "sha256": "7c9e44e91d6263e2f0da313d0fb1e7280a429bf49889dfc432687acffa636ea8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/WaveSpectrumBuffer.cs.meta",
+          "size": 263,
+          "sha256": "c688e81a3820539931a6b4dc6e34b8aafa1accbfa6813a30b86e4e1ba22f90a0"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/WaveSpectrumBufferCPU.cs",
+          "size": 10384,
+          "sha256": "10390feb3ba58fa1029094882554c582345ca252c8bbb9116340e6c7d52b4e69"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/WaveSpectrumBufferCPU.cs.meta",
+          "size": 263,
+          "sha256": "e570ac9bb1f66c6987c0c35b193928f75eaccfb4dadbb3906dc69b1c3594e8eb"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/WaveSpectrumBufferGPU.cs",
+          "size": 12123,
+          "sha256": "9d8bd7794a8cee4ec78f362d3905da13e35a03824e66d502f2d4eb7df1740e27"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Buffers/WaveSpectrumBufferGPU.cs.meta",
+          "size": 263,
+          "sha256": "12b7db0e1e380ed4ca7f752218f39d7181f03eb9ef5f1655f5c91adaa18771df"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions.meta",
+          "size": 191,
+          "sha256": "428b353128e5afef43d6874132bdd47791e53d08056b92013747e8ad1b51596d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/CustomWaveSpectrumCondition.cs",
+          "size": 1141,
+          "sha256": "64023ea04efab82ad7f2e1132079e60369ac32be6a13ff7f2aef381febcf2fd1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/CustomWaveSpectrumCondition.cs.meta",
+          "size": 262,
+          "sha256": "7f1e29e00d1bbeab5f0671faa55f7348f48f588d407ff82fc15ea67626cbc392"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/ISpectrum.cs",
+          "size": 158,
+          "sha256": "e4efadba1fabe9184f813fe31804f3ef79b7d347e5cac39a87087508af889833"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/ISpectrum.cs.meta",
+          "size": 262,
+          "sha256": "f5ce601d6779a0bc7af3505abf6fa148a54530af11e47335e99739f18882ba2f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/PhillipsSpectrum.cs",
+          "size": 1495,
+          "sha256": "027a9469a2053f086b571f41a5099e789246d4eaecc1ae9af8732316ccff2804"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/PhillipsSpectrum.cs.meta",
+          "size": 262,
+          "sha256": "3e1cddfc54a9260a7cf735be6bddb8523c35f0a06a4c432a98a154908764401d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/PhillipsSpectrumCondition.cs",
+          "size": 1932,
+          "sha256": "da4e86c5adcb49419a1a6f7b34314519c9b98515bea63646e6a757cc07582b6d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/PhillipsSpectrumCondition.cs.meta",
+          "size": 262,
+          "sha256": "f4b34873ae684f855736872bb5e650ba2cf43cee2e7c2107139d4ff3234e4f24"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/PhillipsSpectrumConditionKey.cs",
+          "size": 1191,
+          "sha256": "fe429aeccd6bb604c54fa28c66bf147b0d0bf29aa6ccf4a78828ccba607c6310"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/PhillipsSpectrumConditionKey.cs.meta",
+          "size": 262,
+          "sha256": "52a188a6b7bd478c4ee3ba61080afadb1e0135402ad521fae264e1b30d1c7bd4"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/UnifiedPhillipsSpectrumCondition.cs",
+          "size": 2588,
+          "sha256": "630710e0ec3cb797bcfa5ac711409e8a30993c3a74cdab2eb62b1924c18122b1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/UnifiedPhillipsSpectrumCondition.cs.meta",
+          "size": 262,
+          "sha256": "61ecda2e998e617baa641121dc986a2b906c5f39925f2cc96d8eea64e0e5598f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/UnifiedSpectrum.cs",
+          "size": 4788,
+          "sha256": "f44c84d5a1daaeff55f14a3a42a7bd7a696b22d277cf00e65918ad2342c85a95"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/UnifiedSpectrum.cs.meta",
+          "size": 263,
+          "sha256": "8f80f5215a1a6e649aea7be738e7de1c92d2f7a6a0b8fcbeccb708624f59104e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/UnifiedSpectrumCondition.cs",
+          "size": 1989,
+          "sha256": "783e115c088ac70cd2dbcf48308b7037a577c6a7d717ae1cdf1c034e74b41c44"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/UnifiedSpectrumCondition.cs.meta",
+          "size": 262,
+          "sha256": "7a3e9aff8c74eb75d652e52a838b3797121ebf4de94c64a001840939a3e8970b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/UnifiedSpectrumConditionKey.cs",
+          "size": 1411,
+          "sha256": "193ea622343872c25c25876cc3df84fa93ac3cbc33a2d71f4e96071bc4501fad"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/UnifiedSpectrumConditionKey.cs.meta",
+          "size": 262,
+          "sha256": "aab92c2dd17189c699511aaec46fc4a3366cc76675e95c951542507ce0f84aa7"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/WaveSpectrumCondition.cs",
+          "size": 4463,
+          "sha256": "e2389d9d98c26c3952beb0fd298c32bdbe7b749bb12862517f43580bbf3f738d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/WaveSpectrumCondition.cs.meta",
+          "size": 263,
+          "sha256": "2ea8ee25d206cf880d61888e641c04acab9aecbb0dae6ad5a3f06ba6c7c887b8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/WaveSpectrumConditionKey.cs",
+          "size": 3032,
+          "sha256": "52c85deb0888cc3ec50168e78ddb90f70540820491e11174393ff4c8f170d11b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Conditions/WaveSpectrumConditionKey.cs.meta",
+          "size": 262,
+          "sha256": "3a592046e1a5024a0c49d579d00f784f8b84709089e88090b195f507093b66ce"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/CustomWaveSpectrumExample.cs",
+          "size": 10588,
+          "sha256": "5c88f51c1e37cda2ff0b596c6a16f6f5dde21f45f572b66608a8d56d05705ae1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/CustomWaveSpectrumExample.cs.meta",
+          "size": 262,
+          "sha256": "9d27c0c1644860c708f5c9b7ea20c453e29d5e3efe93c75fffcf5ce42a4a0925"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Fourier.meta",
+          "size": 192,
+          "sha256": "44961ef1842165ee2b92766cbdd461cb12ee9aea2c901200e95befae89f68731"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Fourier/FourierCPU.cs",
+          "size": 18566,
+          "sha256": "f8ebfca9ad111cb773058d5e989b8dcaa99d93e4207eb142fea91af5321aaced"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Fourier/FourierCPU.cs.meta",
+          "size": 263,
+          "sha256": "a393b4ef725135301aaef5e9b708caa6dc0f97a05e5e299d1969f0047dfde8df"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Fourier/FourierGPU.cs",
+          "size": 12835,
+          "sha256": "70049c7eb7d17e413d2a324583ef9eb0dc794237607f833b05c3057e15946fb8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Fourier/FourierGPU.cs.meta",
+          "size": 263,
+          "sha256": "aeef50d947545ea025b6be8f3ec5c9effdb2642d0b8242bca7147bdb7d4ac948"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/ICustomWaveSpectrum.cs",
+          "size": 542,
+          "sha256": "f3a3ad8546772b0337d5c10499b8d4bc554c3f4be99b6273ed93d2492e6860b6"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/ICustomWaveSpectrum.cs.meta",
+          "size": 262,
+          "sha256": "050f7fe1363abed0aa7aee11d34a0c563f5fb6ab23cc0ee28d62cc1648e747a5"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Tasks.meta",
+          "size": 191,
+          "sha256": "dd7df1d581f97348097ee00f8e3c639cccf3e1d5ad4482e501bf95126beb7dfd"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Tasks/FindRangeTask.cs",
+          "size": 1336,
+          "sha256": "b6581bfd6cd21177d3006f22b826a1d01bcaa978145ba97af3e51cf1346ef6ba"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Tasks/FindRangeTask.cs.meta",
+          "size": 263,
+          "sha256": "1a29ce496cf3df9835469f2a567ead3e327c31ed659f11f472341ec4e62beb8b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Tasks/FourierTask.cs",
+          "size": 9315,
+          "sha256": "d9ef4ff04a61e5f39561430ab821d78ddaff830a93033c2d95b09449ec52cff5"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Tasks/FourierTask.cs.meta",
+          "size": 263,
+          "sha256": "2835b0eb45d04e5f0ee1fabe5ea47b79d7f6368cada7a80b8f8bce8846899c6d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Tasks/InitSpectrumDisplacementsTask.cs",
+          "size": 19025,
+          "sha256": "101152f64989466297f806db74a847e56d5ddae53013cba031262cd5797e81f5"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Tasks/InitSpectrumDisplacementsTask.cs.meta",
+          "size": 262,
+          "sha256": "0270eec53fdda0acb641cc0739a27183c9ecc8aa138805ed369829ba76b58428"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Tasks/SpectrumTask.cs",
+          "size": 9696,
+          "sha256": "d2767dbccdde42783e6247f58efe47c5e44b9c6c8be6f97c3846a86423a19c61"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/Tasks/SpectrumTask.cs.meta",
+          "size": 262,
+          "sha256": "85560e094dc01486d10d33f0143a66f8256db257f7ca52b51b60780fb97cd1ae"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/WaveSpectrum.cs",
+          "size": 45970,
+          "sha256": "c09f3a869e8341efa1b473d30d054449ed380d2807f4f7244960285e561e4051"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Spectrum/WaveSpectrum.cs.meta",
+          "size": 961,
+          "sha256": "3195e12cbb0555133c9d87496688c4b7f4a91f6674c8673319aa12f696974881"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater.meta",
+          "size": 192,
+          "sha256": "bfd6dec72997d70ba02cca94f2193661e8a97d1115d9ad07738b833e028b9a32"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/DepthData.cs",
+          "size": 1378,
+          "sha256": "4cb88e81a071e6001cd4d223f627c984451040798a603ac20db9304c81599ea2"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/DepthData.cs.meta",
+          "size": 262,
+          "sha256": "e7ae0ebb6ce6928d580cd6d5e8af75b06fc3ec40d245ac4aa783572577af0959"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/IRefractionCommand.cs",
+          "size": 836,
+          "sha256": "4e6ac22e6ed01ed63630bcdeec44dce9641339ab1d03fcd6dbc135687c1f4351"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/IRefractionCommand.cs.meta",
+          "size": 262,
+          "sha256": "81af7d91e29b5f6e2cff21760bd44294f102fa2919360775a91126c5062577b1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/MaskData.cs",
+          "size": 1129,
+          "sha256": "a379d5264cc4be21ae45ac8b0f938c4f67dde88fc12baff41e56f11114cdec91"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/MaskData.cs.meta",
+          "size": 262,
+          "sha256": "31f2f2bd629846ae3563e6eb0ba3088e33d3d5ed0c8efadeb0b910354f9c7394"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/RefractionCommand.cs",
+          "size": 8641,
+          "sha256": "6a55e2d61c972c1846fceb35d295d8c86cc1b78f74621a36f26fa8c16b81d31c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/RefractionCommand.cs.meta",
+          "size": 262,
+          "sha256": "50ba3d5f936dc9d6a36e637f094ebdb92b1a7e1cdbef00f0f0a33bc5bcadd5d2"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/UnderWater.cs",
+          "size": 41259,
+          "sha256": "aee1fad20be5cb6e77a8866f97eb46cc6545e4fc2a753af7d0d8dfc6970b2cb1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/UnderWater.cs.meta",
+          "size": 786,
+          "sha256": "20e4e49f92c87c4f03f0a54a7adb2a99440702221187e05aeed04edc1fe2066e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/UnderWaterPostEffect.cs",
+          "size": 8585,
+          "sha256": "b53162013bd694af1c29c9e52928b1a1057b8cda7618fc010179a769ecc1b8bf"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/UnderWater/UnderWaterPostEffect.cs.meta",
+          "size": 444,
+          "sha256": "e7dd9ede42f4173f618ec91185679ab12188e70637f14809b31373b35b1265dd"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility.meta",
+          "size": 192,
+          "sha256": "e62a08a86e27bf0bd8e3429d57be13591b625667fbed3e13245018559a2d648a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/AddRenderTarget.cs",
+          "size": 724,
+          "sha256": "bec359e9e8a75fffdff6e63f90ebf69722199aabd8e0aefb227fd2ccaf1e2268"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/AddRenderTarget.cs.meta",
+          "size": 263,
+          "sha256": "194ad52c9ccefd41ebad11e3f902c2f9569ffc93b3bfe84e8cccc3071333102d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/DisplayTexture.cs",
+          "size": 4319,
+          "sha256": "f00d8c9dec9c6fe1aeb4340be05a49c8fa7eb37f7cefc43bc3dfa2351988efcb"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/DisplayTexture.cs.meta",
+          "size": 263,
+          "sha256": "e5ba932d28f1d3805e1c3ce0e0875cae0e4fc2650da227ce77bdbe57458e70d7"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/DrawCameraFrustum.cs",
+          "size": 1236,
+          "sha256": "d6e3523f7fdbbfe18381b7c6bebd22bba5d3f835d015b54751d0f7c88734be30"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/DrawCameraFrustum.cs.meta",
+          "size": 262,
+          "sha256": "b8e7e6e0704ec844a9e873f8123977f0a84bf33ce19a94614c0f82e0a5106253"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/FreeCam.cs",
+          "size": 2418,
+          "sha256": "2ad06b1d250b18f717227701ea6fcb4207217c5a3d84dfd64f305e9f922ca8a8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/FreeCam.cs.meta",
+          "size": 263,
+          "sha256": "67184203f5b1fb0626e2445ceba40244f2a7bc394f531b258f42f3d68a5ac0f3"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/GUIDisplay.cs",
+          "size": 9530,
+          "sha256": "a7fccfb74a9735fca152c8c5d7f1210c4ef9519c8084fa2b10feebb3acc75f46"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/GUIDisplay.cs.meta",
+          "size": 263,
+          "sha256": "7fa17d5ccbd5e3e286388e21723bcd6ec2e4097e10cdc687e630b8b290fc63ae"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/ImageBlur.cs",
+          "size": 2734,
+          "sha256": "08112958db768e073128ea0495fbf06e32b5b8e605f4f9e8a2d01a9cb48f6d81"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/ImageBlur.cs.meta",
+          "size": 262,
+          "sha256": "c96d1c649cbfd80b3b3a87191768dc3a6504b993af17ef057f4512097649ad93"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/ShipCamera.cs",
+          "size": 5269,
+          "sha256": "61bfc3925fdf792bdbab4a4ba5f3ee189627544dd1b90bfff6c65c7a9aad07ab"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/ShipCamera.cs.meta",
+          "size": 263,
+          "sha256": "7429af7e2e6afeac4c1371a1c0b3317e3663d9083db96ad3168dc55f25ab8330"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/ShoreMaskGenerator.cs",
+          "size": 4955,
+          "sha256": "3315b452c5c1e4c5e60589ed695aeb988bba97b87a281a43497c30fd0f724b12"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Scripts/Utility/ShoreMaskGenerator.cs.meta",
+          "size": 263,
+          "sha256": "92be49517af0749625cc2fe1ebd8d5d1e841b650183c904aab90919859eb6d58"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders.meta",
+          "size": 192,
+          "sha256": "86519d13398e70b0820b88a5d1b16063097930e151328c3e08c847a9226fe2ea"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/BlurEffectConeTaps.shader",
+          "size": 1458,
+          "sha256": "efb26509449c8ee0ec51b773fba99361acf3b37a605bb61ad97311dd8373eaa9"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/BlurEffectConeTaps.shader.meta",
+          "size": 195,
+          "sha256": "99c86ab0109f6c56be1fb8c211009e18003d47f97dec56384543243f08580a1d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/CopyDepth.shader",
+          "size": 830,
+          "sha256": "61c409160ffd314a3365b158e74a61769a95b75e56c6c0999212147e266f3c83"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/CopyDepth.shader.meta",
+          "size": 195,
+          "sha256": "0588b0f910dc4263e73cef64fc23d8707c6529b00205b87e50e217633ab4e2a0"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/DisplacementCopy.shader",
+          "size": 2382,
+          "sha256": "c4a82490c6bc18e9fe185f0ee3723d1b7ff60730147d730c4e8e3ee70a8f8c9d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/DisplacementCopy.shader.meta",
+          "size": 196,
+          "sha256": "3e523a0b2a1783757404e9c387257d6d4e0851d260f691dd07b4224d1e635bae"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/FoamCopy.shader",
+          "size": 2792,
+          "sha256": "0db0cd7898824f9ae354366c5f21a58f97ddf12cacde8de9923d1ddbc9c48aab"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/FoamCopy.shader.meta",
+          "size": 196,
+          "sha256": "ad1411c9187c9c50a334ddeb2bda893c2e39cd61916327db39673f7c37e750cf"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/Fourier.shader",
+          "size": 6777,
+          "sha256": "b918b78322c0e375390e177c961cc72aff3c50baff8043eea30c5b17b7cc4e20"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/Fourier.shader.meta",
+          "size": 196,
+          "sha256": "bc23b4e6dd8ce2f552fd51d561ac3443914b1a4fbaf7d7b218310c924ce370c5"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/InitDisplacement.shader",
+          "size": 6529,
+          "sha256": "679039cae27faad447d56648f95fd46d82a580cb3cce9420af7775743e595a62"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/InitDisplacement.shader.meta",
+          "size": 196,
+          "sha256": "1399e6d12a177a6750d581d3af7aaf0528f6c17a2d1ded9c7403af0d5ec65ed4"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/InitJacobians.shader",
+          "size": 7021,
+          "sha256": "cd679a9ca79ae683ec2c4680fd5bf5a67053290a9f5e8e40e63a24e2f5ece8e2"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/InitJacobians.shader.meta",
+          "size": 196,
+          "sha256": "3cd790cfcca86bfb2be347b78709ad60d448015f6dd512cde6cda67095137091"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/InitSlope.shader",
+          "size": 5151,
+          "sha256": "6c1b1d92fae6dd41cf4e12b410cdb7cbcb11363cef7ce6533ccce6dd500280ef"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/InitSlope.shader.meta",
+          "size": 196,
+          "sha256": "c3fe9615cec21e73669f4c2d153e141c04e04990b6e629ce9a1138f10520ea29"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/NormalFade.shader",
+          "size": 1543,
+          "sha256": "e9329be214a64672173ce258cb606b5670c06a87aeab7491feea534679828a77"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/NormalFade.shader.meta",
+          "size": 195,
+          "sha256": "87fd89a9a6d2042064989c0b407835868a42441366656c65230dea01d853aac8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanBRDF.cginc",
+          "size": 5440,
+          "sha256": "9525bcfdc1c654e2ff0e8abf3148a3a248f1033f081be0dcf018e3f406f25527"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanBRDF.cginc.meta",
+          "size": 196,
+          "sha256": "d94b8654e6868f4a435e5035cf66c2241c20b41967c5ba0b91ab605b8b0d91c6"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanBottom.shader",
+          "size": 671,
+          "sha256": "6742c08c63484d00816425aa665c0b40c0dc3c9b68f23635a23b03feac1e3ee9"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanBottom.shader.meta",
+          "size": 196,
+          "sha256": "88a58675dfedf4312a29c214b0ba0c8021178cd1c439c51342ca007bb173a662"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanDepth.shader",
+          "size": 8744,
+          "sha256": "c8da9046eea03354f78a3883b7df6b75d1cc2ecce3a8bc37bec4eaaa88663eae"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanDepth.shader.meta",
+          "size": 196,
+          "sha256": "b9695f729d1e9ea28fe81336a68c807ff2deb4c2679493ce71a56a644754d9af"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanDisplacement.cginc",
+          "size": 15487,
+          "sha256": "a5de924aad1942dbf87b06d537e4224cd5ae6b92f13275c56ef919e69d79602c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanDisplacement.cginc.meta",
+          "size": 196,
+          "sha256": "e411230f3689e7bb1aef525c7fbf918c826b608b4b9a5f8ee27625be9a81d36b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanMask.shader",
+          "size": 2077,
+          "sha256": "dfa50e83aa80c7d3c036698d750e2e3e08f13df98b515c2885dae7ad001e9c8f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanMask.shader.meta",
+          "size": 196,
+          "sha256": "a8ac45ac9ae0251a09e890d567961c1d4d76e19da39c25b3fb37ab01e7be49ec"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanMaskBody.cginc",
+          "size": 782,
+          "sha256": "0d989334149b6182f91b313680aae479472d4e7b6798958a4ffb25c0529f18fe"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanMaskBody.cginc.meta",
+          "size": 195,
+          "sha256": "2761349268378d7ffa18a843e1ae17f3fed43f753bab3e4dffa183e071d31ff8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanMaskFlipped.shader",
+          "size": 2104,
+          "sha256": "ce28fd5198f7716691bdb5459dffcebb90c5594e1a9da2678da5e9680bd6a916"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanMaskFlipped.shader.meta",
+          "size": 196,
+          "sha256": "d1b2221e00c201c008855924e42d0472d4e864dda8f5e5ab46aec9fe7e3d290f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanMasking.cginc",
+          "size": 863,
+          "sha256": "3f0f8be7dd46e96d8d1cb3800826e6f059e8952e74d25d9cb5ab53bc62a857ae"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanMasking.cginc.meta",
+          "size": 195,
+          "sha256": "ed288b333846070bb1d558c034824f22427c4f1a7cc8f07cfcd5f282d4b09e31"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanShaderHeader.cginc",
+          "size": 4192,
+          "sha256": "dc1b4604794ecedd794c49b3cd2be59bd6f05fc546de4f408262d28ace3ee71a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanShaderHeader.cginc.meta",
+          "size": 195,
+          "sha256": "40a3310ec90ea33b68ef6e79f85862e3c91258f1b515dd31e49b31bb4c286947"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanShadowCasterBody.cginc",
+          "size": 634,
+          "sha256": "d77759a78f7c2a55ee587e67d0fb13b392d0d2d0276748286bc177de9ed3d2a8"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanShadowCasterBody.cginc.meta",
+          "size": 195,
+          "sha256": "a91b61f1aaadb86cbaa3161aab171f91f836f648a39341729541bdc9d0293923"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanSurfaceShaderBody.cginc",
+          "size": 4649,
+          "sha256": "92169ca8709a4a4726c53171707cf8155e0288fe82ee5005424315dc80f950f9"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanSurfaceShaderBody.cginc.meta",
+          "size": 196,
+          "sha256": "27c6827a56e84e6ca9c5970c94ea0e75ac6ad1a74e1d27d1734d0cac047e59dc"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanTopSide_Opaque.shader",
+          "size": 2179,
+          "sha256": "93a10456dce1dcbd158e0d2f7810a36ac088c995aaf843940665780edf50eb4f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanTopSide_Opaque.shader.meta",
+          "size": 195,
+          "sha256": "6f043890bdcdc15616e81d4afb4bd8d93517f3da262d60071c09eb53a88edcbb"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanTopSide_Transparent.shader",
+          "size": 2169,
+          "sha256": "ae758ae86cb79fc5266df49b3dab81f8bff801e0441e4b8ad491996e947fe805"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanTopSide_Transparent.shader.meta",
+          "size": 195,
+          "sha256": "78677a021232e5de4d0e5bdf1e8182dfe05f7e28302da393452240ffe3d23f6f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanUnderSide_Opaque.shader",
+          "size": 2119,
+          "sha256": "318a419efb228a8948b83ebf26a94d6838148b2c073546b6e803e33afbe0504e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanUnderSide_Opaque.shader.meta",
+          "size": 195,
+          "sha256": "b777b27903a85b34b9b5634f7020010059196e8842384706a960828668025db4"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanUnderSide_Transparent.shader",
+          "size": 2141,
+          "sha256": "b82bf64ef001574d643e10b36a26856ab2903160c5f43d852507051e8a215d40"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanUnderSide_Transparent.shader.meta",
+          "size": 195,
+          "sha256": "5f95e67cbdecb0a281799b542ae97b53408e653b7564206651ef6fada4a7cba3"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanUnderWater.cginc",
+          "size": 15548,
+          "sha256": "308ae7876f4f05841f708e81568427147e0d94cdd2a262bacf6f0ec27abacacc"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/OceanUnderWater.cginc.meta",
+          "size": 196,
+          "sha256": "401e7c93a96d464c035398f08a3c295a9058b07767fca7f7faee586d2e9ecc18"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/Read.compute",
+          "size": 4129,
+          "sha256": "73f328cbb172589468e606072e97eefcd6baeae1cc31bc0e91385ae524de9af5"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/Read.compute.meta",
+          "size": 205,
+          "sha256": "f7a454e0ac7fe64fdaf3b4f8699ff23c490d022f534da18c6f0b6314a0e6bf1b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/SlopeCopy.shader",
+          "size": 787,
+          "sha256": "41d93b080989ee07a7d76adf3ef663fe038307dad7a0535a4ff42352a1c31b47"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/SlopeCopy.shader.meta",
+          "size": 196,
+          "sha256": "c5995bbe01f4a1e8a094baf2f4fcbb3308e209d378d133d996ab146f9c7f5633"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/UnderWaterPostEffect.shader",
+          "size": 3636,
+          "sha256": "43c27a14b10b776543d7d67c1e4680db3e46244901bea15404568aa9e9e21f4e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/UnderWaterPostEffect.shader.meta",
+          "size": 196,
+          "sha256": "343cf5ce2271b36729265f9df387fdacb98252eb510856b5b6d24ad7d9f42d85"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/WaveOverlay.shader",
+          "size": 4492,
+          "sha256": "d1d9faf3186a6242a82dab35d6db2b1203fbce2f74e44854d9ae66c72355813c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Shaders/WaveOverlay.shader.meta",
+          "size": 196,
+          "sha256": "c1dd14331eb8bb2f9f4e39758f0b46d284dc4a772978bf72a78a4e26ec448c39"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures.meta",
+          "size": 192,
+          "sha256": "b894dc7b075223b6e33ac957a7907da715ed5e95ef6d567b20ff858c4cd48328"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/Black.png",
+          "size": 17257,
+          "sha256": "53ba5a9064ce9778060184d9e3f4244a88f363b035ab9a1c18d59d68b46578aa"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/Black.png.meta",
+          "size": 1162,
+          "sha256": "0de735d4f15c9ad05ebf4ed2e664b1f2ab882600cb40b038d7c6e29bd22733b9"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/Bubbles.png",
+          "size": 674943,
+          "sha256": "c0d69a97b487731bd6c3c1fd36ba367b127ff0288c6d0bebcefd735ec2e3ea11"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/Bubbles.png.meta",
+          "size": 1163,
+          "sha256": "8136741568706698c1e70b658b25ae3e02cee5ece93231bc5fd97f04f513df59"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/Caustics.png",
+          "size": 1082896,
+          "sha256": "c99a44a3707507e6d4ae5ef7050245ab6640f9296c8fe6cfe7a411c3833878d1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/Caustics.png.meta",
+          "size": 1206,
+          "sha256": "2742c7175e31e17ab4db25baac6f9dc0f9c1bff9fce194549e38a6674886da44"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/CircleMaskHard.png",
+          "size": 163833,
+          "sha256": "8c7572d5cc572d066b62cb1102e53a275996e7b9070f36ecbb28f761f67a7f12"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/CircleMaskHard.png.meta",
+          "size": 1161,
+          "sha256": "d0ec96ce0578b377a35ed600f02dc2516457338f29b06c774560c41ff73792a1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/CircleMaskSoft.png",
+          "size": 189429,
+          "sha256": "48e567003d0f40ebc2d4ccca201ef2b2b9acee5901220532a4e1f39e0d069dd7"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/CircleMaskSoft.png.meta",
+          "size": 1162,
+          "sha256": "2bdb69cf5648874b050aed1cac4779607861269229d87a76dfecf97a049ee5f0"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/FoamSpot.png",
+          "size": 245089,
+          "sha256": "a2b0b4b52270d08e0a6bb2a48debb3e761b762de2dd08ab41482f5024431b0d2"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/FoamSpot.png.meta",
+          "size": 1163,
+          "sha256": "fdefd8c3e6a955a83cf3d24b615d41f01cbca5ca4f9f07c3b1d814d744b8835f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/SquareMaskHard.png",
+          "size": 55960,
+          "sha256": "8c40604da9170e63c17ba944e6fee6ec762f699ae6451089d1745f95882f1865"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/SquareMaskHard.png.meta",
+          "size": 1161,
+          "sha256": "8c7a61e77dd6c25a81d27ea62aedda987cd693daf05fe8f9996a1ca135d0593d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/SquareMaskSoft.png",
+          "size": 151129,
+          "sha256": "c41541c462077e51b7def5bbdeba3d725a0b2aa2270031cce3343e82415ff969"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/SquareMaskSoft.png.meta",
+          "size": 1162,
+          "sha256": "bde3e8c54ef6b8af20aee7e33788f2100736b8e05b2481a47f8bbf77a1e7c609"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/WaveNormalMap.png",
+          "size": 509838,
+          "sha256": "b739034fb853b93a492cede7f62cd9be8b92c1eefed4dac205f7c7cbdbe8383c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/WaveNormalMap.png.meta",
+          "size": 1206,
+          "sha256": "8dc7e479975619a9026db0371a7bb76deb8585b2c9591fff54fcdd5a022994ab"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/White.png",
+          "size": 18169,
+          "sha256": "19b10ae0359a88e90136438d2839ab497a635b86642f26ceaf92e49762795974"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Textures/White.png.meta",
+          "size": 1162,
+          "sha256": "5323266d2b5d2f9ab61090d5f60cb001a1f6800d4486737ebd605782ce0038e7"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Version.txt",
+          "size": 25832,
+          "sha256": "58a59d18bc276d1a223ead1a2652931bb421f5eaa71d8a94de2e7e3d4aecfd89"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/Ceto/Version.txt.meta",
+          "size": 177,
+          "sha256": "0706c84ae51d63c6a87673ba4f14801b1e5901f3b56ccf1f99984cb262ed8512"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/_TerrainAutoUpgrade.meta",
+          "size": 172,
+          "sha256": "42b8a06f5e68f71e8d51c227ac364a81a42cc2d3c6f3ba9bf5a84bc76ec0f615"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/_TerrainAutoUpgrade/layer_GrassHillAlbedo(15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer",
+          "size": 799,
+          "sha256": "d7dd10af24f116b0acec1137c6af4303f397e3c488daee7ed18ac9751994ba5a"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Assets/_TerrainAutoUpgrade/layer_GrassHillAlbedo(15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer.meta",
+          "size": 200,
+          "sha256": "1e967de5391bc23537a3bb49d60f97335812f0bb24dac38be497ca3c9095a09e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/CetoDemo8.png",
+          "size": 1133756,
+          "sha256": "9f722ef209f59a758c76a33d9657d703e134f75f8efffd3de83d14ba5bba22fe"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/Ceto_1_1_4.unitypackage",
+          "size": 4496469,
+          "sha256": "55ed933e67ee4cd1a3c83eeb5252a2902bc3bc4cc781e0da5f43c003ed0d586e"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/LICENSE",
+          "size": 1063,
+          "sha256": "9e7394c000b6da9c1bdb34f1dd8abdac331dfedbda1845e4f7407f383b734742"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/AudioManager.asset",
+          "size": 360,
+          "sha256": "f9147b59c2986c8b98bcb509c474d5dfec433e6d46aa31680db2a60737351c11"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/ClusterInputManager.asset",
+          "size": 114,
+          "sha256": "40e65dd214bf254955d2c8829ca8ce2130fd3510485560ce012e9a1ddd93e623"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/DynamicsManager.asset",
+          "size": 1160,
+          "sha256": "6afb077ca6ac7285c5372e2d31a61626bac86cc2a1f9cb05c7b85f58bd072ca2"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/EditorBuildSettings.asset",
+          "size": 160,
+          "sha256": "1942c088ddfeeef348fdf12390e2a2d6da51056e197458d67969d44e7b2cbbd3"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/EditorSettings.asset",
+          "size": 708,
+          "sha256": "3a29dfda9d94c7b617c59b1d634f2aac9a1a6bf42b09b6c84febe84a1810d247"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/GraphicsSettings.asset",
+          "size": 3616,
+          "sha256": "b701e278ca04ee79577cb0f3933f737a1e254835f7998445253549c8521946e1"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/InputManager.asset",
+          "size": 5793,
+          "sha256": "1fb1c30f8a1615cf9a4220be6d18a33eccd3a09cc4cd0a3c7cd0a38a7c083134"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/NavMeshAreas.asset",
+          "size": 1308,
+          "sha256": "80106cfa7e6181a1928b142c075f3e510d527441e3d79bc83590e4ac91e7cd66"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/NetworkManager.asset",
+          "size": 4112,
+          "sha256": "58dbdbf877246aa106ddb576734d0cef370a69214282b2db8ef70fe0bea81813"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/PackageManagerSettings.asset",
+          "size": 1003,
+          "sha256": "a7dabba589abe7fc2b45bd3d3fba3fe9be97043492703f716da2d9131c13a807"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/Physics2DSettings.asset",
+          "size": 2028,
+          "sha256": "add582cec7d968b74ed44ee9bf31376790229a5afb5113c7a166665ed22c9645"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/PresetManager.asset",
+          "size": 120,
+          "sha256": "1df37c2b99796bf71dcdc073b41faabd069d8650f3a5cc05803a6411d2937b3d"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/ProjectSettings.asset",
+          "size": 18599,
+          "sha256": "f31240d97571830bc1b2c986abeb66369120b9ddf93d21dadc49b9fe7e3d541c"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/ProjectVersion.txt",
+          "size": 83,
+          "sha256": "c50555f585cb3b7368a6a9e73670eeede0978362ff3601e47a47caacb39915a9"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/QualitySettings.asset",
+          "size": 6464,
+          "sha256": "63b53327e13ee96c2775723b184252716bb90d6f539380417d9c2e572013143b"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/TagManager.asset",
+          "size": 378,
+          "sha256": "8e18b1c820e9c09e16bbd1f1b7842e9fb3b0158a0921b0964e0b8fa12c6e2c01"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/TimeManager.asset",
+          "size": 202,
+          "sha256": "1a83e54adbbda7c9f4851103a0c6ab7f6448a3343d4ea5b7620452fa08416ecd"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/UnityConnectSettings.asset",
+          "size": 853,
+          "sha256": "ac8109d02d617c14d3cb69864f02c6c1b8aec57b4866164b4ae25a09cf2704b3"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/VFXManager.asset",
+          "size": 273,
+          "sha256": "3fe2a3148618003c192c0f76f395cfae385e92cdee8dec7ddc89120fac199671"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/VersionControlSettings.asset",
+          "size": 188,
+          "sha256": "e7bda45bf7a394745fee1316e6c71fa676004d591ad1f3aa247fd3e4ceb86071"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/ProjectSettings/XRSettings.asset",
+          "size": 158,
+          "sha256": "edd2beb4a2e388312b4b7da241aa51070434005d82c59363f1237dd2e567585f"
+        },
+        {
+          "path": "Extracted/Ceto-master/Ceto-master/README.md",
+          "size": 393,
+          "sha256": "01db54ba3299886ccd7fe9a3f7a3682cf95db56816c5c836edac238cca098b0b"
+        }
+      ]
+    },
+    {
+      "archive": "godot-project.zip",
+      "archive_size": 1317514,
+      "archive_sha256": "efa5f7476535dc3d7b9316b86ce626c79ffd5cce65419424da22bfd81ecf8c2e",
+      "extracted_file_count": 69,
+      "total_uncompressed_bytes": 1525813,
+      "files": [
+        {
+          "path": "Extracted/godot-project/godot-project/.editorconfig",
+          "size": 33,
+          "sha256": "3b2c749c8a940905a08f727d8be9017c9568a12421c0aee7e37e9543b3751b1b"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.gitattributes",
+          "size": 80,
+          "sha256": "21b01a606c9f85f18bb9230245f00ab104df7409cbb2fe9423f6751ca72ba754"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.gitignore",
+          "size": 46,
+          "sha256": "d6194b1a176268740a0b7f153bd4926908b4a0955a9a311181c0200b4329bc94"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/.gdignore",
+          "size": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/editor/editor_layout.cfg",
+          "size": 1383,
+          "sha256": "a5abe121474cc1e31af4a24cea083a22575c638bf86fac58c2c7b88e2b7e1c24"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/editor/filesystem_cache10",
+          "size": 252,
+          "sha256": "35d7e4a48cae2792a9f5514d1351662888814c6a361801e69a64406c512db1c5"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/editor/node_3d.tscn-editstate-14584830dbc22d3f76a596eed5f4948e.cfg",
+          "size": 4353,
+          "sha256": "742565dc6e7a52f586f8f861706f401bee64909121224a71395b0298717447d1"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/editor/node_3d.tscn-folding-14584830dbc22d3f76a596eed5f4948e.cfg",
+          "size": 90,
+          "sha256": "fb8543239054fd159ba9adbda789f885f15ee6becc5a083e91cfbbb19d34cf33"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/editor/project_metadata.cfg",
+          "size": 41,
+          "sha256": "b4b69299cea614644ee7eb4e262943cc3779b37b05057cf41ad46dee9ab9a727"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/editor/recent_dirs",
+          "size": 7,
+          "sha256": "eb5775bc7c154bfdb30483166efcfd341bdd55befbbe707a393df503b6f5d4ac"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/editor/script_editor_cache.cfg",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/global_script_class_cache.cfg",
+          "size": 8,
+          "sha256": "f61aa7ad3097022d6a9d110ca3f73fa7bb348ec2cf9a6e7c9523574dc75f5a16"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex",
+          "size": 3426,
+          "sha256": "5065348df8b1d7fa8484298b54140bd0cdae1c53b35a8bca37f7ffde71b45d2b"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.md5",
+          "size": 91,
+          "sha256": "8c7ad609215f31f9c67e43094c36a2e7d369c60c73d01bf71c7016c6b56c1981"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/scene_groups_cache.cfg",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/BlitShaderRD/ae4daaa7a60bb17ebd7e9de5db9422fb448b52ad89776ae7aa53fee442f7cc60/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 6484,
+          "sha256": "e1874b1a4043ba3db97466ede9f3ced6d6c2b78f34a65250c1a7a2d824723655"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/BlurRasterShaderRD/9c5ce6c282305d452850250d675e75b5784d4bd5843cfef7c8c782a789f8ed56/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 7384,
+          "sha256": "d82221393fb39c41f8427bc50e8956c24325c6c9121dcf4533f0ca9a7fcba4d4"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/BokehDofRasterShaderRD/8641c53aea67ee360fd91fe57abfedf8e7ff723cb62ccf7a29ced875fbf9649b/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 11320,
+          "sha256": "13fec009f6b4f05e675fcfa3af8f859e2f044a714f25b4b8b295a13774ecb475"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CanvasOcclusionShaderRD/606df5c981910bc4bc719cf497719273e80d1f314f65e68820bf8e2111368cdb/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 2920,
+          "sha256": "1b52aa01ac3c10a6e9e7c55c15b59da8e1adea1984461b8279125d2ab9360729"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CanvasSdfShaderRD/a4f6d732dba9a4cc0c37a1ca52936369e2ee148e9d03efe1b81bfed822adb1eb/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 4776,
+          "sha256": "ba597caf009e83ef5dc8e6b05eaa22a16e15bd026b6dbc03153fcb5237c9e7a8"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CanvasShaderRD/5454ca85157b6953b76bf324ebe90594c466e36301bf1b3e6adcce117d705c79/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 39424,
+          "sha256": "939043aecd8d42183da5535a26961616230d4c7d294e8da8e30b1b5c4bb1bbda"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CanvasShaderRD/5454ca85157b6953b76bf324ebe90594c466e36301bf1b3e6adcce117d705c79/89e0c5a264d1558e7bc2ca0dc3d0afd834fbe7b6.vulkan.cache",
+          "size": 23900,
+          "sha256": "21f55664bd58720cd51108426975c789b2c86efd65797d7840680ea53753b235"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CanvasShaderRD/5454ca85157b6953b76bf324ebe90594c466e36301bf1b3e6adcce117d705c79/8f9335de72e837eeead40640cc01fddc5baf5a7c.vulkan.cache",
+          "size": 23584,
+          "sha256": "ad10b101ee4b6e454166105776feb898debed3f5d6a9ae8ae4a737aef63b7904"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CanvasShaderRD/5454ca85157b6953b76bf324ebe90594c466e36301bf1b3e6adcce117d705c79/b7f8864ed1b8040a3456125a335ae926e257bf47.vulkan.cache",
+          "size": 40564,
+          "sha256": "3e7ad51f843bf308165084ad89b9fa1edeb8dd5f222e4d312c12540b48221fbe"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CanvasShaderRD/5454ca85157b6953b76bf324ebe90594c466e36301bf1b3e6adcce117d705c79/ddf1c2fb49f2d96e42d4ffa10cbbb808b4b14063.vulkan.cache",
+          "size": 41580,
+          "sha256": "d81c0335ed3bad653c18d401d5bb29e0f8af651f9c8a29a7fc39b8a428d19901"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CopyShaderRD/c374588e7ae9bf64919d0186bea3104b4f721cc0691d284a9998e1e7d06c5eb8/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 13948,
+          "sha256": "271ad1bbf115f834fc1933ff827a8fbf55d817e0b57efcd8439f428697237942"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CopyToFbShaderRD/72456b3a82af4da12c412275d4c8ffa4a6a5447d9daffeeef86bc16965803813/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 5464,
+          "sha256": "ca8a9147d19df85df951536776d5c9ead02a3c4213399913f30b37a37a10908b"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CubeToDpShaderRD/da14e2c9b701a4bd7336b87667bf4f3b4f645de09781824763d2bbceead56c83/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 1312,
+          "sha256": "3a6521e560f17a914f45c8094d7f3c48990c6a7ef6c9338e0225278e2b054100"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/CubeToOctmapShaderRD/7a5a6871c4fae131d3fef2e125ac23cbe81a1a042028f8c294461282de463c9a/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 1080,
+          "sha256": "984862cd77f4e8d4a5683453d3ac38da33385df9d08f8e25f3e1b2e5a18e8dfd"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/LuminanceReduceRasterShaderRD/64ab628341e9cf29ef6194796669b84730634d7b0838d39615342160fa4bcea2/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 3432,
+          "sha256": "2ca5e0323391f6e3966dcbfbf00265a36545da7115babe49b8d19da7c64a76ca"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/MotionVectorsShaderRD/4d3ba0c01e8b64c74a0f2f0fd20ddc8099d56cfbb3ee9e7dbe6dc3c54c174725/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 1628,
+          "sha256": "c873f675904dc6a2cb3daf0a16243db5ec964110e10a128399cd52629c1c61fa"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/OctmapDownsamplerShaderRD/17404978f453a0a0388dfb81b2d08f173476d2c3b680e2e6aa35bcf438e24f11/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 2896,
+          "sha256": "9ddcb171b9b39eaba5d7e682160f695970c148ace63a64ac528acbbcba23e04a"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/OctmapFilterShaderRD/cd03c4ea34362e2724f4d4536156039ee5ca21c31167b8840dfc65dad2d6bb11/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 23104,
+          "sha256": "19b5374f25b1db2ad049362a8cc694f00399943d827789a55c9429c27e805842"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/OctmapRoughnessShaderRD/8470960c68b74292e24251e3b7e41d28e9a5054dce0cd1d77c2a2a865a10af43/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 5208,
+          "sha256": "2a5b1f9fcc62895d861d0da2c17fa709f2fb99e78526a99d9d50d8b093eac56e"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/ParticlesCopyShaderRD/ce2b95c8a6b9e21f14c989c3ca095de77d9bb5e86213ae4180fb97cbd2c02a10/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 44972,
+          "sha256": "c3adf1a6162a2f91154a1aef9e49f925cab417b9518578dca315486b488d06ff"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/ParticlesShaderRD/f645828ab356b17f1478c77373935ecd2417e1c227a96b62417396293d13970e/07b5904b662900d90454c39c46885098de79aa4c.vulkan.cache",
+          "size": 6256,
+          "sha256": "b77a9bb89c7f08ee632d86612aeb02de887704f2aa618917f64419bf500ea553"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/ResolveRasterShaderRD/137533f5cd9053770129104644f24ab1233ba842cf0fab2a907f5680ea22aa2d/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 892,
+          "sha256": "b8c18285233cdc8c1a31cedecb843fcebd43092eb53c0faa7aa75c25583af2a5"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/02c86814035a46b723fc63849c963fa909ca1d53.vulkan.cache",
+          "size": 75712,
+          "sha256": "38a1229e22a2255d620e1bd57df347ae98010ab1571e12322f09e16be9e127c8"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/264740c9e52d30fdf72eb09ac389c8c05d7e3e52.vulkan.cache",
+          "size": 74280,
+          "sha256": "cf39b8de15186f4c9ac0d9042c00daf651c44228ab77b22d0c828f6bda50cbd6"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/281632020e3bb50b51c579792ed09cba55ca9e61.vulkan.cache",
+          "size": 77244,
+          "sha256": "5bc1f998c5d7916c2236a85d10ebd6da63b11895e277f087b7e282ffa19cdbd3"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/2dc1b5cfff090b77444337c6816f834532bf6711.vulkan.cache",
+          "size": 75560,
+          "sha256": "b8143423f153f9b9f5cb3b7b95f230d209009bdfcef7e76d1d834b2c5332a49f"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/347259af253e6bbec7ad5c69332af5ca731015aa.vulkan.cache",
+          "size": 68572,
+          "sha256": "6bc367d762736c28c156b7228c9e56292bf7021ced496d69a7a9661b6bf8c6fc"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/4aa5dd261de3fdc556b6e1bb6dde860628f12626.vulkan.cache",
+          "size": 73500,
+          "sha256": "033f1aec45c674511aa0ffcf707154e144e4183d95431ecd2c0325e856110197"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/58be0ecb4a3734a94c5fe4a3f1dd8f5bfcbe3a1a.vulkan.cache",
+          "size": 74016,
+          "sha256": "ee16480bba48d2e764f00989fd9cb1c3621948da68a912e6f2c69dce386b8766"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/89e8fba0d7acd47b3a26f6e80d5b4f5113808a81.vulkan.cache",
+          "size": 73080,
+          "sha256": "0acd5b1ad12ef6e054bf9ae05706aaaef2e5aa2c7ba218f6353e812329acbacb"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/8b5b4dbe3b644851d29f825ca63d090c7903e1c8.vulkan.cache",
+          "size": 73340,
+          "sha256": "7af5de6e10faf4746a5f5374515da5cd049170c6d8ea8769d429804015ab263e"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/a57de43d7037044db256520aedcde521c5d7211c.vulkan.cache",
+          "size": 75608,
+          "sha256": "b5313ae00fcfe8c07d541fae440003bc8d90c91812f5996babf501062849e1c0"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/a784797763b72ce058effad41b273eb697df9814.vulkan.cache",
+          "size": 142088,
+          "sha256": "fb432d44e3f5373f56b7912e2baf1147b828a5ec4f3e1f550927a688bafbc105"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/b600e18e20b53d8932999d48838b29553c586934.vulkan.cache",
+          "size": 145368,
+          "sha256": "aab3224731765034a9701c01856c42046db9ca91352109322d986a00b8af14f8"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SceneForwardMobileShaderRD/d62fbfd5b17269ffddb9a426006ac3f57e497a0754625bd6193e29bf42f3f7a4/faba017f3680b49e2024b66cc6d194f77217733d.vulkan.cache",
+          "size": 75896,
+          "sha256": "dead5773f55f555a8ab103e659d64b3a7cc9d8a9f011dd107020284f0998d932"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/ShadowFrustumShaderRD/248bc9deb54d10af912f2da1bd4b006bc43cfe08659a206fa573baf48e4050e0/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 696,
+          "sha256": "1206899168bd04b198462416700de3986abca6464dad625811b106754710c730"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SkeletonShaderRD/e6bc641e2a094416c99b1294ac5e453c55d24e0b62c1da47c8f7f93ae7877bfa/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 5140,
+          "sha256": "35b28864ff35e4721f63a4de8c5ff383853b82239da7156fb8520b6f4a463a99"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SkyShaderRD/25c4162ba5ed1f15e722f73bf07201837a6ae7b301288dd32ff9f71634118d9c/0fa1946a11e1cca806ebfe4b3b4ac7f723d8b701.vulkan.cache",
+          "size": 15384,
+          "sha256": "d726ba8b19c98f41c37652bd27b24fdd49cfbf185d2d41c4afe0459cbe357428"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SkyShaderRD/25c4162ba5ed1f15e722f73bf07201837a6ae7b301288dd32ff9f71634118d9c/9247dd7bf98483a15ebb05f8c580a398614a07d8.vulkan.cache",
+          "size": 20160,
+          "sha256": "f82a8b314c4a66c786efd74369dce577f4ee209891501914090a506e0ba1ff91"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SkyShaderRD/25c4162ba5ed1f15e722f73bf07201837a6ae7b301288dd32ff9f71634118d9c/ff1961ca0c4c55a79eb12f819a7b6345801bbbaf.vulkan.cache",
+          "size": 15696,
+          "sha256": "6f7d89720fe44bfa47f2f86c41b12e4e0711cdbbcbe8801409aedd243f2116e0"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SmaaBlendingShaderRD/d7b7c8cec00f24f9aa8db356b4df88c5fe032d38ce38673bd520c280c936fb80/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 1940,
+          "sha256": "f8bab3ed70125a082cd741f096906a2bab65467210e77d64b8d0588e2419800b"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SmaaEdgeDetectionShaderRD/8879d099a2601bd01d4582b1e86a091c5f89a7bc46aecc9e805410f75bcda245/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 1400,
+          "sha256": "3c9bb2c4a3e490609816bcc2f0e2327799fe8934927d6f50bc47fc43e8deaaf8"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SmaaWeightCalculationShaderRD/de1d49d5ff947e8b8382f43a79f57c4cceb02eed6f86d5175093ca63e94052bf/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 4496,
+          "sha256": "ca5f841485d426724a4f68ee8c1e942b7d335ce385f417321ca4ab64a07d9b4d"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SortShaderRD/d8d77897b86870d358bf870233e14233981c2db9ff06641cd8f405379ac8872f/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 3020,
+          "sha256": "426e41a868d108e00ef9a5823a7e997d7def01fe6f33dd322e8a0baa9983b7d2"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/SpecularMergeShaderRD/70920fc883de48dd253fbc2503dd8f4e65941df0da07e074541df12df090de98/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 3268,
+          "sha256": "616efa51531105c1879d7eb4a3d5433b3ca1f9fc4e36994234583d2ca12c73df"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/TexBlitShaderRD/fd9c885eab1da0d330a04ebfd7796019cde57f82208202f3bfc96cae74155212/1e8995c9eb0e9b0b053035999de68595c521a33e.vulkan.cache",
+          "size": 6316,
+          "sha256": "ca93a3a8ffbea8b1f4e3f0bbab6371722ba4dc0ecb8046737d8745338bf6aa4a"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/TonemapMobileShaderRD/d0219d249e06a0fe50412897cc24a137b74c0423bc660911325fe01a359a8273/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 16732,
+          "sha256": "afd04d1b6dd12d52d003bab14101240af983f427b5cd834c03ed519ca2151a3f"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/shader_cache/VrsShaderRD/fa59a74699f8241cd3f8174eaef045dc8d40f3b29bf36af5414713c289f82717/8305c75c1294a9f00656f0f14344bb8bedcfe4e7.vulkan.cache",
+          "size": 2560,
+          "sha256": "10d40a96c9cb38160f10e635ad4e926d5965f4a3de6a149a98517e005db1ccab"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.godot/uid_cache.bin",
+          "size": 60,
+          "sha256": "de5c704744bb4645c55a7bf23cc0e19ca7701e29ad0e07a9f7e3ac50af881450"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/.nomedia",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/icon.svg",
+          "size": 995,
+          "sha256": "6c80384360a5b269d1054bfb27241258154e2cc8167c522016fdc1820e84e0f8"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/icon.svg.import",
+          "size": 1013,
+          "sha256": "9320db66ff69e56ecb22e0b77bbf913cd5dc9f7fd7da551cf0a0a725ee46b3c1"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/node_3d.tscn",
+          "size": 103,
+          "sha256": "a37ce57191cd0303e635a9d14b8c27242dec9ed6b3c1fb7500c774d93a3e08e1"
+        },
+        {
+          "path": "Extracted/godot-project/godot-project/project.godot",
+          "size": 631,
+          "sha256": "cbb55141eaab18c02ec63575ffa1e105000fb56442f3d2992aca7acaef181c43"
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "max_files": 100000,
+    "max_total_uncompressed_bytes": 524288000,
+    "max_single_file_bytes": 94371840
+  }
+}\n
