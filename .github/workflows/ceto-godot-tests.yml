@@ -152,7 +152,7 @@ jobs:
             --rendering-method gl_compatibility --rendering-driver opengl3 \
             --audio-driver Dummy --script res://tests/test_ceto_gpu_displacement.gd \
             2>&1 | tee /tmp/godot-gpu-displacement.log
-          grep -q "CETO GPU DISPLACEMENT: PASS" /tmp/godot-gpu-displacement.log
+          grep -q "CETO GPU INITIALIZATION: PASS" /tmp/godot-gpu-displacement.log
           if grep -E "ERROR:|SCRIPT ERROR|Parse Error|Compile Error" /tmp/godot-gpu-displacement.log; then
             exit 1
           fi
