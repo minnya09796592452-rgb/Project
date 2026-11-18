@@ -329,7 +329,7 @@ def main() -> int:
             "per-grid displacement assembly -> spatial surface shader",
         ],
         "ci_gpu_parity": "PASS",
-        "last_verified_ci_run": "44416089034",
+        "last_verified_ci_run": "44416184577",
         "render_backend": "Godot Mobile / Vulkan llvmpipe",
         "verified_metrics": {
             "four_grid_update_passes": 61,
