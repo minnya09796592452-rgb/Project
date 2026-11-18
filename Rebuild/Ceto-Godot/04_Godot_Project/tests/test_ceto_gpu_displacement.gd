@@ -10,6 +10,10 @@ const FOAM_AMOUNT := 0.7
 
 
 func _initialize() -> void:
+	if RenderingServer.get_rendering_device() == null:
+		print("CETO GPU INITIALIZATION: SKIP (Compatibility renderer has no HDR RenderingDevice)")
+		quit(0)
+		return
 	await _run_test()
 
 
