@@ -16,6 +16,8 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 - `shaders/ceto_init_slope.gdshader`: Ceto slope initialization, split into selectable single-target passes.
 - `shaders/ceto_init_jacobians.gdshader`: Ceto Jacobian/foam precursor initialization, split into selectable single-target passes.
 - `shaders/ceto_foam_copy.gdshader`: Ceto foam Jacobian composition for one through four grids.
+- `shaders/ceto_displacement_copy.gdshader`: Ceto packed height/horizontal displacement texture assembly.
+- `shaders/ceto_slope_copy.gdshader`: Ceto slope buffer copy.
 - `tests/test_ceto_fourier.gd`: headless tests for FFT, lookup textures, spectrum equations, and WTable.
 
 ## Verification
