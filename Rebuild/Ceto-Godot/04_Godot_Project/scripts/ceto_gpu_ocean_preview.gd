@@ -24,6 +24,9 @@ var _simulation_time := 0.0
 
 
 func _ready() -> void:
+	if RenderingServer.get_rendering_device() == null:
+		push_error("GPU ocean preview requires a Forward+ or Mobile RenderingDevice backend")
+		return
 	_settings = CetoSpectrumGenerator.grid_configuration("unified", 4)
 	var parameters := CetoSpectrum.unified_parameters(8.0, 25.0, 0.64)
 	_spectrum_data = CetoSpectrumGenerator.generate(
