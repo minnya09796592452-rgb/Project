@@ -22,6 +22,7 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 - `shaders/ceto_displacement_copy.gdshader`: Ceto packed height/horizontal displacement texture assembly.
 - `shaders/ceto_slope_copy.gdshader`: Ceto slope buffer copy.
 - `shaders/ceto_ocean_surface.gdshader`: Godot preview surface material that consumes the generated per-grid displacement, slope, and foam textures; it is a presentation approximation, not a full port of Ceto's original ocean material.
+- `shaders/ceto_copy_depth.gdshader`, `ceto_normal_fade.gdshader`, and `ceto_blur_cone_taps.gdshader`: additional Ceto depth-copy, world-normal fade, and four-tap blur translations.
 - `tests/test_ceto_fourier.gd`: headless CPU tests for FFT, lookup textures, spectrum equations, WTable, displacement initialization, and wave queries.
 - `tests/test_ceto_gpu_fourier.gd`: GPU render-pass comparison against the CPU FFT reference, including pass-count and numeric-error gates.
 - `tests/test_ceto_gpu_displacement.gd`: GPU InitDisplacement, InitSlope, and InitJacobians outputs compared against independent CPU references for four grids.
