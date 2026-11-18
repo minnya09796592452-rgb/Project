@@ -325,7 +325,7 @@ def main() -> int:
         "source_counts": {key: len(value) for key, value in inventory.items()},
         "results": results,
         "complete_ceto_feature_parity": False,
-        "note": "A PASS applies only to the named stage. Present C# and shader outputs are partial ports and still require full feature-parity validation.",
+        "note": "A PASS applies only to the named stage. Present C# and shader outputs are partial ports and still require full feature-parity validation; unmapped files remain queued.",
     }
     (reports / "run_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     with (reports / "run_summary.txt").open("w", encoding="utf-8") as stream:
@@ -340,7 +340,7 @@ def main() -> int:
     failures = [item for item in results if item["status"] == "FAIL"]
     print(f"\nREPORT: {reports.relative_to(repo)}")
     print(f"RESULT: {len(results) - len(failures)} non-failing stages; {len(failures)} failed stages.")
-    print("C# and shader queues remain explicitly unconverted until their dedicated ports are validated.")
+    print("Mapped C# and shader outputs are partial ports requiring parity checks; unmapped files remain queued.")
     return 1 if failures else 0
 
 
