@@ -35,6 +35,10 @@ This folder is a Godot 4.7.2 project assembled from the existing starter project
 
 The `Ceto Godot Conversion Tests` workflow downloads the official Godot 4.7.2 binary, imports the project headlessly, runs the CPU numerical suite, and launches the CPU preview smoke test. It also runs GPU Fourier, displacement/slope/Jacobian initialization, copy/foam parity checks, and the integrated 61-pass ocean update on the Godot Mobile renderer using the runner's Vulkan llvmpipe device. The optional GPU preview requires a Forward+ or Mobile renderer. CI copies the remaining original Caustics texture and converts the original Ship.3DS to GLB, then removes the generated editor cache.
 
+## Conversion inventory snapshot
+
+Latest one-click audit: **41/104 C# files** have partial behavior mappings, **15/29 shader sources** have Godot outputs, and **18 Unity scene/material files** remain queued. These are source-to-output coverage counts, not a claim that the mapped files are complete or parity-equivalent.
+
 ## GPU validation boundary
 
 The sequential GPU pass runner, multi-buffer FFT scheduler, initialization/copy pipeline, optional GPU preview scene, and additional mask/depth/underwater shader translations are implemented. The CI host exposes a Vulkan llvmpipe RenderingDevice, so GPU numeric tests are configured to run against the CPU reference. A successful CI run validates the tested FFT and initialization/copy stages only; the full Unity visual parity is still outstanding.
