@@ -92,6 +92,42 @@ static func create_butterfly_lookup_textures(size: int) -> Array[ImageTexture]:
 
 	return textures
 
+
+## Transforms the two complex pairs packed into a Ceto Vector4 buffer.
+## When double_packed is false, only XY is transformed, matching FourierCPU.
+static func transform_packed_vector4_2d(
+	input_data: PackedVector4Array,
+	size: int,
+	double_packed: bool
+) -> PackedVector4Array:
+	assert(is_power_of_two(size), "Ceto FFT size must be a positive power of two")
+	assert(input_data.size() == size * size, "Packed FFT input length must equal size * size")
+
+	var xy := PackedVector2Array()
+	xy.resize(input_data.size())
+	var zw := PackedVector2Array()
+	if double_packed:
+		zw.resize(input_data.size())
+
+	for index in range(input_data.size()):
+		xy[index] = Vector2(input_data[index].x, input_data[index].y)
+		if double_packed:
+			zw[index] = Vector2(input_data[index].z, input_data[index].w)
+
+	var transformed_xy := transform_2d(xy, size)
+	var transformed_zw := transform_2d(zw, size) if double_packed else PackedVector2Array()
+	var output := PackedVector4Array()
+	output.resize(input_data.size())
+	for index in range(output.size()):
+		var second := transformed_zw[index] if double_packed else Vector2.ZERO
+		output[index] = Vector4(
+			transformed_xy[index].x,
+			transformed_xy[index].y,
+			second.x,
+			second.y
+		)
+	return output
+
 ## input_data is row-major: index = x + y * size.
 ## Returns a new PackedVector2Array; input_data is not modified.
 static func transform_2d(input_data: PackedVector2Array, size: int) -> PackedVector2Array:
