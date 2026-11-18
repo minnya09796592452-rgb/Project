@@ -111,16 +111,47 @@ def main() -> int:
         "dotnet": shutil.which("dotnet"),
         "unity_editor": shutil.which("Unity") or shutil.which("unity"),
     }
-    # No unverified converter is downloaded or executed. The queue identifies
-    # source classes requiring a dedicated, audited converter or semantic port.
+    # Existing ports are tracked per original source file. A present output is not
+    # treated as feature parity; runtime/numerical parity remains a separate gate.
+    shader_ports = {
+        "Shaders/Fourier.shader": ["shaders/ceto_fourier_stage.gdshader"],
+        "Shaders/InitDisplacement.shader": ["shaders/ceto_init_displacement.gdshader"],
+        "Shaders/InitSlope.shader": ["shaders/ceto_init_slope.gdshader"],
+        "Shaders/InitJacobians.shader": ["shaders/ceto_init_jacobians.gdshader"],
+        "Shaders/FoamCopy.shader": ["shaders/ceto_foam_copy.gdshader"],
+        "Shaders/DisplacementCopy.shader": ["shaders/ceto_displacement_copy.gdshader"],
+        "Shaders/SlopeCopy.shader": ["shaders/ceto_slope_copy.gdshader"],
+    }
+    csharp_ports = {
+        "Scripts/Spectrum/Fourier/FourierCPU.cs": ["scripts/ceto_fourier.gd"],
+        "Scripts/Spectrum/Conditions/UnifiedSpectrum.cs": ["scripts/ceto_spectrum.gd"],
+        "Scripts/Spectrum/Conditions/PhillipsSpectrum.cs": ["scripts/ceto_spectrum.gd"],
+        "Scripts/Spectrum/Conditions/WaveSpectrumCondition.cs": ["scripts/ceto_spectrum_generator.gd"],
+        "Scripts/Spectrum/Tasks/InitSpectrumDisplacementsTask.cs": ["scripts/ceto_displacement.gd"],
+        "Scripts/Spectrum/Tasks/FourierTask.cs": ["scripts/ceto_fourier.gd", "scripts/ceto_displacement.gd"],
+        "Scripts/Spectrum/Buffers/QueryDisplacements.cs": ["scripts/ceto_wave_query.gd", "scripts/ceto_interpolated_array_2d.gd"],
+    }
+    def present_ports(mapping: dict[str, list[str]], domain: str) -> dict[str, list[str]]:
+        found = {}
+        for source_file, outputs in mapping.items():
+            if source_file in inventory[domain] and all((project / output).is_file() for output in outputs):
+                found[source_file] = outputs
+        return found
+
+    present_shader_ports = present_ports(shader_ports, "shaders")
+    present_csharp_ports = present_ports(csharp_ports, "csharp")
     routing = [
-        ("C# logic", len(inventory["csharp"]), "C# / Roslyn analysis", "SEMANTIC_PORT_QUEUE",
-         "No verified Unity-C# to Godot converter is configured; retain source references and port APIs explicitly."),
-        ("ShaderLab/HLSL", len(inventory["shaders"]), "Godot shader translation", "SHADER_PORT_QUEUE",
-         "Unity render passes, CG includes and compute kernels require Ceto-specific Godot shader work."),
-        ("Unity scenes/materials", len(inventory["unity_scenes"]), "Unity scene/prefab converter", "SCENE_CONVERSION_QUEUE",
-         "Requires an audited Unity YAML converter; do not silently approximate custom ocean materials."),
-        ("Textures/models", len(inventory["assets"]), "Pillow/hash + Assimp", "ASSET_PIPELINE",
+        ("C# logic", len(inventory["csharp"]), "Roslyn/source analysis + Godot GDScript ports",
+         f"{len(present_csharp_ports)} PARTIAL_PORT_OUTPUTS_PRESENT",
+         "Mapped files are behavior ports, not a complete line-by-line C# conversion or parity claim."),
+        ("ShaderLab/HLSL", len(inventory["shaders"]), "Ceto-specific Godot shader translation",
+         f"{len(present_shader_ports)} PORT_OUTPUTS_PRESENT",
+         "Mapped shader outputs are separate Godot single-target passes; the remaining source shaders stay queued."),
+        ("Unity scenes/materials", len(inventory["unity_scenes"]), "Audited Unity scene/prefab converter",
+         "SCENE_CONVERSION_QUEUE",
+         "Requires an audited Unity YAML converter; custom ocean materials must not be silently approximated."),
+        ("Textures/models", len(inventory["assets"]), "Byte-hash verification + Assimp",
+         "ASSET_PIPELINE",
          "Copy raster textures byte-for-byte; convert supported 3D formats with Assimp."),
     ]
 
@@ -198,28 +229,51 @@ def main() -> int:
         else:
             record("ship_model", "SKIP", "No source Mesh/Ship.3DS found.")
 
-    # Dedicated conversion queues are explicit: never claim that merely classifying
-    # source files has converted their behavior.
+    # Build a truthful per-file conversion manifest and queue only unmapped files.
     queue_dir = reports / "queues"
     queue_dir.mkdir(parents=True, exist_ok=True)
-    for key, filename in [
-        ("csharp", "csharp_semantic_port.json"),
-        ("shaders", "shader_translation.json"),
-        ("unity_scenes", "unity_scene_conversion.json"),
-    ]:
+    conversion_manifest = []
+    queue_specs = [
+        ("csharp", "csharp_semantic_port.json", csharp_ports, present_csharp_ports,
+         "PARTIAL_BEHAVIOR_PORT_REQUIRES_PARITY"),
+        ("shaders", "shader_translation.json", shader_ports, present_shader_ports,
+         "GODOT_SHADER_OUTPUT_PRESENT_REQUIRES_PARITY"),
+        ("unity_scenes", "unity_scene_conversion.json", {}, {},
+         "NOT_CONVERTED"),
+    ]
+    for key, filename, mapping, present, output_status in queue_specs:
+        pending = []
+        for source_file in inventory[key]:
+            outputs = mapping.get(source_file, [])
+            if outputs and source_file in present:
+                conversion_manifest.append({
+                    "domain": key, "source": source_file, "outputs": outputs,
+                    "status": output_status,
+                })
+            else:
+                pending.append(source_file)
+                conversion_manifest.append({
+                    "domain": key, "source": source_file, "outputs": [],
+                    "status": "QUEUED_NOT_CONVERTED",
+                })
         (queue_dir / filename).write_text(
             json.dumps({
                 "domain": key,
-                "status": "QUEUED_NOT_CONVERTED",
+                "status": "PENDING" if pending else "NO_PENDING_FILES",
                 "source_root": SOURCE_REL.as_posix(),
-                "files": inventory[key],
+                "pending_files": pending,
+                "mapped_output_count": len(present),
                 "existing_godot_project": PROJECT_REL.as_posix(),
-                "policy": "Do not modify original Unity source. Do not mark a file converted without output and validation.",
+                "policy": "Original Unity source is read-only. Output presence is not proof of feature parity.",
             }, indent=2), encoding="utf-8"
         )
+    (reports / "conversion_manifest.json").write_text(
+        json.dumps(conversion_manifest, indent=2), encoding="utf-8"
+    )
     record("conversion_queues", "INFO",
-           f"C#={len(inventory['csharp'])}, shaders={len(inventory['shaders'])}, "
-           f"Unity scenes/materials={len(inventory['unity_scenes'])}; queued, not falsely marked converted.")
+           f"C# mapped={len(present_csharp_ports)}/{len(inventory['csharp'])}; "
+           f"shaders mapped={len(present_shader_ports)}/{len(inventory['shaders'])}; "
+           f"Unity scenes/materials pending={len(inventory['unity_scenes'])}.")
 
     # Godot lane: import, numerical tests, then preview smoke test.
     if not args.no_godot:
@@ -271,7 +325,7 @@ def main() -> int:
         "source_counts": {key: len(value) for key, value in inventory.items()},
         "results": results,
         "complete_ceto_feature_parity": False,
-        "note": "A PASS applies only to the named stage. Queued C# and shader domains are not converted yet.",
+        "note": "A PASS applies only to the named stage. Present C# and shader outputs are partial ports and still require full feature-parity validation.",
     }
     (reports / "run_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     with (reports / "run_summary.txt").open("w", encoding="utf-8") as stream:
